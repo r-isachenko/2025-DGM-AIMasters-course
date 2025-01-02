@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Normalizing flows (NF)}{7}{0}{1}
+\beamer@sectionintoc {2}{NF examples}{15}{0}{2}
+\beamer@subsectionintoc {2}{1}{Linear normalizing flows}{16}{0}{2}
+\beamer@subsectionintoc {2}{2}{Gaussian autoregressive NF}{20}{0}{2}
+\beamer@subsectionintoc {2}{3}{Coupling layer (RealNVP)}{24}{0}{2}

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Denoising score matching for diffusion}{9}{0}{1}
+\beamer@sectionintoc {2}{Denoising Diffusion Probabilistic Model (DDPM)}{11}{0}{2}
+\beamer@subsectionintoc {2}{1}{Reverse Gaussian diffusion process}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Gaussian diffusion model as VAE}{18}{0}{2}
+\beamer@subsectionintoc {2}{3}{ELBO derivation}{21}{0}{2}

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{EM-algorithm}{8}{0}{1}
+\beamer@subsectionintoc {1}{1}{Amortized inference}{9}{0}{1}
+\beamer@subsectionintoc {1}{2}{ELBO gradients, reparametrization trick}{13}{0}{1}
+\beamer@sectionintoc {2}{Variational autoencoder (VAE)}{18}{0}{2}
+\beamer@sectionintoc {3}{Discrete VAE latent representations}{24}{0}{3}

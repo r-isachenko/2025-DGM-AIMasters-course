@@ -1,0 +1,40 @@
+\beamer@sectionintoc {1}{Autoregressive models}{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Masked Autoencoder (MADE)}{8}{0}{1}
+\beamer@subsectionintoc {1}{2}{WaveNet}{12}{0}{1}
+\beamer@subsectionintoc {1}{3}{GatedPixelCNN}{16}{0}{1}
+\beamer@sectionintoc {2}{Variational inference}{20}{0}{2}
+\beamer@subsectionintoc {2}{1}{ELBO gradient, Log derivative trick}{22}{0}{2}
+\beamer@subsectionintoc {2}{2}{Mean field approximation}{26}{0}{2}
+\beamer@sectionintoc {3}{VAE-related topics}{38}{0}{3}
+\beamer@subsectionintoc {3}{1}{Posterior collapse and decoder weakening techniques}{39}{0}{3}
+\beamer@subsectionintoc {3}{2}{IWAE}{49}{0}{3}
+\beamer@subsectionintoc {3}{3}{PixelVAE, Hierarchical VAE}{62}{0}{3}
+\beamer@sectionintoc {4}{Normalizing Flows}{65}{0}{4}
+\beamer@subsectionintoc {4}{1}{Flows intuition}{66}{0}{4}
+\beamer@subsectionintoc {4}{2}{Residual Flows (planar flows)}{73}{0}{4}
+\beamer@subsectionintoc {4}{3}{Autoregressive flows}{77}{0}{4}
+\beamer@subsectionintoc {4}{4}{Inverse gaussian autoregressive flows}{80}{0}{4}
+\beamer@subsectionintoc {4}{5}{Parallel WaveNet}{86}{0}{4}
+\beamer@subsectionintoc {4}{6}{RevNet, i-RevNet}{93}{0}{4}
+\beamer@subsectionintoc {4}{7}{Data dequantization}{100}{0}{4}
+\beamer@subsectionintoc {4}{8}{FFJORD}{108}{0}{4}
+\beamer@sectionintoc {5}{ELBO surgery}{111}{0}{5}
+\beamer@subsectionintoc {5}{1}{VAE limitations: prior distribution}{117}{0}{5}
+\beamer@subsectionintoc {5}{2}{VAE limitations: posterior distribution}{120}{0}{5}
+\beamer@sectionintoc {6}{Disentanglement}{125}{0}{6}
+\beamer@sectionintoc {7}{GANs}{149}{0}{7}
+\beamer@subsectionintoc {7}{1}{DCGAN}{152}{0}{7}
+\beamer@subsectionintoc {7}{2}{Vanishing gradients}{158}{0}{7}
+\beamer@subsectionintoc {7}{3}{Improved techniques for training GANs}{161}{0}{7}
+\beamer@subsectionintoc {7}{4}{Adversarial variational Bayes}{164}{0}{7}
+\beamer@subsectionintoc {7}{5}{WGAN}{171}{0}{7}
+\beamer@subsectionintoc {7}{6}{WGAN with Gradient Penalty}{176}{0}{7}
+\beamer@subsectionintoc {7}{7}{Spectral Normalization GAN}{180}{0}{7}
+\beamer@subsectionintoc {7}{8}{Evolution of GANs}{185}{0}{7}
+\beamer@subsectionintoc {7}{9}{Evaluation of likelihood-free models}{201}{0}{7}
+\beamer@sectionintoc {8}{Quantized latents}{208}{0}{8}
+\beamer@subsectionintoc {8}{1}{Vector Quantized VAE-2}{209}{0}{8}
+\beamer@subsectionintoc {8}{2}{Feature Quantized GAN}{213}{0}{8}
+\beamer@sectionintoc {9}{Diffusion related topics}{217}{0}{9}
+\beamer@subsectionintoc {9}{1}{Implicit score matching}{218}{0}{9}
+\beamer@subsectionintoc {9}{2}{Classifier guidance}{221}{0}{9}

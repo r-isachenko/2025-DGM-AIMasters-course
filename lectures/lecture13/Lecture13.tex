@@ -1,0 +1,574 @@
+\input{../utils/preamble}
+\createdgmtitle{13}
+
+%--------------------------------------------------------------------------------
+\begin{document}
+%--------------------------------------------------------------------------------
+\begin{frame}[noframenumbering,plain]
+%\thispagestyle{empty}
+\titlepage
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.2cm}
+	\begin{block}{SDE basics}
+		Let define stochastic process $\bx(t)$ with initial condition $\bx(0) \sim p_0(\bx)$:
+		\[
+			d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw, 
+		\]
+		where $\bw(t)$ is the standard Wiener process (Brownian motion)
+		\vspace{-0.2cm}
+		\[		
+			\bw(t) - \bw(s) \sim \cN(0, (t - s) \bI), \quad d \bw = \bepsilon \cdot \sqrt{dt}, \, \text{where } \bepsilon \sim \cN(0, \bI).
+		\]
+	\end{block}
+	\vspace{-0.3cm}
+	\begin{block}{Discretization of SDE (Euler method) - SDESolve}
+		\vspace{-0.3cm}
+		\[
+			\bx(t + dt) = \bx(t) + \bff(\bx(t), t) \cdot dt + g(t) \cdot \bepsilon \cdot \sqrt{dt}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{itemize}
+		\item At each moment $t$ we have the density $p_t(\bx) = p(\bx, t)$.
+		\item $p: \bbR^m \times [0, 1] \rightarrow \bbR_+$ is a \textbf{probability path} between $p_0(\bx)$ and $p_1(\bx)$.
+	\end{itemize}
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+ 	\begin{block}{Theorem (Kolmogorov-Fokker-Planck)}
+ 		Evolution of the distribution $p_t(\bx)$ is given by the following equation:
+ 		\vspace{-0.3cm}
+ 		\[
+ 			\frac{\partial p_t(\bx)}{\partial t} = - \text{div}\left(\bff(\bx, t) p_t(\bx)\right) + \frac{1}{2}g^2(t) \Delta_{\bx}p_t(\bx)
+ 		\]
+ 		\vspace{-0.5cm}
+ 	\end{block}
+ 	\begin{block}{Langevin SDE (special case)}
+ 		\vspace{-0.3cm}
+ 		\[
+ 			d \bx = {\color{violet}\frac{1}{2} \frac{\partial}{\partial \bx} \log p_t(\bx)} d t + {\color{teal} 1 } \cdot d \bw
+ 		\]
+ 		\vspace{-0.3cm}
+ 	\end{block}
+ 	The density $p(\bx | \btheta)$ is a \textbf{stationary} distribution for the SDE.
+	\begin{block}{Langevin dynamics}
+		Samples from the following dynamics will comes from $p(\bx | \btheta)$ under mild regularity conditions for small enough $\eta$.
+		\vspace{-0.2cm}
+		\[
+			\bx_{t + 1} = \bx_t + \frac{\eta}{2} \nabla_{\bx_t} \log p(\bx_t | \btheta) + \sqrt{\eta} \cdot \bepsilon, \quad \bepsilon \sim \cN(0, \bI).
+		\]
+	\end{block}
+	\myfootnotewithlink{https://www.stats.ox.ac.uk/~teh/research/compstats/WelTeh2011a.pdf}{Welling M. Bayesian Learning via Stochastic Gradient Langevin Dynamics, 2011}
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.5cm}
+	\[
+		d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw - \text{SDE with the probability path } p_t(\bx)
+	\]
+	\vspace{-0.5cm}
+	\begin{block}{Probability flow ODE}
+		There exists ODE with identical the probability path $p_t(\bx)$ of the form
+		\[
+			d\bx = \left(\mathbf{f}(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{figure}
+		\includegraphics[width=0.75\linewidth]{figs/probability_flow}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.3cm}
+	\[
+		d\bx = \mathbf{f}(\bx, t) dt, \quad \bx(t + dt) = \bx(t) + \mathbf{f}(\bx, t) dt
+	\]
+	\vspace{-0.5cm}
+	\begin{block}{Reverse ODE}
+		Let $\tau = 1 - t$ ($d\tau = -dt$).
+		\vspace{-0.3cm}
+		\[
+			d\bx = - \bff(\bx, 1 - \tau) d \tau
+		\]
+	\end{block}
+	\vspace{-0.5cm}
+	\begin{block}{Reverse SDE}
+		There exists the reverse SDE for the SDE $d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw$ that has the following form
+		\vspace{-0.3cm}
+		\[
+			d\bx = \left(\mathbf{f}(\bx, t) {\color{violet}- g^2(t) \frac{\partial}{\partial \bx}\log p_t(\bx)}\right) dt + g(t) d \bw, \quad dt < 0
+		\] 
+	\end{block}
+	\vspace{-0.5cm}
+	\begin{block}{Sketch of the proof}
+		\begin{itemize}
+			\item Convert initial SDE to probability flow ODE.
+			\item Revert probability flow ODE.
+			\item Convert reverse probability flow ODE to reverse SDE.
+		\end{itemize}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.5cm}
+	\begin{align*}
+		d\bx &= \mathbf{f}(\bx, t) dt + g(t) d \bw - \text{SDE} \\
+		d\bx &= \left(\mathbf{f}(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt - \text{probability flow ODE} \\
+		d\bx &= \left(\mathbf{f}(\bx, t) - g^2(t) \frac{\partial }{\partial \bx}\log p_t(\bx)\right) dt + g(t) d \bw - \text{reverse SDE}
+	\end{align*}
+	\vspace{-0.5cm}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figs/sde}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.3cm}
+	\[
+		d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw
+	\]
+	\vspace{-0.3cm}
+	\begin{block}{Variance Exploding SDE (NCSN)}
+		\vspace{-0.5cm}
+		\[
+			d \bx = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} \cdot d \bw, \quad \bff(\bx, t) = 0, \quad g(t) = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} 
+		\]
+		Variance grows since $\sigma(t)$ is a monotonically increasing function.
+	\end{block}
+	\begin{block}{Variance Preserving SDE (DDPM)}
+		\vspace{-0.3cm}
+		\[
+			d \bx = - \frac{1}{2} \beta(t) \bx(t) dt + \sqrt{\beta(t)} \cdot d \bw
+		\]
+		\[
+			\bff(\bx, t) = - \frac{1}{2} \beta(t) \bx(t) , \quad g(t) = \sqrt{\beta(t)} 
+		\]
+		Variance is preserved if $\bx(0)$ has a unit variance.
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+%=======
+\section{Score-based generative models through SDEs}
+%=======
+\begin{frame}{Score-based generative models through SDEs}
+	\begin{block}{Discrete-in-time objective}
+		\vspace{-0.3cm}
+		\[
+			\bbE_{\pi(\bx_0)} \bbE_{t \sim U\{1, T\}} \bbE_{q(\bx_t | \bx_0)}\bigl\| \bs_{\btheta, t}(\bx_t) - \nabla_{\bx_t} \log q(\bx_t | \bx_0) \bigr\|^2_2 
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Continuous-in-time objective}
+		\vspace{-0.5cm}
+		\[
+			\bbE_{\pi(\bx(0))} \bbE_{t \sim U[0, 1]} \bbE_{q(\bx(t) | \bx(0))}\bigl\| \bs_{\btheta}(\bx(t), t) - {\color{teal}\nabla_{\bx(t)} \log q(\bx(t) | \bx(0))} \bigr\|^2_2 
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{figure}
+		\includegraphics[width=0.8\linewidth]{figs/sbgm}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Score-based generative models through SDEs}
+	\vspace{-0.3cm}
+	\begin{block}{Continuous-in-time objective}
+		\vspace{-0.5cm}
+		\[
+			\bbE_{\pi(\bx(0))} \bbE_{t \sim U[0, 1]} \bbE_{q(\bx(t) | \bx(0))}\bigl\| \bs_{\btheta}(\bx(t), t) - {\color{teal}\nabla_{\bx(t)} \log q(\bx(t) | \bx(0))} \bigr\|^2_2 
+		\]
+		\vspace{-0.7cm}
+	\end{block}
+	\[
+		q(\bx(t) | \bx(0)) = \cN\Bigl(\bmu(\bx(t), \bx(0)), \bSigma(\bx(t), \bx(0))\Bigr)
+	\]
+	\vspace{-0.5cm}
+	\begin{block}{Theorem}
+		Moments of the SDE $d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw$ satisfies the equations
+		\[
+			\frac{d \bmu(\bx(t), \bx(0))}{dt} = \bbE \left[ \bff(\bx(t), t) | \bx(0)\right]
+		\]
+		\[
+			\frac{d \bSigma(\bx(t), \bx(0))}{dt} = \bbE \left[ \bff \cdot (\bx(t) - \bmu)^T + (\bx(t) - \bmu) \cdot \bff^T | \bx(0)\right] + g^2(t) \cdot \bI
+		\]
+	\end{block}
+	Let prove the first one.
+	\myfootnotewithlink{https://users.aalto.fi/~asolin/sde-book/sde-book.pdf}{Särkkä S., Solin A. Applied stochastic differential equations, 2019}
+\end{frame}
+%=======
+\begin{frame}{Score-based generative models through SDEs}
+	\begin{block}{Theorem}
+		\vspace{-0.3cm}
+		\[
+			\frac{d \bmu(\bx(t), \bx(0))}{dt} = \bbE \left[ \bff(\bx(t), t) | \bx(0)\right]
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{Proof}
+		\vspace{-0.7cm}
+		\begin{align*}
+			\bbE\left[{\color{violet}d\bx} | \bx(0) \right] &= \bbE\left[{\color{violet}\mathbf{f}(\bx, t) dt} | \bx(0) \right] + \bbE\left[{\color{violet}g(t) d \bw} | \bx(0) \right] \\
+			&= \bbE\left[\mathbf{f}(\bx, t) | \bx(0) \right] dt + g(t) \bbE\left[d \bw | \bx(0) \right] \\
+			&= \bbE\left[\mathbf{f}(\bx, t) | \bx(0) \right] dt
+		\end{align*}
+		\[
+			\frac{d \bbE\left[\bx | \bx(0) \right]}{dt} = \frac{d \bmu(\bx(t), \bx(0))}{dt} = \bbE\left[\mathbf{f}(\bx, t) | \bx(0) \right] 
+		\]
+	\end{block}
+	\vspace{-0.3cm}
+	\begin{block}{Examples}
+		\vspace{-0.5cm}
+		\[
+			\textbf{NCSN:} \quad	\mathbf{f}(\bx, t) = 0 \quad \Rightarrow \quad \bmu = \bx(0)
+		\]
+		\[
+			\textbf{DDPM:} \quad \mathbf{f}(\bx, t) = - \frac{1}{2} \beta(t) \bx(t) \quad \Rightarrow \quad \bmu = \bx(0) \exp\left(- \frac{1}{2} \int_0^t \beta(s)ds\right)
+		\]
+	\end{block}
+	\myfootnotewithlink{https://users.aalto.fi/~asolin/sde-book/sde-book.pdf}{Särkkä S., Solin A. Applied stochastic differential equations, 2019}
+\end{frame}
+%=======
+\begin{frame}{Score-based generative models through SDEs}
+	\begin{block}{Training}
+		\vspace{-0.5cm}
+		\[
+			\bbE_{\pi(\bx(0))} \bbE_{t \sim U[0, 1]} \bbE_{q(\bx(t) | \bx(0))}\bigl\| \bs_{\btheta}(\bx(t), t) - {\color{teal}\nabla_{\bx(t)} \log q(\bx(t) | \bx(0))} \bigr\|^2_2 
+		\]
+		\vspace{-0.7cm}
+	\end{block}
+	\[
+		q(\bx(t) | \bx(0)) = \cN\Bigl(\bmu(\bx(t), \bx(0)), \bSigma(\bx(t), \bx(0))\Bigr)
+	\]
+	\vspace{-0.5cm}
+	\begin{block}{NCSN}
+		\vspace{-0.3cm}
+		\[
+			q(\bx(t) | \bx(0)) = \cN\left(\bx(0), \left[\sigma^2(t) - \sigma^2(0)\right] \cdot \bI\right)
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{DDPM}
+		\vspace{-0.3cm}
+		\[
+			q(\bx(t) | \bx(0)) = \cN\left(\bx(0) e^{-\frac{1}{2} \int_0^t\beta(s)ds}, \left(1 - e^{- \int_0^t\beta(s)ds}\right) \cdot \bI\right)
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Score-based generative models through SDEs}
+	\begin{block}{Sampling}
+		Solve reverse SDE using numerical solvers (SDESolve).
+		\begin{figure}
+			\includegraphics[width=0.8\linewidth]{figs/sbgm}
+		\end{figure}
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{itemize}
+		\item Discretization of the reverse SDE gives us the ancestral sampling.
+		\item If we use probability flow instead of SDE than the reverse ODE gives us the DDIM sampling.
+	\end{itemize}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\section{Flow Matching}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	Let consider ODE dynamic $\bx(t)$ in time interval $t \in [0, 1]$
+	\begin{itemize}
+	\item $\bx_0 \sim p_0(\bx) = p(\bx)$, $\bx_1 \sim p_1(\bx) =  \pi(\bx)$;
+	\item $p(\bx)$ is a base distribution ($\cN(0, \bI)$) and $\pi(\bx)$ is a true data distribution.
+	\end{itemize} 
+	\textbf{Note:} the time direction is the same as for CNF (opposite to score-based SDE models).
+	\[
+		\frac{d \bx}{dt} = \bff (\bx, t),  \quad \text{with initial condition }\bx(0) = \bx_0.
+	\]
+	\vspace{-0.3cm}
+	\begin{block}{KFP theorem (continuity equation)}
+		\vspace{-0.5cm}
+		\[
+			\frac{\partial p_t(\bx)}{\partial t} = - \text{div}\left(\bff(\bx, t) p_t(\bx)\right) \Leftrightarrow \frac{d \log p_t(\bx(t))}{d t} = - \text{tr} \left( \frac{\partial \bff(\bx(t), t)}{\partial \bx(t)} \right)
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
+\end{frame}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	\begin{block}{KFP theorem (continuity equation)}
+		\vspace{-0.5cm}
+		\[
+			\frac{\partial p_t(\bx)}{\partial t} = - \text{div}\left(\bff(\bx, t) p_t(\bx)\right) \Leftrightarrow \frac{d \log p_t(\bx(t))}{d t} = - \text{tr} \left( \frac{\partial \bff(\bx(t), t)}{\partial \bx(t)} \right)
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{itemize}
+		\item If we know the true vector field $\bff (\bx, t)$, then KFP equation (or continuity equation) gives us the way to compute the density $p_t(\bx)$.
+		\item Solving the continuity equation using the adjoint method is complicated and unstable process.
+		\item \textbf{Flow matching} generalizes these models and gives the alternative way to solve the Neural ODE.
+	\end{itemize}
+	\begin{block}{Flow Matching}
+		\vspace{-0.3cm}
+		\[
+			\bbE_{t \sim U[0, 1]} \bbE_{\bx \sim p_t(\bx)}\left\| \bff(\bx, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
+\end{frame}
+%=======
+\begin{frame}{Flow Matching}
+	\vspace{-0.3cm}
+	\[
+		\bbE_{t \sim U[0, 1]} \bbE_{\bx \sim p_t(\bx)}\left\| \bff(\bx, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+	\]
+	\vspace{-0.3cm}
+	\begin{itemize}
+		\item There exists infinite number of possible $\bff(\bx, t)$ between $\pi(\bx)$ and $p(\bx)$.
+		\item The true vector field  $\bff(\bx, t)$ is \textbf{unknown}.
+		\item We need to select the "best" $\bff(\bx, t)$ and makes the objective tractable.
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{figs/multiple_dynamics}
+	\end{figure}
+	\myfootnotewithlink{https://dl.heeere.com/conditional-flow-matching/blog/conditional-flow-matching}{image credit: A Visual Dive into Conditional Flow Matching}
+\end{frame}
+%=======
+\section{Conditional Flow Matching}
+%=======
+\begin{frame}{Flow Matching}
+	\vspace{-0.5cm}
+	\begin{block}{Latent variable model}
+		Let introduce the latent variable $\bz$:
+		\[
+			p_t(\bx) = \int p_t(\bx | \bz) p(\bz) d \bz 
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	Here $p_t(\bx | \bz)$ is a \textbf{conditional probability path}.
+	
+	The conditional probability path $p_t(\bx | \bz)$ satisfies KFP theorem
+	\[
+		{\color{violet}\frac{\partial p_t(\bx | \bz)}{\partial t} = - \text{div}\left(\bff(\bx, \bz, t) p_t(\bx | \bz)\right)},
+	\]
+	where $\bff(\bx, \bz, t)$ is a \textbf{conditional vector field}.
+	\[
+		\frac{d\bx}{dt} = \bff(\bx, t) \quad \Rightarrow \quad \frac{d\bx}{dt} = \bff(\bx, \bz, t)
+	\]
+	\vspace{-0.3cm}
+	What is the relationship between $\bff(\bx, t)$ and $\bff(\bx, \bz, t)$?
+	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
+\end{frame}
+%=======
+\begin{frame}{Flow Matching}
+	\[
+		{\color{violet}\frac{\partial p_t(\bx | \bz)}{\partial t} = - \text{div}\left(\bff(\bx, \bz, t) p_t(\bx | \bz)\right)},
+	\]
+	\vspace{-0.3cm}
+	\begin{block}{Theorem}
+		The following vector field generates the probability path $p_t(\bx)$.
+		\vspace{-0.2cm}
+		\[
+			\bff(\bx, t) = \bbE_{p_t(\bz | \bx)} \bff(\bx, \bz, t)  = {\color{teal}\int \bff(\bx, \bz, t)} \frac{\color{teal}p_t(\bx | \bz) p(\bz)}{p_t(\bx)} {\color{teal}d \bz}
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{Proof}
+		\vspace{-0.7cm}
+		\begin{multline*}
+			\frac{\partial p_t(\bx)}{\partial t} = \frac{\partial}{\partial t} \int p_t(\bx | \bz) p(\bz) d \bz =  \int \left( {\color{violet} \frac{\partial p_t(\bx | \bz)}{\partial t} } \right) p(\bz) d \bz = \\
+			= \int \left( {\color{violet} - \text{div}\left(\bff(\bx, \bz, t) p_t(\bx | \bz)\right) } \right) p(\bz) d \bz = \\
+			= - \text{div} \left({\color{teal}\int \bff(\bx, \bz, t) p_t(\bx | \bz) p(\bz) d \bz }\right) = - \text{div}  \left(\bff(\bx, t) p_t(\bx)\right)
+		\end{multline*}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
+\end{frame}
+%=======
+\begin{frame}{Flow Matching}
+	\begin{block}{Flow Matching (FM)}
+		\vspace{-0.3cm}
+		\[
+			\bbE_{t \sim U[0, 1]} \bbE_{\bx \sim p_t(\bx)}\left\| \bff(\bx, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Conditional Flow Matching (CFM)}
+		\vspace{-0.3cm}
+		\[
+			\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Theorem}
+		If $\text{supp}(p_t(\bx)) = \bbR^m$, then the optimal value of FM objective is equal to the optimal value of CFM objective.
+	\end{block}
+	\begin{block}{Proof}
+		It is proved similarly with the denoising score matching theorem.
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
+\end{frame}
+%=======
+\begin{frame}{Conditional Flow Matching}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.75\linewidth]{figs/cfm_uncond_to_cond}
+	\end{figure}
+	\begin{itemize}
+		\item We do not want to model $p_t(\bx)$ because it is complex.
+		\item We showed that it is possible to solve CFM task instead of FM task.
+		\item Let choose the convenient conditioning latent variable $\bz$.
+		\item Let parametrize $p_t(\bx | \bz)$ instead of $p_t(\bx)$. It must satisfy the following constraints
+		\[
+			p(\bx) = \cN(0, \bI) = \bbE_{p(\bz)} p_0(\bx | \bz); \quad \pi(\bx) = \bbE_{p(\bz)} p_1(\bx | \bz).
+		\]
+	\end{itemize}
+	\myfootnotewithlink{https://dl.heeere.com/conditional-flow-matching/blog/conditional-flow-matching}{image credit: A Visual Dive into Conditional Flow Matching}
+\end{frame}
+%=======
+\begin{frame}{Conditional Flow Matching}
+	\vspace{-0.2cm}
+	\[
+		\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+	\]
+	\vspace{-0.3cm}
+	\begin{block}{What is left?}
+		\begin{itemize}
+			\item How to choose the conditioning latent variable $\bz$?
+			\item How to define $p_t(\bx | \bz)$ which follows the constraints?
+		\end{itemize}
+	\end{block}
+	\vspace{-0.3cm}
+	\begin{block}{Gaussian conditional probability path}
+		\vspace{-0.3cm}
+		\[
+			p_t(\bx | \bz) = \cN\left(\bmu_t(\bz), \bsigma_t^2(\bz)\right)
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{itemize}
+		\item There is an infinite number of vector fields that generate any particular probability path.
+		\item Let consider the following dynamics:
+		\[
+			\bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bx_0, \quad {\color{violet} \bx_0 \sim p_0(\bx) = \cN(0, \bI)}
+		\]
+	\end{itemize}
+	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
+\end{frame}
+%=======
+\begin{frame}{Flow Matching}
+	\begin{block}{Gaussian conditional probability path}
+		\vspace{-0.3cm}
+		\[
+			p_t(\bx | \bz) = \cN\left(\bmu_t(\bz), \bsigma_t^2(\bz)\right); \quad \bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bx_0
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{Theorem}
+		\vspace{-0.3cm}
+		\[
+			\bff(\bx, \bz, t) =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx - \bmu_t(\bz))
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Proof}
+	\vspace{-0.3cm}
+	\[
+		\frac{d\bx}{dt} = \bff(\bx, \bz, t); \quad \bx_0 = \frac{1}{\bsigma_t(\bz)} \odot (\bx_t - \bmu_t(\bz))
+	\]
+	\[
+		\frac{d\bx}{dt} = \bmu_t'(\bz) + \bsigma_t'(\bz) \odot \bx_0 =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx - \bmu_t(\bz))
+	\]
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
+\end{frame}
+%=======
+\subsection{Conical gaussian paths}
+%=======
+\begin{frame}{Endpoint conditioning}
+	\begin{block}{Conditional Flow Matching}
+		\vspace{-0.3cm}
+		\[
+			\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Conditioning latent variable}
+		Let choose $\bz = \bx_1$. Then $p(\bz) = p_1(\bx_1)$.
+		\[
+			p_t(\bx) = \int p_t(\bx | \bx_1) p_1(\bx_1) d \bx_1
+		\]
+	\end{block}
+	We need to ensure boundary constraints:
+	\[
+		\begin{cases}
+			p(\bx) = \bbE_{p(\bz)} p_0(\bx | \bz); {\color{gray}(= \cN(0, \bI))} \\
+			\pi(\bx) = \bbE_{p(\bz)} p_1(\bx | \bz).
+		\end{cases}
+		\quad \Rightarrow \quad 
+		\begin{cases}
+			p_0(\bx | \bx_1) = \cN(0, \bI); \\
+			p_1(\bx | \bx_1) = \delta(\bx - \bx_1).
+		\end{cases}
+	\]
+	\vspace{-0.3cm}
+	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
+\end{frame}
+%=======
+\begin{frame}{Conical gaussian paths}
+	\[
+		p_0(\bx | \bx_1) = \cN(0, \bI); \quad p_1(\bx | \bx_1) = \delta(\bx - \bx_1).
+	\]
+	
+	\begin{block}{Gaussian conditional probability path}
+		\vspace{-0.5cm}
+		\[
+			p_t(\bx | \bx_1) = \cN\left(\bmu_t(\bx_1), \bsigma_t^2(\bx_1)\right); \quad \bx_t = \bmu_t(\bx_1) +  \bsigma_t(\bx_1) \odot \bx_0.
+		\]
+		\vspace{-0.6cm}
+	\end{block}
+	Let consider straight conditional paths	
+	\[
+		\begin{cases}
+			\bmu_t(\bx_1) = t \bx_1; \\
+			\bsigma_t(\bx_1) = 1 - t.
+		\end{cases}
+		\quad \Rightarrow \quad 
+		\begin{cases}
+			p_t(\bx | \bx_1) = \cN\left(t \bx_1, (1-t)^2 \cdot \bI\right); \\
+		 	\bx_t = t \bx_1 + (1 - t) \bx_0. 
+	 \end{cases}
+	\]
+	\vspace{-0.3cm}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conical_paths}
+	\end{figure}
+	\myfootnotewithlink{https://dl.heeere.com/conditional-flow-matching/blog/conditional-flow-matching}{image credit: A Visual Dive into Conditional Flow Matching}
+\end{frame}
+%=======
+\begin{frame}{Summary}
+	\begin{itemize}
+		\item It is possible to train the continuous-in-time score-based generative models through forward and reverse SDEs.
+		\vfill
+		\item Discretization of the reverse SDE gives the ancestral sampling of the DDPM.
+		\vfill
+		\item Flow matching suggests to fit the vector field directly.
+		\vfill
+		\item Conditional flow matching allows to make the FM objective tractable.
+	\end{itemize}
+\end{frame}
+\end{document} 

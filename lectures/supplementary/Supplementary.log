@@ -1,0 +1,3113 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  20 OCT 2024 14:59
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Supplementary.tex
+(./Supplementary.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(../utils/preamble.tex
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2024/01/06 v3.71 A class for typesetting presentations
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count188
+)
+\beamer@tempbox=\box51
+\beamer@tempcount=\count189
+\c@beamerpauses=\count190
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count191
+\beamer@minimum=\count192
+\beamer@decode@box=\box52
+)
+\beamer@commentbox=\box53
+\beamer@modecount=\count193
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen140
+\footheight=\dimen141
+\sidebarheight=\dimen142
+\beamer@tempdim=\dimen143
+\beamer@finalheight=\dimen144
+\beamer@animht=\dimen145
+\beamer@animdp=\dimen146
+\beamer@animwd=\dimen147
+\beamer@leftmargin=\dimen148
+\beamer@rightmargin=\dimen149
+\beamer@leftsidebar=\dimen150
+\beamer@rightsidebar=\dimen151
+\beamer@boxsize=\dimen152
+\beamer@vboxoffset=\dimen153
+\beamer@descdefault=\dimen154
+\beamer@descriptionwidth=\dimen155
+\beamer@lastskip=\skip48
+\beamer@areabox=\box54
+\beamer@animcurrent=\box55
+\beamer@animshowbox=\box56
+\beamer@sectionbox=\box57
+\beamer@logobox=\box58
+\beamer@linebox=\box59
+\beamer@sectioncount=\count194
+\beamer@subsubsectionmax=\count195
+\beamer@subsectionmax=\count196
+\beamer@sectionmax=\count197
+\beamer@totalheads=\count198
+\beamer@headcounter=\count199
+\beamer@partstartpage=\count266
+\beamer@sectionstartpage=\count267
+\beamer@subsectionstartpage=\count268
+\beamer@animationtempa=\count269
+\beamer@animationtempb=\count270
+\beamer@xpos=\count271
+\beamer@ypos=\count272
+\beamer@ypos@offset=\count273
+\beamer@showpartnumber=\count274
+\beamer@currentsubsection=\count275
+\beamer@coveringdepth=\count276
+\beamer@sectionadjust=\count277
+\beamer@toclastsection=\count278
+\beamer@tocsectionnumber=\count279
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+))
+\beamer@paperwidth=\skip49
+\beamer@paperheight=\skip50
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
+\Gm@bindingoffset=\dimen156
+\Gm@wd@mp=\dimen157
+\Gm@odd@mp=\dimen158
+\Gm@even@mp=\dimen159
+\Gm@layoutwidth=\dimen160
+\Gm@layoutheight=\dimen161
+\Gm@layouthoffset=\dimen162
+\Gm@layoutvoffset=\dimen163
+\Gm@dimlist=\toks18
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen164
+\pgfutil@tempdimb=\dimen165
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box60
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex
+\pgfkeys@tmptoks=\toks22
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen166
+\pgf@xa=\dimen167
+\pgf@xb=\dimen168
+\pgf@xc=\dimen169
+\pgf@y=\dimen170
+\pgf@ya=\dimen171
+\pgf@yb=\dimen172
+\pgf@yc=\dimen173
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count287
+\pgfmath@box=\box61
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count288
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen175
+\Gin@req@width=\dimen176
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count289
+\c@pgf@countb=\count290
+\c@pgf@countc=\count291
+\c@pgf@countd=\count292
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count293
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count294
+\pgfsyssoftpath@bigbuffer@items=\count295
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen187
+\pgf@picmaxx=\dimen188
+\pgf@picminy=\dimen189
+\pgf@picmaxy=\dimen190
+\pgf@pathminx=\dimen191
+\pgf@pathmaxx=\dimen192
+\pgf@pathminy=\dimen193
+\pgf@pathmaxy=\dimen194
+\pgf@xx=\dimen195
+\pgf@xy=\dimen196
+\pgf@yx=\dimen197
+\pgf@yy=\dimen198
+\pgf@zx=\dimen199
+\pgf@zy=\dimen256
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen257
+\pgf@path@lasty=\dimen258
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen259
+\pgf@shorten@start@additional=\dimen260
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count296
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen261
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen262
+\pgf@pt@y=\dimen263
+\pgf@pt@temp=\dimen264
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen265
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen266
+\pgf@sys@shading@range@num=\count297
+\pgf@shadingcount=\count298
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box65
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count299
+\XC@countmixins=\count300
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count301
+)
+\@linkdim=\dimen267
+\Hy@linkcounter=\count302
+\Hy@pagecounter=\count303
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count304
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4062.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4062.
+Package hyperref Info: Option `implicit' set `false' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count305
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen268
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count306
+\Field@Width=\dimen269
+\Fld@charsize=\dimen270
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+\Hy@abspage=\count307
+
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count308
+\c@bookmark@seq@number=\count309
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasecompatibility.st
+y) (/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasefont.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks29
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+(/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count310
+\beamer@lastskipcover=\skip51
+\beamer@trivlistdepth=\count311
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count312
+\c@part=\count313
+\c@section=\count314
+\c@subsection=\count315
+\c@subsubsection=\count316
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box66
+\beamer@frametitlebox=\box67
+\beamer@zoombox=\box68
+\beamer@zoomcount=\count317
+\beamer@zoomframecount=\count318
+\beamer@frametextheight=\dimen271
+\c@subsectionslide=\count319
+\beamer@frametopskip=\skip52
+\beamer@framebottomskip=\skip53
+\beamer@frametopskipautobreak=\skip54
+\beamer@framebottomskipautobreak=\skip55
+\beamer@envbody=\toks30
+\framewidth=\dimen272
+\c@framenumber=\count320
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box69
+\beamer@autobreakcount=\count321
+\beamer@autobreaklastheight=\dimen273
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.
+sty
+\beamer@footins=\box70
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box71
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks33
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box72
+\bmb@colorbox=\box73
+\bmb@boxwidth=\dimen274
+\bmb@boxheight=\dimen275
+\bmb@prevheight=\dimen276
+\bmb@temp=\dimen277
+\bmb@dima=\dimen278
+\bmb@dimb=\dimen279
+\bmb@prevheight=\dimen280
+)
+\beamer@blockheadheight=\dimen281
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.s
+ty (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
+)
+\beamer@bibiconwidth=\skip56
+\c@figure=\count322
+\c@table=\count323
+\abovecaptionskip=\skip57
+\belowcaptionskip=\skip58
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbol
+s.tex)
+\beamer@section@min@dim=\dimen282
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip59
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks35
+\ex@=\dimen283
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen284
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count324
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count325
+\leftroot@=\count326
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count327
+\DOTSCASE@=\count328
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box74
+\strutbox@=\box75
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen285
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count329
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count330
+\dotsspace@=\muskip17
+\c@parentequation=\count331
+\dspbrk@lvl=\count332
+\tag@help=\toks36
+\row@=\count333
+\column@=\count334
+\maxfields@=\count335
+\andhelp@=\toks37
+\eqnshift@=\dimen286
+\alignsep@=\dimen287
+\tagshift@=\dimen288
+\tagwidth@=\dimen289
+\totwidth@=\dimen290
+\lineht@=\dimen291
+\@envbody=\toks38
+\multlinegap=\skip60
+\multlinetaggap=\skip61
+\mathdisplay@stack=\toks39
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
+\thm@preskip=\skip62
+\thm@postskip=\skip63
+\thm@headsep=\skip64
+\dth@everypar=\toks45
+)
+\c@theorem=\count336
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamercolorthemedefault.st
+y)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.st
+y
+\beamer@dima=\dimen292
+\beamer@dimb=\dimen293
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/beamer/beamerouterthemedefault.st
+y))) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks46
+\inpenc@posthook=\toks47
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen294
+\epsfysize=\dimen295
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/floatflt/floatflt.sty
+Package: floatflt 1997/07/16 v. 1.31
+\c@OptionTest=\count337
+\figbox=\box76
+\tabbox=\box77
+\pagebox=\box78
+\ffigcount=\count338
+\ftabcount=\count339
+\fftest=\count340
+\hangcount=\count341
+\nosuccesstryfig=\count342
+\nosuccesstrytab=\count343
+\figgutter=\dimen296
+\tabgutter=\dimen297
+\htdone=\dimen298
+\pageht=\dimen299
+\startpageht=\dimen300
+\tabbredd=\dimen301
+\floatfltwidth=\dimen302
+\fltitemwidth=\dimen303
+\outputpretest=\toks48
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/eepic/epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count344
+\d@lta=\count345
+\@delta=\dimen304
+\@@delta=\dimen305
+\@gridcnt=\count346
+\@joinkind=\count347
+\@dotgap=\dimen306
+\@ddotgap=\dimen307
+\@x@diff=\count348
+\@y@diff=\count349
+\x@diff=\dimen308
+\y@diff=\dimen309
+\@dotbox=\box79
+\num@segments=\count350
+\num@segmentsi=\count351
+\@datafile=\read3
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/ecltree/ecltree.sty
+ECL Tree graph macro by isozaki, Nov. 12, 1990 + 2e FIX
+\@BundleWidth=\dimen310
+\@BundleDepth=\dimen311
+\@BundleHeight=\dimen312
+\@NodeBox=\box80
+\GapDepth=\dimen313
+\GapWidth=\dimen314
+\EdgeLabelSep=\dimen315
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/t2/mathtext.sty
+Package: mathtext 2018/04/14 v1.0 transparent text-and-math defs
+LaTeX Info: Redefining \halign on input line 121.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box81
+\shadowsize=\dimen316
+\@Sbox=\box82
+\do@VerbBox=\toks49
+\the@fancyput=\toks50
+\this@fancyput=\toks51
+\EndVerbatimTokens=\toks52
+\Verbatim@Outfile=\write5
+\Verbatim@Infile=\read4
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip65
+\f@nch@O@elh=\skip66
+\f@nch@O@erh=\skip67
+\f@nch@O@olh=\skip68
+\f@nch@O@orh=\skip69
+\f@nch@O@elf=\skip70
+\f@nch@O@erf=\skip71
+\f@nch@O@olf=\skip72
+\f@nch@O@orf=\skip73
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip74
+\multirow@cntb=\count352
+\multirow@dima=\skip75
+\bigstrutjot=\dimen317
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count353
+\mult@box=\box83
+\multicol@leftmargin=\dimen318
+\c@unbalance=\count354
+\c@collectmore=\count355
+\doublecol@number=\count356
+\multicoltolerance=\count357
+\multicolpretolerance=\count358
+\full@width=\dimen319
+\page@free=\dimen320
+\premulticols=\dimen321
+\postmulticols=\dimen322
+\multicolsep=\skip76
+\multicolbaselineskip=\skip77
+\partial@page=\box84
+\last@line=\box85
+\mc@boxedresult=\box86
+\maxbalancingoverflow=\dimen323
+\mult@rightbox=\box87
+\mult@grightbox=\box88
+\mult@firstbox=\box89
+\mult@gfirstbox=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\c@minrows=\count359
+\c@columnbadness=\count360
+\c@finalcolumnbadness=\count361
+\last@try=\dimen324
+\multicolovershoot=\dimen325
+\multicolundershoot=\dimen326
+\mult@nat@firstbox=\box127
+\colbreak@box=\box128
+\mc@col@check@num=\count362
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count363
+\float@exts=\toks53
+\float@box=\box129
+\@float@everytoks=\toks54
+\@floatcapt=\box130
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks55
+\c@algorithm=\count364
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count365
+\c@ALC@line=\count366
+\c@ALC@rem=\count367
+\c@ALC@depth=\count368
+\ALC@tlm=\skip78
+\algorithmicindent=\skip79
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box131
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen327
+\pgf@nodesepend=\dimen328
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen329
+\pgffor@skip=\dimen330
+\pgffor@stack=\toks56
+\pgffor@toks=\toks57
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count369
+\pgfplotmarksize=\dimen331
+)
+\tikz@lastx=\dimen332
+\tikz@lasty=\dimen333
+\tikz@lastxsaved=\dimen334
+\tikz@lastysaved=\dimen335
+\tikz@lastmovetox=\dimen336
+\tikz@lastmovetoy=\dimen337
+\tikzleveldistance=\dimen338
+\tikzsiblingdistance=\dimen339
+\tikz@figbox=\box132
+\tikz@figbox@bg=\box133
+\tikz@tempbox=\box134
+\tikz@tempbox@bg=\box135
+\tikztreelevel=\count370
+\tikznumberofchildren=\count371
+\tikznumberofcurrentchild=\count372
+\tikz@fig@count=\count373
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count374
+\pgfmatrixcurrentcolumn=\count375
+\pgf@matrix@numberofcolumns=\count376
+)
+\tikz@expandcount=\count377
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count378
+\c@Blindtext=\count379
+\c@blind@countparstart=\count380
+\blind@countxx=\count381
+\blindtext@numBlindtext=\count382
+\blind@countyy=\count383
+\c@blindlist=\count384
+\c@blindlistlevel=\count385
+\c@blindlist@level=\count386
+\blind@listitem=\count387
+\c@blind@listcount=\count388
+\c@blind@levelcount=\count389
+\blind@mathformula=\count390
+\blind@Mathformula=\count391
+\c@blind@randomcount=\count392
+\c@blind@randommax=\count393
+\c@blind@pangramcount=\count394
+\c@blind@pangrammax=\count395
+)
+(../utils/newcommands.tex) (../utils/title.tex)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen340
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box136
+\pgfnodeparttwobox=\box137
+\pgfnodepartthreebox=\box138
+\pgfnodepartfourbox=\box139
+\pgfnodeparttwentybox=\box140
+\pgfnodepartnineteenbox=\box141
+\pgfnodeparteighteenbox=\box142
+\pgfnodepartseventeenbox=\box143
+\pgfnodepartsixteenbox=\box144
+\pgfnodepartfifteenbox=\box145
+\pgfnodepartfourteenbox=\box146
+\pgfnodepartthirteenbox=\box147
+\pgfnodeparttwelvebox=\box148
+\pgfnodepartelevenbox=\box149
+\pgfnodeparttenbox=\box150
+\pgfnodepartninebox=\box151
+\pgfnodeparteightbox=\box152
+\pgfnodepartsevenbox=\box153
+\pgfnodepartsixbox=\box154
+\pgfnodepartfivebox=\box155
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\new@ifnextchar' on input line 17.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count396
+\l__pdf_internal_box=\box156
+)
+(./Supplementary.aux)
+\openout1 = `Supplementary.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count397
+\scratchdimen=\dimen341
+\scratchbox=\box157
+\nofMPsegments=\count398
+\nofMParguments=\count399
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count400
+\MPscratchDim=\dimen342
+\MPnumerator=\count401
+\makeMPintoPDFobject=\count402
+\everyMPtoPDFconversion=\toks59
+)
+Package hyperref Info: Link coloring OFF on input line 17.
+ (./Supplementary.out) (./Supplementary.out)
+\@outlinefile=\write6
+\openout6 = `Supplementary.out'.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 17.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 17.
+\symnumbers=\mathgroup7
+\sympureletters=\mathgroup8
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 17.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 17.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 17.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 17.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 17.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 17.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 1
+7.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 1
+7.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
+ut line 17.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dicti
+onary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-bibliograph
+y-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-environment
+-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-months-dict
+ionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-numbers-dic
+tionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-theorem-dic
+tionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+) (./Supplementary.nav)
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
+(Font)              size <35.83> substituted on input line 22.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <35> not available
+(Font)              size <35.83> substituted on input line 22.
+
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./Supplementary.toc) [2
+
+] [3
+
+
+] [4
+
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 28.
+
+[5
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 45
+.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
+ut line 45.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 45.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 45.
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 45.
+<figs/sequential_RNN.png, id=320, 681.54625pt x 250.9375pt>
+File: figs/sequential_RNN.png Graphic file (type png)
+<use figs/sequential_RNN.png>
+Package pdftex.def Info: figs/sequential_RNN.png  used on input line 45.
+(pdftex.def)             Requested size: 199.77199pt x 73.55495pt.
+ [6
+
+ <./figs/sequential_RNN.png>]
+File: figs/sequential_RNN.png Graphic file (type png)
+<use figs/sequential_RNN.png>
+Package pdftex.def Info: figs/sequential_RNN.png  used on input line 62.
+(pdftex.def)             Requested size: 199.77199pt x 73.55495pt.
+ [7
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 64.
+
+[8
+
+]
+<figs/made.png, id=360, 719.68875pt x 474.27188pt>
+File: figs/made.png Graphic file (type png)
+<use figs/made.png>
+Package pdftex.def Info: figs/made.png  used on input line 77.
+(pdftex.def)             Requested size: 199.77199pt x 131.64456pt.
+ [9
+
+ <./figs/made.png>]
+<figs/made2.png, id=368, 657.45625pt x 763.85374pt>
+File: figs/made2.png Graphic file (type png)
+<use figs/made2.png>
+Package pdftex.def Info: figs/made2.png  used on input line 100.
+(pdftex.def)             Requested size: 101.40622pt x 117.81332pt.
+ [10
+
+ <./figs/made2.png>]
+<figs/made_nmasks.png, id=377, 1123.19624pt x 860.21375pt>
+File: figs/made_nmasks.png Graphic file (type png)
+<use figs/made_nmasks.png>
+Package pdftex.def Info: figs/made_nmasks.png  used on input line 121.
+(pdftex.def)             Requested size: 181.2999pt x 138.84457pt.
+<figs/made_results.png, id=378, 803.0pt x 804.00375pt>
+File: figs/made_results.png Graphic file (type png)
+<use figs/made_results.png>
+Package pdftex.def Info: figs/made_results.png  used on input line 121.
+(pdftex.def)             Requested size: 125.98996pt x 126.14053pt.
+ [11
+
+ <./figs/made_nmasks.png> <./figs/made_results.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 123.
+
+[12
+
+]
+<figs/sequential_CNN.png, id=403, 757.83125pt x 457.71pt>
+File: figs/sequential_CNN.png Graphic file (type png)
+<use figs/sequential_CNN.png>
+Package pdftex.def Info: figs/sequential_CNN.png  used on input line 138.
+(pdftex.def)             Requested size: 199.77199pt x 120.65701pt.
+ [13
+
+ <./figs/sequential_CNN.png>]
+<figs/wavenet_ex.png, id=412, 746.79pt x 96.36pt>
+File: figs/wavenet_ex.png Graphic file (type png)
+<use figs/wavenet_ex.png>
+Package pdftex.def Info: figs/wavenet_ex.png  used on input line 161.
+(pdftex.def)             Requested size: 276.559pt x 35.68497pt.
+ [14
+
+ <./figs/wavenet_ex.png>]
+<figs/wavenet1.png, id=421, 923.45pt x 322.20375pt>
+File: figs/wavenet1.png Graphic file (type png)
+<use figs/wavenet1.png>
+Package pdftex.def Info: figs/wavenet1.png  used on input line 174.
+(pdftex.def)             Requested size: 276.559pt x 96.4947pt.
+<figs/wavenet2.png, id=422, 923.45pt x 313.17pt>
+File: figs/wavenet2.png Graphic file (type png)
+<use figs/wavenet2.png>
+Package pdftex.def Info: figs/wavenet2.png  used on input line 174.
+(pdftex.def)             Requested size: 276.559pt x 93.78925pt.
+ [15
+
+ <./figs/wavenet1.png> <./figs/wavenet2.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 176.
+
+[16
+
+]
+<figs/gatedpixelcnn.png, id=447, 835.12pt x 486.81876pt>
+File: figs/gatedpixelcnn.png Graphic file (type png)
+<use figs/gatedpixelcnn.png>
+Package pdftex.def Info: figs/gatedpixelcnn.png  used on input line 187.
+(pdftex.def)             Requested size: 153.64493pt x 89.56236pt.
+<figs/gated_block.png, id=448, 788.9475pt x 332.24126pt>
+File: figs/gated_block.png Graphic file (type png)
+<use figs/gated_block.png>
+Package pdftex.def Info: figs/gated_block.png  used on input line 187.
+(pdftex.def)             Requested size: 153.64493pt x 64.70313pt.
+ [17
+
+ <./figs/gatedpixelcnn.png> <./figs/gated_block.png>]
+<figs/pixelcnn_receptive_field.png, id=457, 413.545pt x 438.63875pt>
+File: figs/pixelcnn_receptive_field.png Graphic file (type png)
+<use figs/pixelcnn_receptive_field.png>
+Package pdftex.def Info: figs/pixelcnn_receptive_field.png  used on input line 
+205.
+(pdftex.def)             Requested size: 138.2795pt x 146.67213pt.
+<figs/gatedpixelcnn_receptive_field.png, id=458, 417.56pt x 443.6575pt>
+File: figs/gatedpixelcnn_receptive_field.png Graphic file (type png)
+<use figs/gatedpixelcnn_receptive_field.png>
+Package pdftex.def Info: figs/gatedpixelcnn_receptive_field.png  used on input 
+line 205.
+(pdftex.def)             Requested size: 138.2795pt x 146.9219pt.
+ [18
+
+ <./figs/pixelcnn_receptive_field.png> <./figs/gatedpixelcnn_receptive_field.pn
+g>] [19
+
+]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 218.
+
+[20
+
+]
+<figs/bayesian_pca.png, id=491, 701.62125pt x 289.08pt>
+File: figs/bayesian_pca.png Graphic file (type png)
+<use figs/bayesian_pca.png>
+Package pdftex.def Info: figs/bayesian_pca.png  used on input line 236.
+(pdftex.def)             Requested size: 215.10196pt x 88.6258pt.
+ [21
+
+ <./figs/bayesian_pca.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 238.
+
+[22
+
+]
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 258.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 258.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 258.
+
+ [23
+
+] [24
+
+]
+<figs/vae_0.png, id=528, 592.2125pt x 589.20125pt>
+File: figs/vae_0.png Graphic file (type png)
+<use figs/vae_0.png>
+Package pdftex.def Info: figs/vae_0.png  used on input line 289.
+(pdftex.def)             Requested size: 153.64493pt x 152.86505pt.
+ [25
+
+ <./figs/vae_0.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 291.
+
+[26
+
+]
+Overfull \vbox (8.05841pt too high) detected at line 325
+ []
+
+[27
+
+] [28
+
+] [29
+
+]
+Overfull \hbox (8.7034pt too wide) detected at line 386
+\OT1/mathkerncmss/m/sl/10.95 q\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 T\OT1/c
+mss/m/n/10.95 ) = [] \OT1/mathkerncmss/m/sl/10.95 q[]\OT1/cmss/m/n/10.95 (\OT1/
+cmss/bx/n/10.95 T[]\OT1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 ;  \OT1/cmss/bx/n/1
+0.95 T \OT1/cmss/m/n/10.95 = [\OT1/cmss/bx/n/10.95 T[]\OML/cmm/m/it/10.95 ; [] 
+; \OT1/cmss/bx/n/10.95 T[]\OT1/cmss/m/n/10.95 ]\OML/cmm/m/it/10.95 ;  \OT1/cmss
+/bx/n/10.95 T[] \OT1/cmss/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OT1/cmss/bx/n/10.95
+ t[]\OMS/cmsy/m/n/10.95 g[]\OML/cmm/m/it/10.95 ;  \OT1/cmss/bx/n/10.95 t[] \OT1
+/cmss/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OT1/cmss/bx/n/10.95 T[]\OMS/cmsy/m/n/10
+.95 g[]\OML/cmm/m/it/10.95 :
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <12> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 386.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 386.
+
+LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 386.
+
+
+Overfull \hbox (3.6905pt too wide) detected at line 386
+ []$[]  \OMS/cmsy/m/n/9 L\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 q\OT1/cmss/m
+/n/9 ) = [] \OT1/mathkerncmss/m/sl/9 q\OT1/cmss/m/n/9 (\OT1/cmss/bx/n/9 T\OT1/c
+mss/m/n/9 ) [] []\OT1/mathkerncmss/m/sl/9 d\OT1/cmss/bx/n/9 T \OT1/cmss/m/n/9 =
+ [] [] [] [] [] \OT1/mathkerncmss/m/sl/9 d\OT1/cmss/bx/n/9 T[] \OT1/cmss/m/n/9 
+=$ 
+ []
+
+
+Overfull \vbox (6.89392pt too high) detected at line 386
+ []
+
+[30
+
+]
+Overfull \vbox (2.81554pt too high) detected at line 414
+ []
+
+[31
+
+] [32
+
+] [33
+
+]
+Overfull \vbox (1.31432pt too high) detected at line 494
+ []
+
+[34
+
+]
+Overfull \hbox (3.82207pt too wide) detected at line 513
+[]
+ []
+
+[35
+
+]
+Overfull \hbox (10.69336pt too wide) detected at line 534
+ []$[]  \OMS/cmsy/m/n/10.95 L\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 
+q[]\OML/cmm/m/it/10.95 ; \OT1/mathkerncmss/m/sl/10.95 q[]\OT1/cmss/m/n/10.95 ) 
+= [] \OML/cmm/m/it/10.95 ^^N\OT1/cmss/m/n/10.95 ([] \OMS/cmsy/m/n/10.95 ^^@ [][
+]\OT1/cmss/m/n/10.95 ) [] [](\OT1/cmss/bx/n/10.95 X\OML/cmm/m/it/10.95 ; []\OT1
+/cmss/m/n/10.95 )\OT1/mathkerncmss/m/sl/10.95 d[] \OT1/cmss/m/n/10.95 + [] = []
+ [](\OT1/cmss/bx/n/10.95 X\OML/cmm/m/it/10.95 ; [][]\OT1/cmss/m/n/10.95 ) + []$
+ 
+ []
+
+[36
+
+] [37
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 560.
+
+[38
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 562.
+
+[39
+
+] [40
+
+] [41
+
+]
+<figs/posterior_collapse_toy_1.png, id=659, 367.3725pt x 322.20375pt>
+File: figs/posterior_collapse_toy_1.png Graphic file (type png)
+<use figs/posterior_collapse_toy_1.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_1.png  used on input line 
+650.
+(pdftex.def)             Requested size: 81.12527pt x 71.15053pt.
+<figs/posterior_collapse_toy_3.png, id=660, 323.2075pt x 320.19624pt>
+File: figs/posterior_collapse_toy_3.png Graphic file (type png)
+<use figs/posterior_collapse_toy_3.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_3.png  used on input line 
+650.
+(pdftex.def)             Requested size: 76.05466pt x 75.34384pt.
+<figs/posterior_collapse_toy_5.png, id=661, 320.19624pt x 327.2225pt>
+File: figs/posterior_collapse_toy_5.png Graphic file (type png)
+<use figs/posterior_collapse_toy_5.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_5.png  used on input line 
+650.
+(pdftex.def)             Requested size: 76.05466pt x 77.72113pt.
+<figs/posterior_collapse_toy_2.png, id=662, 337.26pt x 326.21875pt>
+File: figs/posterior_collapse_toy_2.png Graphic file (type png)
+<use figs/posterior_collapse_toy_2.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_2.png  used on input line 
+650.
+(pdftex.def)             Requested size: 81.12527pt x 78.4683pt.
+<figs/posterior_collapse_toy_4.png, id=663, 317.185pt x 324.21124pt>
+File: figs/posterior_collapse_toy_4.png Graphic file (type png)
+<use figs/posterior_collapse_toy_4.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_4.png  used on input line 
+650.
+(pdftex.def)             Requested size: 76.05466pt x 77.73807pt.
+<figs/posterior_collapse_toy_6.png, id=664, 327.2225pt x 324.21124pt>
+File: figs/posterior_collapse_toy_6.png Graphic file (type png)
+<use figs/posterior_collapse_toy_6.png>
+Package pdftex.def Info: figs/posterior_collapse_toy_6.png  used on input line 
+650.
+(pdftex.def)             Requested size: 76.05466pt x 75.35359pt.
+ [42
+
+ <./figs/posterior_collapse_toy_1.png> <./figs/posterior_collapse_toy_3.png> <.
+/figs/posterior_collapse_toy_5.png> <./figs/posterior_collapse_toy_2.png> <./fi
+gs/posterior_collapse_toy_4.png> <./figs/posterior_collapse_toy_6.png>]
+<figs/PixelVAE_2.png, id=676, 1127.71312pt x 509.905pt>
+File: figs/PixelVAE_2.png Graphic file (type png)
+<use figs/PixelVAE_2.png>
+Package pdftex.def Info: figs/PixelVAE_2.png  used on input line 674.
+(pdftex.def)             Requested size: 230.46739pt x 104.2044pt.
+
+Overfull \vbox (9.79655pt too high) detected at line 674
+ []
+
+[43
+
+ <./figs/PixelVAE_2.png>] [44
+
+]
+<figs/VLAE_1.png, id=691, 468.75125pt x 173.64874pt>
+File: figs/VLAE_1.png Graphic file (type png)
+<use figs/VLAE_1.png>
+Package pdftex.def Info: figs/VLAE_1.png  used on input line 713.
+(pdftex.def)             Requested size: 153.64493pt x 56.9174pt.
+<figs/VLAE_2.png, id=692, 541.02126pt x 332.24126pt>
+File: figs/VLAE_2.png Graphic file (type png)
+<use figs/VLAE_2.png>
+Package pdftex.def Info: figs/VLAE_2.png  used on input line 713.
+(pdftex.def)             Requested size: 153.64493pt x 94.35007pt.
+ [45
+
+ <./figs/VLAE_1.png> <./figs/VLAE_2.png>]
+[46
+
+] [47
+
+] [48
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 778.
+
+[49
+
+] [50
+
+] [51
+
+]
+Overfull \vbox (3.994pt too high) detected at line 843
+ []
+
+[52
+
+] [53
+
+] [54
+
+]
+Overfull \vbox (9.33923pt too high) detected at line 914
+ []
+
+[55
+
+] [56
+
+] [57
+
+]
+Overfull \hbox (9.8919pt too wide) detected at line 985
+\OT1/mathkerncmss/m/sl/10.95 q[]\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 z\OMS
+/cmsy/m/n/10.95 j\OT1/cmss/bx/n/10.95 x\OML/cmm/m/it/10.95 ; \OT1/cmss/bx/n/10.
+95 z[]\OT1/cmss/m/n/10.95 ) = []\OT1/mathkerncmss/m/sl/10.95 q\OT1/cmss/m/n/10.
+95 (\OT1/cmss/bx/n/10.95 z\OMS/cmsy/m/n/10.95 j\OT1/cmss/bx/n/10.95 x\OT1/cmss/
+m/n/10.95 ) = []\OML/cmm/m/it/10.95 :
+ []
+
+<figs/IWAE_1.png, id=788, 881.2925pt x 219.82124pt>
+File: figs/IWAE_1.png Graphic file (type png)
+<use figs/IWAE_1.png>
+Package pdftex.def Info: figs/IWAE_1.png  used on input line 985.
+(pdftex.def)             Requested size: 307.28987pt x 76.64676pt.
+
+Overfull \vbox (4.22055pt too high) detected at line 985
+ []
+
+[58
+
+ <./figs/IWAE_1.png>]
+<figs/IWAE_3.png, id=797, 973.6375pt x 375.4025pt>
+File: figs/IWAE_3.png Graphic file (type png)
+<use figs/IWAE_3.png>
+Package pdftex.def Info: figs/IWAE_3.png  used on input line 999.
+(pdftex.def)             Requested size: 307.28987pt x 118.48154pt.
+ [59
+
+ <./figs/IWAE_3.png>]
+Overfull \hbox (8.92532pt too wide) detected at line 1027
+[][] \OT1/cmss/m/n/10.95 = [];  [][]([]) = \OT1/mathkerncmss/m/sl/10.95 O\OT1/c
+mss/m/n/10.95 ([]);  [][]([]) = \OT1/mathkerncmss/m/sl/10.95 O [] \OML/cmm/m/it
+/10.95 :
+ []
+
+
+Overfull \vbox (6.02219pt too high) detected at line 1027
+ []
+
+[60
+
+]
+Overfull \hbox (8.92532pt too wide) detected at line 1057
+[][] \OT1/cmss/m/n/10.95 = [];  [][]([]) = \OT1/mathkerncmss/m/sl/10.95 O\OT1/c
+mss/m/n/10.95 ([]);  [][]([]) = \OT1/mathkerncmss/m/sl/10.95 O [] \OML/cmm/m/it
+/10.95 :
+ []
+
+<figs/IWAE_SNR_1.png, id=811, 1194.4625pt x 708.6475pt>
+File: figs/IWAE_SNR_1.png Graphic file (type png)
+<use figs/IWAE_SNR_1.png>
+Package pdftex.def Info: figs/IWAE_SNR_1.png  used on input line 1057.
+(pdftex.def)             Requested size: 153.64493pt x 91.15422pt.
+<figs/IWAE_SNR_2.png, id=812, 1188.44pt x 721.69624pt>
+File: figs/IWAE_SNR_2.png Graphic file (type png)
+<use figs/IWAE_SNR_2.png>
+Package pdftex.def Info: figs/IWAE_SNR_2.png  used on input line 1057.
+(pdftex.def)             Requested size: 153.64493pt x 93.29521pt.
+[61
+
+ <./figs/IWAE_SNR_1.png> <./figs/IWAE_SNR_2.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 22.5174 percent inste
+ad of 0 percent on input line 1059.
+
+[62
+
+]
+<figs/PixelVAE_1.png, id=838, 515.9275pt x 435.6275pt>
+File: figs/PixelVAE_1.png Graphic file (type png)
+<use figs/PixelVAE_1.png>
+Package pdftex.def Info: figs/PixelVAE_1.png  used on input line 1071.
+(pdftex.def)             Requested size: 215.10196pt x 181.61958pt.
+ [63
+
+ <./figs/PixelVAE_1.png>]
+Overfull \vbox (0.1482pt too high) detected at line 1097
+ []
+
+[64
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1099.
+
+[65
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1101.
+
+[66
+
+]
+<figs/flows_1d.png, id=895, 685.56125pt x 245.91875pt>
+File: figs/flows_1d.png Graphic file (type png)
+<use figs/flows_1d.png>
+Package pdftex.def Info: figs/flows_1d.png  used on input line 1120.
+(pdftex.def)             Requested size: 307.28987pt x 110.23088pt.
+ [67
+
+ <./figs/flows_1d.png>] [68
+
+]
+<figs/venn_diagram.png, id=909, 1043.9pt x 392.46625pt>
+File: figs/venn_diagram.png Graphic file (type png)
+<use figs/venn_diagram.png>
+Package pdftex.def Info: figs/venn_diagram.png  used on input line 1149.
+(pdftex.def)             Requested size: 307.28987pt x 115.531pt.
+ [69
+
+ <./figs/venn_diagram.png>] [70
+
+]
+Overfull \hbox (9.02386pt too wide) detected at line 1195
+\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 z\OMS/c
+msy/m/n/10.95 j\OT1/cmss/bx/n/10.95 x\OML/cmm/m/it/10.95 ; []\OT1/cmss/m/n/10.9
+5 ) = [];  \OMS/cmsy/m/n/10.95 )  \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/1
+0.95 (\OT1/cmss/bx/n/10.95 x\OMS/cmsy/m/n/10.95 j\OT1/cmss/bx/n/10.95 z\OML/cmm
+/m/it/10.95 ; []\OT1/cmss/m/n/10.95 ) = \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss
+/m/n/10.95 (\OT1/cmss/bx/n/10.95 z\OMS/cmsy/m/n/10.95 j\OT1/cmss/bx/n/10.95 x\O
+ML/cmm/m/it/10.95 ; []\OT1/cmss/m/n/10.95 )\OMS/cmsy/m/n/10.95 j []\OT1/cmss/m/
+n/10.95 (\OT1/cmss/bx/n/10.95 J[]\OT1/cmss/m/n/10.95 )\OMS/cmsy/m/n/10.95 j\OML
+/cmm/m/it/10.95 :
+ []
+
+[71
+
+]
+Overfull \hbox (1.43092pt too wide) detected at line 1229
+[][] \OT1/cmss/m/n/10 = \U/msb/m/n/10 E[] [] [] \OT1/cmss/m/n/10 = [] \OMS/cmsy
+/m/n/10 j [] \OT1/cmss/bx/n/10 J[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 :
+ []
+
+[72
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1231.
+
+[73
+
+]
+Overfull \hbox (7.87561pt too wide) detected at line 1258
+[] \OT1/cmss/m/n/10 = [] = []
+ []
+
+[74
+
+]
+<figs/planar_flows.png, id=970, 419.5675pt x 232.87pt>
+File: figs/planar_flows.png Graphic file (type png)
+<use figs/planar_flows.png>
+Package pdftex.def Info: figs/planar_flows.png  used on input line 1281.
+(pdftex.def)             Requested size: 215.10196pt x 119.3875pt.
+ [75
+
+ <./figs/planar_flows.png>]
+<figs/maf1.png, id=979, 798.985pt x 196.735pt>
+File: figs/maf1.png Graphic file (type png)
+<use figs/maf1.png>
+Package pdftex.def Info: figs/maf1.png  used on input line 1303.
+(pdftex.def)             Requested size: 291.92444pt x 71.88121pt.
+ [76
+
+ <./figs/maf1.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1305.
+
+[77
+
+] [78
+
+]
+<figs/autoregressive_flow.png, id=1017, 1105.12875pt x 355.3275pt>
+File: figs/autoregressive_flow.png Graphic file (type png)
+<use figs/autoregressive_flow.png>
+Package pdftex.def Info: figs/autoregressive_flow.png  used on input line 1350.
+
+(pdftex.def)             Requested size: 307.28987pt x 98.79701pt.
+ [79
+
+ <./figs/autoregressive_flow.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1352.
+
+[80
+
+] [81
+
+]
+<figs/af_iaf_explained_1.png, id=1055, 401.5pt x 270.00874pt>
+File: figs/af_iaf_explained_1.png Graphic file (type png)
+<use figs/af_iaf_explained_1.png>
+Package pdftex.def Info: figs/af_iaf_explained_1.png  used on input line 1430.
+(pdftex.def)             Requested size: 96.79733pt x 65.09593pt.
+<figs/af_iaf_explained_2.png, id=1056, 401.5pt x 274.02374pt>
+File: figs/af_iaf_explained_2.png Graphic file (type png)
+<use figs/af_iaf_explained_2.png>
+Package pdftex.def Info: figs/af_iaf_explained_2.png  used on input line 1430.
+(pdftex.def)             Requested size: 96.79733pt x 66.0639pt.
+<figs/af_iaf_explained_3.png, id=1057, 401.5pt x 270.00874pt>
+File: figs/af_iaf_explained_3.png Graphic file (type png)
+<use figs/af_iaf_explained_3.png>
+Package pdftex.def Info: figs/af_iaf_explained_3.png  used on input line 1430.
+(pdftex.def)             Requested size: 96.79733pt x 65.09593pt.
+ [82
+
+ <./figs/af_iaf_explained_1.png> <./figs/af_iaf_explained_2.png> <./figs/af_iaf
+_explained_3.png>] [83
+
+] [84
+
+]
+<figs/flows_how2.png, id=1079, 1023.825pt x 538.01pt>
+File: figs/flows_how2.png Graphic file (type png)
+<use figs/flows_how2.png>
+Package pdftex.def Info: figs/flows_how2.png  used on input line 1490.
+(pdftex.def)             Requested size: 307.28987pt x 161.47812pt.
+ [85
+
+ <./figs/flows_how2.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1492.
+
+[86
+
+]
+Overfull \hbox (3.0712pt too wide) in paragraph at lines 1525--1525
+[]$[]$$[]$ 
+ []
+
+File: figs/wavenet2.png Graphic file (type png)
+<use figs/wavenet2.png>
+Package pdftex.def Info: figs/wavenet2.png  used on input line 1525.
+(pdftex.def)             Requested size: 261.19826pt x 88.58058pt.
+
+Overfull \vbox (13.32828pt too high) detected at line 1525
+ []
+
+[87
+
+] [88
+
+] [89
+
+]
+Overfull \hbox (3.75177pt too wide) detected at line 1619
+[]  \OMS/cmsy/m/n/10.95 ,  []
+ []
+
+[90
+
+] [91
+
+]
+<figs/parallel_wavenet.png, id=1142, 927.465pt x 536.0025pt>
+File: figs/parallel_wavenet.png Graphic file (type png)
+<use figs/parallel_wavenet.png>
+Package pdftex.def Info: figs/parallel_wavenet.png  used on input line 1651.
+(pdftex.def)             Requested size: 307.28987pt x 177.59291pt.
+ [92
+
+ <./figs/parallel_wavenet.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1653.
+
+[93
+
+]
+<figs/resnet_block.png, id=1171, 526.96875pt x 245.91875pt>
+File: figs/resnet_block.png Graphic file (type png)
+<use figs/resnet_block.png>
+Package pdftex.def Info: figs/resnet_block.png  used on input line 1674.
+(pdftex.def)             Requested size: 122.91406pt x 57.35938pt.
+ [94
+
+ <./figs/resnet_block.png>]
+<figs/revnet.png, id=1180, 792.9625pt x 155.58125pt>
+File: figs/revnet.png Graphic file (type png)
+<use figs/revnet.png>
+Package pdftex.def Info: figs/revnet.png  used on input line 1696.
+(pdftex.def)             Requested size: 307.28987pt x 60.29185pt.
+ [95
+
+ <./figs/revnet.png>]
+<figs/revnet_results.png, id=1189, 594.22pt x 178.6675pt>
+File: figs/revnet_results.png Graphic file (type png)
+<use figs/revnet_results.png>
+Package pdftex.def Info: figs/revnet_results.png  used on input line 1708.
+(pdftex.def)             Requested size: 245.83282pt x 73.91661pt.
+ [96
+
+ <./figs/revnet_results.png>] [97
+
+] [98
+
+]
+<figs/i-revnet.png, id=1211, 862.22125pt x 278.03876pt>
+File: figs/i-revnet.png Graphic file (type png)
+<use figs/i-revnet.png>
+Package pdftex.def Info: figs/i-revnet.png  used on input line 1745.
+(pdftex.def)             Requested size: 307.28987pt x 99.0884pt.
+<figs/i-revnet_block.png, id=1212, 680.5425pt x 149.55875pt>
+File: figs/i-revnet_block.png Graphic file (type png)
+<use figs/i-revnet_block.png>
+Package pdftex.def Info: figs/i-revnet_block.png  used on input line 1745.
+(pdftex.def)             Requested size: 276.559pt x 60.77634pt.
+ [99
+
+ <./figs/i-revnet.png> <./figs/i-revnet_block.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1747.
+
+[100
+
+]
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+1765.
+LaTeX Font Info:    No file OMScmss.fd. on input line 1765.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 1765.
+
+[101
+
+]
+<figs/CIFAR_pixel_distr.png, id=1249, 726.715pt x 565.11125pt>
+File: figs/CIFAR_pixel_distr.png Graphic file (type png)
+<use figs/CIFAR_pixel_distr.png>
+Package pdftex.def Info: figs/CIFAR_pixel_distr.png  used on input line 1784.
+(pdftex.def)             Requested size: 184.37286pt x 61.45534pt.
+ [102
+
+ <./figs/CIFAR_pixel_distr.png>]
+Overfull \hbox (7.20105pt too wide) detected at line 1813
+\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95
+ x\OMS/cmss/m/n/10.95 j\OML/cmm/m/it/10.95 ^^V; \OT1/mathkerncmss/m/sl/10.95 s\
+OT1/cmss/m/n/10.95 ) = [];  \OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 (
+\OT1/mathkerncmss/m/sl/10.95 x\OMS/cmss/m/n/10.95 j[]\OML/cmm/m/it/10.95 ; []; 
+\OT1/cmss/bx/n/10.95 s\OT1/cmss/m/n/10.95 ) = [] \OML/cmm/m/it/10.95 ^^Y[]\OT1/
+mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x\OM
+S/cmss/m/n/10.95 j\OML/cmm/m/it/10.95 ^^V[]; \OT1/mathkerncmss/m/sl/10.95 s[]\O
+T1/cmss/m/n/10.95 )\OML/cmm/m/it/10.95 :
+ []
+
+[103
+
+]
+<figs/uniform_dequantization.png, id=1267, 570.63188pt x 336.75812pt>
+File: figs/uniform_dequantization.png Graphic file (type png)
+<use figs/uniform_dequantization.png>
+Package pdftex.def Info: figs/uniform_dequantization.png  used on input line 18
+44.
+(pdftex.def)             Requested size: 92.18239pt x 73.74786pt.
+
+Overfull \hbox (11.29166pt too wide) detected at line 1844
+ []$[]  \U/msb/m/n/10 E[] [] \OT1/mathkerncmss/m/sl/10 p\OT1/cmss/m/n/10 (\OT1/
+cmss/bx/n/10 x\OMS/cmsy/m/n/10 j[]\OT1/cmss/m/n/10 ) = [] \OML/cmm/m/it/10 ^^Y\
+OT1/cmss/m/n/10 (\OT1/cmss/bx/n/10 x\OT1/cmss/m/n/10 ) [] \OT1/mathkerncmss/m/s
+l/10 p\OT1/cmss/m/n/10 (\OT1/cmss/bx/n/10 x\OMS/cmsy/m/n/10 j[]\OT1/cmss/m/n/10
+ )\OT1/mathkerncmss/m/sl/10 d\OT1/cmss/bx/n/10 x \OT1/cmss/m/n/10 = [] ^^E(\OT1
+/cmss/bx/n/10 y\OT1/cmss/m/n/10 ) [][] [] \OT1/mathkerncmss/m/sl/10 p\OT1/cmss/
+m/n/10 (\OT1/cmss/bx/n/10 y \OT1/cmss/m/n/10 + \OT1/cmss/bx/n/10 u\OMS/cmsy/m/n
+/10 j[]\OT1/cmss/m/n/10 )\OT1/mathkerncmss/m/sl/10 d\OT1/cmss/bx/n/10 u \OMS/cm
+sy/m/n/10 ^^T$ 
+ []
+
+
+Overfull \vbox (8.0679pt too high) detected at line 1844
+ []
+
+[104
+
+ <./figs/uniform_dequantization.png>]
+File: figs/uniform_dequantization.png Graphic file (type png)
+<use figs/uniform_dequantization.png>
+Package pdftex.def Info: figs/uniform_dequantization.png  used on input line 18
+66.
+(pdftex.def)             Requested size: 122.9164pt x 72.53517pt.
+<figs/variational_dequantization.png, id=1275, 570.63188pt x 337.76187pt>
+File: figs/variational_dequantization.png Graphic file (type png)
+<use figs/variational_dequantization.png>
+Package pdftex.def Info: figs/variational_dequantization.png  used on input lin
+e 1866.
+(pdftex.def)             Requested size: 122.9164pt x 72.75137pt.
+ [105
+
+ <./figs/variational_dequantization.png>] [106
+
+]
+<figs/flow++1.png, id=1289, 977.6525pt x 363.3575pt>
+File: figs/flow++1.png Graphic file (type png)
+<use figs/flow++1.png>
+Package pdftex.def Info: figs/flow++1.png  used on input line 1907.
+(pdftex.def)             Requested size: 307.28987pt x 114.20871pt.
+ [107
+
+ <./figs/flow++1.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 36.56769 percent inst
+ead of 0 percent on input line 1909.
+
+[108
+
+]
+Overfull \vbox (5.98772pt too high) detected at line 1951
+ []
+
+[109
+
+]
+<figs/flow_comparison.png, id=1327, 799.98875pt x 322.70563pt>
+File: figs/flow_comparison.png Graphic file (type png)
+<use figs/flow_comparison.png>
+Package pdftex.def Info: figs/flow_comparison.png  used on input line 1976.
+(pdftex.def)             Requested size: 230.46739pt x 92.96672pt.
+<figs/ffjord_forward.png, id=1328, 1057.9525pt x 163.10938pt>
+File: figs/ffjord_forward.png Graphic file (type png)
+<use figs/ffjord_forward.png>
+Package pdftex.def Info: figs/ffjord_forward.png  used on input line 1976.
+(pdftex.def)             Requested size: 245.83282pt x 37.90013pt.
+<figs/ffjord_reverse.png, id=1329, 846.66313pt x 161.60374pt>
+File: figs/ffjord_reverse.png Graphic file (type png)
+<use figs/ffjord_reverse.png>
+Package pdftex.def Info: figs/ffjord_reverse.png  used on input line 1976.
+(pdftex.def)             Requested size: 245.83282pt x 46.9206pt.
+
+Overfull \vbox (8.29282pt too high) detected at line 1976
+ []
+
+[110
+
+ <./figs/flow_comparison.png> <./figs/ffjord_forward.png> <./figs/ffjord_revers
+e.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 1978.
+
+[111
+
+] [112
+
+]
+Overfull \hbox (2.35559pt too wide) detected at line 2036
+\OMS/cmss/m/n/10.95 L\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 q\OML/cm
+m/m/it/10.95 ; []\OT1/cmss/m/n/10.95 ) = [] [] [] \OML/cmm/m/it/10.95 :
+ []
+
+
+Overfull \vbox (5.07404pt too high) detected at line 2036
+ []
+
+[113
+
+]
+Overfull \hbox (1.3626pt too wide) detected at line 2063
+\OT1/mathkerncmss/m/sl/9 q\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 i\OML/cmm/m
+/it/9 ; \OT1/cmss/bx/n/9 z\OT1/cmss/m/n/9 ) = \OT1/mathkerncmss/m/sl/9 q\OT1/cm
+ss/m/n/9 (\OT1/mathkerncmss/m/sl/9 i\OT1/cmss/m/n/9 )\OT1/mathkerncmss/m/sl/9 q
+\OT1/cmss/m/n/9 (\OT1/cmss/bx/n/9 z\OMS/cmsy/m/n/9 j\OT1/mathkerncmss/m/sl/9 i\
+OT1/cmss/m/n/9 );  \OT1/mathkerncmss/m/sl/9 p\OT1/cmss/m/n/9 (\OT1/mathkerncmss
+/m/sl/9 i\OML/cmm/m/it/9 ; \OT1/cmss/bx/n/9 z\OT1/cmss/m/n/9 ) = \OT1/mathkernc
+mss/m/sl/9 p\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 i\OT1/cmss/m/n/9 )\OT1/ma
+thkerncmss/m/sl/9 p\OT1/cmss/m/n/9 (\OT1/cmss/bx/n/9 z\OT1/cmss/m/n/9 );  \OT1/
+mathkerncmss/m/sl/9 q\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 i\OT1/cmss/m/n/9
+ ) = \OT1/mathkerncmss/m/sl/9 p\OT1/cmss/m/n/9 (\OT1/mathkerncmss/m/sl/9 i\OT1/
+cmss/m/n/9 ) = [];  \OT1/mathkerncmss/m/sl/9 q\OT1/cmss/m/n/9 (\OT1/cmss/bx/n/9
+ z\OMS/cmsy/m/n/9 j\OT1/mathkerncmss/m/sl/9 i\OT1/cmss/m/n/9 ) = \OT1/mathkernc
+mss/m/sl/9 q\OT1/cmss/m/n/9 (\OT1/cmss/bx/n/9 z\OMS/cmsy/m/n/9 j\OT1/cmss/bx/n/
+9 x[]\OT1/cmss/m/n/9 )\OML/cmm/m/it/9 :
+ []
+
+[114
+
+] [115
+
+] [116
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 2110.
+
+[117
+
+]
+Overfull \vbox (5.17122pt too high) detected at line 2139
+ []
+
+[118
+
+]
+<figs/VampPrior_1.png, id=1407, 578.16pt x 332.74312pt>
+File: figs/VampPrior_1.png Graphic file (type png)
+<use figs/VampPrior_1.png>
+Package pdftex.def Info: figs/VampPrior_1.png  used on input line 2165.
+(pdftex.def)             Requested size: 169.01036pt x 97.26477pt.
+<figs/VampPrior_2.png, id=1408, 738.76pt x 520.94624pt>
+File: figs/VampPrior_2.png Graphic file (type png)
+<use figs/VampPrior_2.png>
+Package pdftex.def Info: figs/VampPrior_2.png  used on input line 2165.
+(pdftex.def)             Requested size: 138.2795pt x 97.51025pt.
+ [119
+
+ <./figs/VampPrior_1.png> <./figs/VampPrior_2.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 2167.
+
+[120
+
+] [121
+
+]
+Overfull \hbox (7.46149pt too wide) detected at line 2213
+ []$[]  \OMS/cmss/m/n/10.95 L\OT1/cmss/m/n/10.95 ([]\OML/cmm/m/it/10.95 ; []; [
+]\OT1/cmss/m/n/10.95 ) = \U/msb/m/n/10.95 E[] [] \OT1/mathkerncmss/m/sl/10.95 p
+\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 x\OMS/cmss/m/n/10.95 j\OT1/cmss/bx/n/
+10.95 z[]\OML/cmm/m/it/10.95 ; []\OT1/cmss/m/n/10.95 ) \OMS/cmss/m/n/10.95 ^^@ 
+[][] \OT1/cmss/m/n/10.95 =$ 
+ []
+
+[122
+
+] [123
+
+]
+<figs/prior_vs_posterior.png, id=1451, 1044.40187pt x 432.11438pt>
+File: figs/prior_vs_posterior.png Graphic file (type png)
+<use figs/prior_vs_posterior.png>
+Package pdftex.def Info: figs/prior_vs_posterior.png  used on input line 2254.
+(pdftex.def)             Requested size: 199.73653pt x 82.63666pt.
+ [124
+
+ <./figs/prior_vs_posterior.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 10.57434 percent inst
+ead of 0 percent on input line 2256.
+
+[125
+
+] [126
+
+] [127
+
+]
+<figs/infogan_mnist.png, id=1487, 1105.12875pt x 668.4975pt>
+File: figs/infogan_mnist.png Graphic file (type png)
+<use figs/infogan_mnist.png>
+Package pdftex.def Info: figs/infogan_mnist.png  used on input line 2315.
+(pdftex.def)             Requested size: 307.28987pt x 185.87236pt.
+ [128
+
+ <./figs/infogan_mnist.png>]
+<figs/infogan_faces.png, id=1496, 1094.0875pt x 669.50125pt>
+File: figs/infogan_faces.png Graphic file (type png)
+<use figs/infogan_faces.png>
+Package pdftex.def Info: figs/infogan_faces.png  used on input line 2326.
+(pdftex.def)             Requested size: 307.28987pt x 188.04137pt.
+
+Overfull \vbox (2.1516pt too high) detected at line 2326
+ []
+
+[129
+
+ <./figs/infogan_faces.png>] [130
+
+]
+<figs/betaVAE_1.png, id=1513, 393.97188pt x 290.58563pt>
+File: figs/betaVAE_1.png Graphic file (type png)
+<use figs/betaVAE_1.png>
+Package pdftex.def Info: figs/betaVAE_1.png  used on input line 2361.
+(pdftex.def)             Requested size: 276.559pt x 203.98497pt.
+ [131
+
+ <./figs/betaVAE_1.png>]
+<figs/betaVAE_5.png, id=1522, 995.72pt x 651.43375pt>
+File: figs/betaVAE_5.png Graphic file (type png)
+<use figs/betaVAE_5.png>
+Package pdftex.def Info: figs/betaVAE_5.png  used on input line 2370.
+(pdftex.def)             Requested size: 291.92444pt x 190.98842pt.
+ [132
+
+ <./figs/betaVAE_5.png>]
+Overfull \hbox (23.27689pt too wide) detected at line 2394
+[] [] \OMS/cmsy/m/n/10 L[]\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 q\OML/cmm
+/m/it/10 ; []; ^^L\OT1/cmss/m/n/10 ) = [] \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 
+^^L \OMS/cmsy/m/n/10 ^^A [] ^^@\OML/cmm/m/it/10 ^^L \OMS/cmsy/m/n/10 ^^A []
+ []
+
+[133
+
+]
+Overfull \vbox (6.10898pt too high) detected at line 2418
+ []
+
+[134
+
+]
+<figs/betaVAE_6.png, id=1545, 1079.03125pt x 460.72125pt>
+File: figs/betaVAE_6.png Graphic file (type png)
+<use figs/betaVAE_6.png>
+Package pdftex.def Info: figs/betaVAE_6.png  used on input line 2433.
+(pdftex.def)             Requested size: 307.28987pt x 131.2085pt.
+ [135
+
+ <./figs/betaVAE_6.png>]
+<figs/betaVAE_7.png, id=1553, 808.01875pt x 341.275pt>
+File: figs/betaVAE_7.png Graphic file (type png)
+<use figs/betaVAE_7.png>
+Package pdftex.def Info: figs/betaVAE_7.png  used on input line 2449.
+(pdftex.def)             Requested size: 276.559pt x 116.80786pt.
+ [136
+
+ <./figs/betaVAE_7.png>]
+<figs/betaVAE_8.png, id=1561, 826.08624pt x 497.86pt>
+File: figs/betaVAE_8.png Graphic file (type png)
+<use figs/betaVAE_8.png>
+Package pdftex.def Info: figs/betaVAE_8.png  used on input line 2465.
+(pdftex.def)             Requested size: 215.10196pt x 129.63046pt.
+ [137
+
+ <./figs/betaVAE_8.png>]
+<figs/betaVAE_9.png, id=1569, 1051.93pt x 600.2425pt>
+File: figs/betaVAE_9.png Graphic file (type png)
+<use figs/betaVAE_9.png>
+Package pdftex.def Info: figs/betaVAE_9.png  used on input line 2474.
+(pdftex.def)             Requested size: 307.28987pt x 175.33896pt.
+ [138
+
+ <./figs/betaVAE_9.png>] [139
+
+]
+<figs/dip-vae_1.png, id=1585, 605.76312pt x 354.32375pt>
+File: figs/dip-vae_1.png Graphic file (type png)
+<use figs/dip-vae_1.png>
+Package pdftex.def Info: figs/dip-vae_1.png  used on input line 2511.
+(pdftex.def)             Requested size: 307.28987pt x 179.74036pt.
+ [140
+
+ <./figs/dip-vae_1.png>]
+[141
+
+] [142
+
+] [143
+
+]
+<figs/factorvae_1.png, id=1612, 589.20125pt x 713.66624pt>
+File: figs/factorvae_1.png Graphic file (type png)
+<use figs/factorvae_1.png>
+Package pdftex.def Info: figs/factorvae_1.png  used on input line 2605.
+(pdftex.def)             Requested size: 153.64493pt x 186.10422pt.
+<figs/factorvae_2.png, id=1613, 939.51pt x 644.4075pt>
+File: figs/factorvae_2.png Graphic file (type png)
+<use figs/factorvae_2.png>
+Package pdftex.def Info: figs/factorvae_2.png  used on input line 2605.
+(pdftex.def)             Requested size: 153.64493pt x 105.3787pt.
+ [144
+
+ <./figs/factorvae_1.png> <./figs/factorvae_2.png>]
+[145
+
+]
+Overfull \vbox (0.80006pt too high) detected at line 2662
+ []
+
+[146
+
+] [147
+
+]
+<figs/challenge_dis_2.png, id=1645, 1175.39125pt x 541.02126pt>
+File: figs/challenge_dis_2.png Graphic file (type png)
+<use figs/challenge_dis_2.png>
+Package pdftex.def Info: figs/challenge_dis_2.png  used on input line 2696.
+(pdftex.def)             Requested size: 261.19826pt x 120.22206pt.
+<figs/challenge_dis_3.png, id=1646, 1236.62pt x 580.1675pt>
+File: figs/challenge_dis_3.png Graphic file (type png)
+<use figs/challenge_dis_3.png>
+Package pdftex.def Info: figs/challenge_dis_3.png  used on input line 2696.
+(pdftex.def)             Requested size: 199.73653pt x 93.7051pt.
+ [148
+
+ <./figs/challenge_dis_2.png> <./figs/challenge_dis_3.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 2698.
+
+[149
+
+] [150
+
+] [151
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 2751.
+
+[152
+
+]
+<figs/Vanila_gan_results.png, id=1712, 527.9725pt x 385.44pt>
+File: figs/Vanila_gan_results.png Graphic file (type png)
+<use figs/Vanila_gan_results.png>
+Package pdftex.def Info: figs/Vanila_gan_results.png  used on input line 2759.
+(pdftex.def)             Requested size: 291.92444pt x 213.11598pt.
+ [153
+
+ <./figs/Vanila_gan_results.png>]
+<figs/dcgan_1.png, id=1720, 1108.14pt x 445.665pt>
+File: figs/dcgan_1.png Graphic file (type png)
+<use figs/dcgan_1.png>
+Package pdftex.def Info: figs/dcgan_1.png  used on input line 2781.
+(pdftex.def)             Requested size: 245.83282pt x 98.86263pt.
+ [154
+
+ <./figs/dcgan_1.png>]
+<figs/dcgan_results_1.png, id=1729, 884.30376pt x 653.44125pt>
+File: figs/dcgan_results_1.png Graphic file (type png)
+<use figs/dcgan_results_1.png>
+Package pdftex.def Info: figs/dcgan_results_1.png  used on input line 2791.
+(pdftex.def)             Requested size: 245.83282pt x 181.64616pt.
+ [155
+
+ <./figs/dcgan_results_1.png>]
+<figs/dcgan_results_2.png, id=1738, 864.73062pt x 605.76312pt>
+File: figs/dcgan_results_2.png Graphic file (type png)
+<use figs/dcgan_results_2.png>
+Package pdftex.def Info: figs/dcgan_results_2.png  used on input line 2802.
+(pdftex.def)             Requested size: 245.83282pt x 172.20985pt.
+ [156
+
+ <./figs/dcgan_results_2.png>]
+<figs/dcgan_results_3.png, id=1747, 879.285pt x 444.66125pt>
+File: figs/dcgan_results_3.png Graphic file (type png)
+<use figs/dcgan_results_3.png>
+Package pdftex.def Info: figs/dcgan_results_3.png  used on input line 2813.
+(pdftex.def)             Requested size: 307.28987pt x 155.39629pt.
+ [157
+
+ <./figs/dcgan_results_3.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 2815.
+
+[158
+
+]
+<figs/vanishing_gradients_1.png, id=1780, 448.67625pt x 348.30125pt>
+File: figs/vanishing_gradients_1.png Graphic file (type png)
+<use figs/vanishing_gradients_1.png>
+Package pdftex.def Info: figs/vanishing_gradients_1.png  used on input line 284
+0.
+(pdftex.def)             Requested size: 138.2795pt x 107.34514pt.
+<figs/vanishing_gradients_2.png, id=1781, 583.17876pt x 470.75874pt>
+File: figs/vanishing_gradients_2.png Graphic file (type png)
+<use figs/vanishing_gradients_2.png>
+Package pdftex.def Info: figs/vanishing_gradients_2.png  used on input line 284
+0.
+(pdftex.def)             Requested size: 138.2795pt x 111.6196pt.
+ [159
+
+ <./figs/vanishing_gradients_1.png> <./figs/vanishing_gradients_2.png>]
+<figs/vanishing_gradients_3.png, id=1791, 588.1975pt x 472.76625pt>
+File: figs/vanishing_gradients_3.png Graphic file (type png)
+<use figs/vanishing_gradients_3.png>
+Package pdftex.def Info: figs/vanishing_gradients_3.png  used on input line 286
+5.
+(pdftex.def)             Requested size: 169.01036pt x 135.84349pt.
+ [160
+
+ <./figs/vanishing_gradients_3.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 2867.
+
+[161
+
+] [162
+
+]
+<figs/virtual_batch_norm.png, id=1828, 416.05438pt x 109.91063pt>
+File: figs/virtual_batch_norm.png Graphic file (type png)
+<use figs/virtual_batch_norm.png>
+Package pdftex.def Info: figs/virtual_batch_norm.png  used on input line 2900.
+(pdftex.def)             Requested size: 171.23563pt x 45.23637pt.
+ [163
+
+ <./figs/virtual_batch_norm.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 2902.
+
+[164
+
+]
+<figs/vae-gaussian.png, id=1859, 1187.43625pt x 550.055pt>
+File: figs/vae-gaussian.png Graphic file (type png)
+<use figs/vae-gaussian.png>
+Package pdftex.def Info: figs/vae-gaussian.png  used on input line 2917.
+(pdftex.def)             Requested size: 307.28987pt x 142.34785pt.
+ [165
+
+ <./figs/vae-gaussian.png>] [166
+
+] [167
+
+] [168
+
+]
+Overfull \vbox (2.27437pt too high) detected at line 3019
+ []
+
+[169
+
+]
+<figs/avb_scheme.png, id=1898, 786.94pt x 561.09625pt>
+File: figs/avb_scheme.png Graphic file (type png)
+<use figs/avb_scheme.png>
+Package pdftex.def Info: figs/avb_scheme.png  used on input line 3033.
+(pdftex.def)             Requested size: 215.10196pt x 153.36444pt.
+ [170
+
+ <./figs/avb_scheme.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 3035.
+
+[171
+
+]
+<figs/EM_distance_discrete.png, id=1929, 1676.2625pt x 793.96625pt>
+File: figs/EM_distance_discrete.png Graphic file (type png)
+<use figs/EM_distance_discrete.png>
+Package pdftex.def Info: figs/EM_distance_discrete.png  used on input line 3048
+.
+(pdftex.def)             Requested size: 276.559pt x 130.98666pt.
+ [172
+
+ <./figs/EM_distance_discrete.png>]
+<figs/wgan_pseudocode.png, id=1937, 819.06pt x 480.79625pt>
+File: figs/wgan_pseudocode.png Graphic file (type png)
+<use figs/wgan_pseudocode.png>
+Package pdftex.def Info: figs/wgan_pseudocode.png  used on input line 3057.
+(pdftex.def)             Requested size: 307.28987pt x 180.38617pt.
+ [173
+
+ <./figs/wgan_pseudocode.png>]
+<figs/wgan_gp_pseudocode.png, id=1945, 1539.7525pt x 813.0375pt>
+File: figs/wgan_gp_pseudocode.png Graphic file (type png)
+<use figs/wgan_gp_pseudocode.png>
+Package pdftex.def Info: figs/wgan_gp_pseudocode.png  used on input line 3067.
+(pdftex.def)             Requested size: 307.28987pt x 162.25725pt.
+ [174
+
+ <./figs/wgan_gp_pseudocode.png>]
+<figs/wgan_gp_convergence.png, id=1953, 739.76375pt x 276.03125pt>
+File: figs/wgan_gp_convergence.png Graphic file (type png)
+<use figs/wgan_gp_convergence.png>
+Package pdftex.def Info: figs/wgan_gp_convergence.png  used on input line 3082.
+
+(pdftex.def)             Requested size: 307.28987pt x 114.66034pt.
+<figs/wgan_gp_wgan.png, id=1954, 1296.845pt x 286.06876pt>
+File: figs/wgan_gp_wgan.png Graphic file (type png)
+<use figs/wgan_gp_wgan.png>
+Package pdftex.def Info: figs/wgan_gp_wgan.png  used on input line 3082.
+(pdftex.def)             Requested size: 230.46739pt x 50.83539pt.
+ [175
+
+ <./figs/wgan_gp_convergence.png> <./figs/wgan_gp_wgan.png>] (./Supplementary.t
+oc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 3084.
+
+[176
+
+]
+<figs/wgan_gp_weights.png, id=1986, 727.71875pt x 391.4625pt>
+File: figs/wgan_gp_weights.png Graphic file (type png)
+<use figs/wgan_gp_weights.png>
+Package pdftex.def Info: figs/wgan_gp_weights.png  used on input line 3101.
+(pdftex.def)             Requested size: 276.559pt x 148.7752pt.
+ [177
+
+ <./figs/wgan_gp_weights.png>] [178
+
+] [179
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 3142.
+
+[180
+
+]
+Overfull \vbox (13.0141pt too high) detected at line 3167
+ []
+
+[181
+
+] [182
+
+]
+Overfull \vbox (4.97527pt too high) detected at line 3224
+ []
+
+[183
+
+]
+<figs/sngan_pseudocode.png, id=2048, 1009.7725pt x 489.83pt>
+File: figs/sngan_pseudocode.png Graphic file (type png)
+<use figs/sngan_pseudocode.png>
+Package pdftex.def Info: figs/sngan_pseudocode.png  used on input line 3237.
+(pdftex.def)             Requested size: 261.19826pt x 126.70253pt.
+<figs/sngan_fids.png, id=2049, 927.465pt x 302.12875pt>
+File: figs/sngan_fids.png Graphic file (type png)
+<use figs/sngan_fids.png>
+Package pdftex.def Info: figs/sngan_fids.png  used on input line 3237.
+(pdftex.def)             Requested size: 261.19826pt x 85.08875pt.
+
+Overfull \vbox (5.51816pt too high) detected at line 3237
+ []
+
+[184
+
+ <./figs/sngan_pseudocode.png> <./figs/sngan_fids.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 3239.
+
+[185
+
+]
+<figs/gan_evolution.png, id=2080, 1896.08376pt x 759.83875pt>
+File: figs/gan_evolution.png Graphic file (type png)
+<use figs/gan_evolution.png>
+Package pdftex.def Info: figs/gan_evolution.png  used on input line 3253.
+(pdftex.def)             Requested size: 307.28987pt x 123.14189pt.
+ [186
+
+ <./figs/gan_evolution.png>]
+<figs/self-attention.png, id=2092, 1190.4475pt x 432.61626pt>
+File: figs/self-attention.png Graphic file (type png)
+<use figs/self-attention.png>
+Package pdftex.def Info: figs/self-attention.png  used on input line 3269.
+(pdftex.def)             Requested size: 276.559pt x 100.50302pt.
+ [187
+
+ <./figs/self-attention.png>]
+<figs/conv-vs-sa.png, id=2101, 2006.49625pt x 953.5625pt>
+File: figs/conv-vs-sa.png Graphic file (type png)
+<use figs/conv-vs-sa.png>
+Package pdftex.def Info: figs/conv-vs-sa.png  used on input line 3290.
+(pdftex.def)             Requested size: 215.10196pt x 102.21497pt.
+<figs/sa_maps.png, id=2102, 1059.45813pt x 275.0275pt>
+File: figs/sa_maps.png Graphic file (type png)
+<use figs/sa_maps.png>
+Package pdftex.def Info: figs/sa_maps.png  used on input line 3290.
+(pdftex.def)             Requested size: 307.28987pt x 79.76851pt.
+
+Overfull \vbox (5.51219pt too high) detected at line 3290
+ []
+
+[188
+
+ <./figs/conv-vs-sa.png> <./figs/sa_maps.png>]
+<figs/biggan_results.png, id=2112, 1009.27063pt x 163.61125pt>
+File: figs/biggan_results.png Graphic file (type png)
+<use figs/biggan_results.png>
+Package pdftex.def Info: figs/biggan_results.png  used on input line 3307.
+(pdftex.def)             Requested size: 307.28987pt x 49.81273pt.
+<figs/biggan_samples.png, id=2113, 996.72375pt x 249.43187pt>
+File: figs/biggan_samples.png Graphic file (type png)
+<use figs/biggan_samples.png>
+Package pdftex.def Info: figs/biggan_samples.png  used on input line 3307.
+(pdftex.def)             Requested size: 307.28987pt x 76.8968pt.
+ [189
+
+ <./figs/biggan_results.png> <./figs/biggan_samples.png>]
+<figs/pggan_samples.png, id=2123, 1148.29pt x 575.14874pt>
+File: figs/pggan_samples.png Graphic file (type png)
+<use figs/pggan_samples.png>
+Package pdftex.def Info: figs/pggan_samples.png  used on input line 3324.
+(pdftex.def)             Requested size: 276.559pt x 138.5212pt.
+
+Overfull \vbox (4.29634pt too high) detected at line 3324
+ []
+
+[190
+
+ <./figs/pggan_samples.png>]
+<figs/pggan_arch.png, id=2132, 537.00626pt x 329.23pt>
+File: figs/pggan_arch.png Graphic file (type png)
+<use figs/pggan_arch.png>
+Package pdftex.def Info: figs/pggan_arch.png  used on input line 3339.
+(pdftex.def)             Requested size: 230.46739pt x 141.29486pt.
+
+Overfull \vbox (2.93132pt too high) detected at line 3339
+ []
+
+[191
+
+ <./figs/pggan_arch.png>] [192
+
+]
+<figs/stylegan_mapping.png, id=2149, 854.19125pt x 406.51875pt>
+File: figs/stylegan_mapping.png Graphic file (type png)
+<use figs/stylegan_mapping.png>
+Package pdftex.def Info: figs/stylegan_mapping.png  used on input line 3379.
+(pdftex.def)             Requested size: 180.68748pt x 85.98553pt.
+<figs/stylegan_curved.png, id=2150, 483.8075pt x 194.7275pt>
+File: figs/stylegan_curved.png Graphic file (type png)
+<use figs/stylegan_curved.png>
+Package pdftex.def Info: figs/stylegan_curved.png  used on input line 3379.
+(pdftex.def)             Requested size: 116.77164pt x 46.99702pt.
+ [193
+
+ <./figs/stylegan_mapping.png (PNG copy)> <./figs/stylegan_curved.png>]
+<figs/stylegan_truncation.png, id=2160, 519.9425pt x 105.39375pt>
+File: figs/stylegan_truncation.png Graphic file (type png)
+<use figs/stylegan_truncation.png>
+Package pdftex.def Info: figs/stylegan_truncation.png  used on input line 3397.
+
+(pdftex.def)             Requested size: 261.19826pt x 52.9444pt.
+<figs/stylegan_samples.png, id=2161, 1212.53pt x 540.0175pt>
+File: figs/stylegan_samples.png Graphic file (type png)
+<use figs/stylegan_samples.png>
+Package pdftex.def Info: figs/stylegan_samples.png  used on input line 3397.
+(pdftex.def)             Requested size: 245.83282pt x 109.48477pt.
+
+Overfull \vbox (6.54182pt too high) detected at line 3397
+ []
+
+[194
+
+ <./figs/stylegan_truncation.png> <./figs/stylegan_samples.png>]
+<figs/stylegan_adain.png, id=2171, 959.585pt x 386.44376pt>
+File: figs/stylegan_adain.png Graphic file (type png)
+<use figs/stylegan_adain.png>
+Package pdftex.def Info: figs/stylegan_adain.png  used on input line 3412.
+(pdftex.def)             Requested size: 307.28987pt x 123.75298pt.
+
+Overfull \vbox (5.72571pt too high) detected at line 3412
+ []
+
+[195
+
+ <./figs/stylegan_adain.png (PNG copy)>]
+<figs/stylegan_input.png, id=2179, 443.6575pt x 351.3125pt>
+File: figs/stylegan_input.png Graphic file (type png)
+<use figs/stylegan_input.png>
+Package pdftex.def Info: figs/stylegan_input.png  used on input line 3424.
+(pdftex.def)             Requested size: 169.01036pt x 133.82712pt.
+ [196
+
+ <./figs/stylegan_input.png (PNG copy)>]
+<figs/stylegan_noise.png, id=2187, 724.7075pt x 374.39874pt>
+File: figs/stylegan_noise.png Graphic file (type png)
+<use figs/stylegan_noise.png>
+Package pdftex.def Info: figs/stylegan_noise.png  used on input line 3436.
+(pdftex.def)             Requested size: 276.559pt x 142.87856pt.
+
+Overfull \vbox (2.25128pt too high) detected at line 3436
+ []
+
+[197
+
+ <./figs/stylegan_noise.png (PNG copy)>]
+<figs/stylegan_mix_reg.jpeg, id=2195, 1304.875pt x 831.105pt>
+File: figs/stylegan_mix_reg.jpeg Graphic file (type jpg)
+<use figs/stylegan_mix_reg.jpeg>
+Package pdftex.def Info: figs/stylegan_mix_reg.jpeg  used on input line 3452.
+(pdftex.def)             Requested size: 245.83282pt x 156.56734pt.
+
+Overfull \vbox (1.9506pt too high) detected at line 3452
+ []
+
+[198
+
+ <./figs/stylegan_mix_reg.jpeg>]
+<figs/stylegan_scheme.png, id=2203, 741.77126pt x 635.37375pt>
+File: figs/stylegan_scheme.png Graphic file (type png)
+<use figs/stylegan_scheme.png>
+Package pdftex.def Info: figs/stylegan_scheme.png  used on input line 3461.
+(pdftex.def)             Requested size: 245.83282pt x 210.56592pt.
+ [199
+
+ <./figs/stylegan_scheme.png>]
+<figs/stylegan_mix.png, id=2213, 602.25pt x 684.5575pt>
+File: figs/stylegan_mix.png Graphic file (type png)
+<use figs/stylegan_mix.png>
+Package pdftex.def Info: figs/stylegan_mix.png  used on input line 3470.
+(pdftex.def)             Requested size: 184.3758pt x 209.57835pt.
+
+[200
+
+ <./figs/stylegan_mix.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 38.8504 percent inste
+ad of 0 percent on input line 3472.
+
+[201
+
+] [202
+
+] [203
+
+]
+<figs/fid_results.png, id=2257, 841.1425pt x 656.4525pt>
+File: figs/fid_results.png Graphic file (type png)
+<use figs/fid_results.png>
+Package pdftex.def Info: figs/fid_results.png  used on input line 3526.
+(pdftex.def)             Requested size: 276.559pt x 215.83867pt.
+
+Overfull \vbox (0.56555pt too high) detected at line 3526
+ []
+
+[204
+
+ <./figs/fid_results.png>] [205
+
+] [206
+
+]
+<figs/mmd_normal.png, id=2283, 1646.15pt x 417.56pt>
+File: figs/mmd_normal.png Graphic file (type png)
+<use figs/mmd_normal.png>
+Package pdftex.def Info: figs/mmd_normal.png  used on input line 3598.
+(pdftex.def)             Requested size: 291.92444pt x 74.04892pt.
+ [207
+
+ <./figs/mmd_normal.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3600.
+
+[208
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3602.
+
+[209
+
+]
+<figs/vqvae_results.png, id=2322, 1375.1375pt x 353.32pt>
+File: figs/vqvae_results.png Graphic file (type png)
+<use figs/vqvae_results.png>
+Package pdftex.def Info: figs/vqvae_results.png  used on input line 3619.
+(pdftex.def)             Requested size: 307.28987pt x 78.94905pt.
+
+Overfull \vbox (5.19264pt too high) detected at line 3619
+ []
+
+[210
+
+ <./figs/vqvae_results.png>]
+<figs/vqvae2.png, id=2330, 943.525pt x 333.245pt>
+File: figs/vqvae2.png Graphic file (type png)
+<use figs/vqvae2.png>
+Package pdftex.def Info: figs/vqvae2.png  used on input line 3633.
+(pdftex.def)             Requested size: 307.28987pt x 108.53215pt.
+ [211
+
+ <./figs/vqvae2.png>]
+<figs/vqvae2_pseudo.png, id=2340, 1027.84pt x 510.90875pt>
+File: figs/vqvae2_pseudo.png Graphic file (type png)
+<use figs/vqvae2_pseudo.png>
+Package pdftex.def Info: figs/vqvae2_pseudo.png  used on input line 3646.
+(pdftex.def)             Requested size: 276.559pt x 137.47165pt.
+<figs/vqvae2_latents.png, id=2341, 1009.7725pt x 295.1025pt>
+File: figs/vqvae2_latents.png Graphic file (type png)
+<use figs/vqvae2_latents.png>
+Package pdftex.def Info: figs/vqvae2_latents.png  used on input line 3646.
+(pdftex.def)             Requested size: 261.19826pt x 76.33308pt.
+
+Overfull \vbox (1.84116pt too high) detected at line 3646
+ []
+
+[212
+
+ <./figs/vqvae2_pseudo.png> <./figs/vqvae2_latents.png>]
+(./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3648.
+
+[213
+
+]
+<figs/fqgan.png, id=2366, 945.5325pt x 307.1475pt>
+File: figs/fqgan.png Graphic file (type png)
+<use figs/fqgan.png>
+Package pdftex.def Info: figs/fqgan.png  used on input line 3666.
+(pdftex.def)             Requested size: 215.10196pt x 69.87381pt.
+ [214
+
+ <./figs/fqgan.png>]
+<figs/fqgan_cnn.png, id=2374, 1330.9725pt x 498.86375pt>
+File: figs/fqgan_cnn.png Graphic file (type png)
+<use figs/fqgan_cnn.png>
+Package pdftex.def Info: figs/fqgan_cnn.png  used on input line 3690.
+(pdftex.def)             Requested size: 199.73653pt x 74.85678pt.
+<figs/fqgan_lookup.png, id=2375, 865.2325pt x 649.42625pt>
+File: figs/fqgan_lookup.png Graphic file (type png)
+<use figs/fqgan_lookup.png>
+Package pdftex.def Info: figs/fqgan_lookup.png  used on input line 3690.
+(pdftex.def)             Requested size: 96.79733pt x 72.64606pt.
+<figs/fqgan_features.png, id=2376, 1374.13374pt x 297.11pt>
+File: figs/fqgan_features.png Graphic file (type png)
+<use figs/fqgan_features.png>
+Package pdftex.def Info: figs/fqgan_features.png  used on input line 3690.
+(pdftex.def)             Requested size: 307.28987pt x 66.43884pt.
+ [215
+
+ <./figs/fqgan_cnn.png> <./figs/fqgan_lookup.png> <./figs/fqgan_features.png>]
+<figs/fqgan_results1.png, id=2386, 700.6175pt x 305.14pt>
+File: figs/fqgan_results1.png Graphic file (type png)
+<use figs/fqgan_results1.png>
+Package pdftex.def Info: figs/fqgan_results1.png  used on input line 3716.
+(pdftex.def)             Requested size: 138.2795pt x 60.2214pt.
+<figs/fqgan_results2.png, id=2387, 596.2275pt x 148.555pt>
+File: figs/fqgan_results2.png Graphic file (type png)
+<use figs/fqgan_results2.png>
+Package pdftex.def Info: figs/fqgan_results2.png  used on input line 3716.
+(pdftex.def)             Requested size: 138.2795pt x 34.45253pt.
+<figs/fqgan_results3.png, id=2388, 523.9575pt x 378.41376pt>
+File: figs/fqgan_results3.png Graphic file (type png)
+<use figs/fqgan_results3.png>
+Package pdftex.def Info: figs/fqgan_results3.png  used on input line 3716.
+(pdftex.def)             Requested size: 169.01036pt x 122.05914pt.
+ [216
+
+ <./figs/fqgan_results1.png> <./figs/fqgan_results2.png> <./figs/fqgan_results3
+.png>] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3718.
+
+[217
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3720.
+
+[218
+
+]
+Overfull \hbox (22.35419pt too wide) detected at line 3751
+ []$[]  \U/msb/m/n/10 E[][]\OT1/mathkerncmss/m/sl/10 s\OT1/cmss/m/n/10 (\OT1/ma
+thkerncmss/m/sl/10 x\OT1/cmss/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ r[] [] \OML/cmm/m/i
+t/10 ^^Y\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 x\OT1/cmss/m/n/10 )[][] = \
+U/msb/m/n/10 E[][]\OT1/mathkerncmss/m/sl/10 s\OT1/cmss/m/n/10 (\OT1/mathkerncms
+s/m/sl/10 x\OT1/cmss/m/n/10 )[] + (\OMS/cmsy/m/n/10 r[] [] \OML/cmm/m/it/10 ^^Y
+\OT1/cmss/m/n/10 (\OT1/mathkerncmss/m/sl/10 x\OT1/cmss/m/n/10 ))[] \OMS/cmsy/m/
+n/10 ^^@ \OT1/cmss/m/n/10 2[][]  $ 
+ []
+
+
+Overfull \hbox (16.64737pt too wide) detected at line 3751
+[]
+ []
+
+
+Overfull \vbox (10.80626pt too high) detected at line 3751
+ []
+
+[219
+
+]
+Overfull \hbox (6.73486pt too wide) detected at line 3774
+[][] \OT1/cmss/m/n/10.95 = [][] + []
+ []
+
+[220
+
+] (./Supplementary.toc)
+
+Class beamer Warning: Frame text is shrunk by a factor of 19.0918 percent inste
+ad of 0 percent on input line 3776.
+
+[221
+
+]
+Overfull \vbox (6.38956pt too high) detected at line 3802
+ []
+
+[222
+
+]
+Overfull \hbox (2.64671pt too wide) detected at line 3828
+[]
+ []
+
+[223
+
+]
+Overfull \hbox (8.95999pt too wide) detected at line 3851
+[]
+ []
+
+
+Overfull \vbox (10.22435pt too high) detected at line 3851
+ []
+
+[224
+
+]
+\tf@nav=\write7
+\openout7 = `Supplementary.nav'.
+
+\tf@toc=\write8
+\openout8 = `Supplementary.toc'.
+
+\tf@snm=\write9
+\openout9 = `Supplementary.snm'.
+
+ (./Supplementary.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.83pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `Supplementary.out' has not changed.
+(rerunfilecheck)             Checksum: 1221C80405110F5AA67DD690AF89AF5A;6686.
+ ) 
+Here is how much of TeX's memory you used:
+ 31273 strings out of 474116
+ 638417 string characters out of 5743682
+ 1953187 words of memory out of 5000000
+ 52417 multiletter control sequences out of 15000+600000
+ 591933 words of font info for 144 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 133i,22n,126p,441b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.
+pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/
+local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pf
+b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib
+9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10
+.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.
+pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.p
+fb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb><
+/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
+/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
+al/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local
+/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
+ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Supplementary.pdf (224 pages, 31089397 bytes).
+PDF statistics:
+ 2716 PDF objects out of 2984 (max. 8388607)
+ 2157 compressed objects within 22 object streams
+ 489 named destinations out of 1000 (max. 500000)
+ 1044 words of extra memory for PDF output out of 10000 (max. 10000000)
+

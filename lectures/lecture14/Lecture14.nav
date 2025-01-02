@@ -1,0 +1,102 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\slideentry {0}{0}{3}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {0}{0}{4}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {0}{0}{5}{5/5}{}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {0}{0}{6}{6/6}{}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {0}{0}{7}{7/7}{}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {0}{0}{8}{8/8}{}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {0}{0}{9}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {0}{0}{10}{10/10}{}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@sectionpages {1}{10}}
+\headcommand {\beamer@subsectionpages {1}{10}}
+\headcommand {\sectionentry {1}{Conditional flow matching}{11}{Conditional flow matching}{0}}
+\headcommand {\slideentry {1}{0}{1}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{12}{Conical gaussian paths (continued)}}
+\headcommand {\slideentry {1}{1}{1}{12/12}{Conical gaussian paths (continued)}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {1}{1}{2}{13/13}{Conical gaussian paths (continued)}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {1}{1}{3}{14/14}{Conical gaussian paths (continued)}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {1}{1}{4}{15/15}{Conical gaussian paths (continued)}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@subsectionpages {12}{15}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{16}{Linear interpolation}}
+\headcommand {\slideentry {1}{2}{1}{16/16}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {1}{2}{2}{17/17}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {1}{2}{3}{18/18}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {1}{2}{4}{19/19}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {1}{2}{5}{20/20}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {1}{2}{6}{21/21}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {1}{2}{7}{22/22}{Linear interpolation}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsectionpages {16}{22}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{23}{Link with score-based models}}
+\headcommand {\slideentry {1}{3}{1}{23/23}{Link with score-based models}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {1}{3}{2}{24/24}{Link with score-based models}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {1}{3}{3}{25/25}{Link with score-based models}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {1}{3}{4}{26/26}{Link with score-based models}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {1}{3}{5}{27/27}{Link with score-based models}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@sectionpages {11}{27}}
+\headcommand {\beamer@subsectionpages {23}{27}}
+\headcommand {\sectionentry {2}{Latent space models}{28}{Latent space models}{0}}
+\headcommand {\slideentry {2}{0}{1}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\beamer@subsectionpages {28}{28}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{29}{Score-based models}}
+\headcommand {\slideentry {2}{1}{1}{29/29}{Score-based models}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {2}{1}{2}{30/30}{Score-based models}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\beamer@subsectionpages {29}{30}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{31}{Autoregressive models}}
+\headcommand {\slideentry {2}{2}{1}{31/31}{Autoregressive models}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {2}{2}{2}{32/32}{Autoregressive models}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {2}{2}{3}{33/33}{Autoregressive models}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {2}{2}{4}{34/34}{Autoregressive models}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {2}{2}{5}{35/35}{Autoregressive models}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@sectionpages {28}{35}}
+\headcommand {\beamer@subsectionpages {31}{35}}
+\headcommand {\sectionentry {3}{The worst course overview}{36}{The worst course overview}{0}}
+\headcommand {\slideentry {3}{0}{1}{36/36}{}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {3}{0}{2}{37/37}{}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {3}{0}{3}{38/38}{}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {3}{0}{4}{39/39}{}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\beamer@partpages {1}{39}}
+\headcommand {\beamer@subsectionpages {36}{39}}
+\headcommand {\beamer@sectionpages {36}{39}}
+\headcommand {\beamer@documentpages {39}}
+\headcommand {\gdef \inserttotalframenumber {38}}
