@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  2 JAN 2025 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  13 JAN 2025 21:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,7 +1278,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <35> not available
 (Font)              size <35.83> substituted on input line 11.
 
-<../utils/aimasterslogo.png, id=53, 770.88pt x 768.8725pt>
+<../utils/aimasterslogo.png, id=57, 770.88pt x 768.8725pt>
 File: ../utils/aimasterslogo.png Graphic file (type png)
 <use ../utils/aimasterslogo.png>
 Package pdftex.def Info: ../utils/aimasterslogo.png  used on input line 11.
@@ -1298,7 +1298,7 @@ Overfull \hbox (6.77243pt too wide) in paragraph at lines 54--54
 ] (./Lecture1.toc) [4
 
 ]
-<figs/vae.png, id=93, 483.8075pt x 435.6275pt>
+<figs/vae.png, id=100, 483.8075pt x 435.6275pt>
 File: figs/vae.png Graphic file (type png)
 <use figs/vae.png>
 Package pdftex.def Info: figs/vae.png  used on input line 68.
@@ -1334,7 +1334,7 @@ Overfull \vbox (6.07637pt too high) detected at line 68
 [5
 
  <./figs/vae.png>]
-<figs/dcgan.png, id=102, 790.955pt x 399.4925pt>
+<figs/dcgan.png, id=109, 790.955pt x 399.4925pt>
 File: figs/dcgan.png Graphic file (type png)
 <use figs/dcgan.png>
 Package pdftex.def Info: figs/dcgan.png  used on input line 76.
@@ -1342,12 +1342,12 @@ Package pdftex.def Info: figs/dcgan.png  used on input line 76.
  [6
 
  <./figs/dcgan.png>]
-<figs/gan_evolution.png, id=111, 1896.08376pt x 759.83875pt>
+<figs/gan_evolution.png, id=118, 1896.08376pt x 759.83875pt>
 File: figs/gan_evolution.png Graphic file (type png)
 <use figs/gan_evolution.png>
 Package pdftex.def Info: figs/gan_evolution.png  used on input line 89.
 (pdftex.def)             Requested size: 261.19826pt x 104.67235pt.
-<figs/stylegan.png, id=112, 1219.55624pt x 540.0175pt>
+<figs/stylegan.png, id=119, 1219.55624pt x 540.0175pt>
 File: figs/stylegan.png Graphic file (type png)
 <use figs/stylegan.png>
 Package pdftex.def Info: figs/stylegan.png  used on input line 89.
@@ -1355,7 +1355,7 @@ Package pdftex.def Info: figs/stylegan.png  used on input line 89.
  [7
 
  <./figs/gan_evolution.png> <./figs/stylegan.png>]
-<figs/LLM-Evolutionary-Tree.png, id=123, 1163.34625pt x 931.48pt>
+<figs/LLM-Evolutionary-Tree.png, id=130, 1163.34625pt x 931.48pt>
 File: figs/LLM-Evolutionary-Tree.png Graphic file (type png)
 <use figs/LLM-Evolutionary-Tree.png>
 Package pdftex.def Info: figs/LLM-Evolutionary-Tree.png  used on input line 96.
@@ -1364,7 +1364,7 @@ Package pdftex.def Info: figs/LLM-Evolutionary-Tree.png  used on input line 96.
  [8
 
  <./figs/LLM-Evolutionary-Tree.png>]
-<figs/diffusion_models.png, id=132, 1096.095pt x 655.44875pt>
+<figs/diffusion_models.png, id=139, 1096.095pt x 655.44875pt>
 File: figs/diffusion_models.png Graphic file (type png)
 <use figs/diffusion_models.png>
 Package pdftex.def Info: figs/diffusion_models.png  used on input line 103.
@@ -1372,7 +1372,7 @@ Package pdftex.def Info: figs/diffusion_models.png  used on input line 103.
  [9
 
  <./figs/diffusion_models.png>]
-<figs/midjourney.png, id=140, 1279.78125pt x 676.5275pt>
+<figs/midjourney.png, id=147, 1279.78125pt x 676.5275pt>
 File: figs/midjourney.png Graphic file (type png)
 <use figs/midjourney.png>
 Package pdftex.def Info: figs/midjourney.png  used on input line 110.
@@ -1380,12 +1380,12 @@ Package pdftex.def Info: figs/midjourney.png  used on input line 110.
  [10
 
  <./figs/midjourney.png>]
-<figs/sd3_1.png, id=148, 1927.2pt x 363.3575pt>
+<figs/sd3_1.png, id=155, 1927.2pt x 363.3575pt>
 File: figs/sd3_1.png Graphic file (type png)
 <use figs/sd3_1.png>
 Package pdftex.def Info: figs/sd3_1.png  used on input line 120.
 (pdftex.def)             Requested size: 307.28987pt x 57.93324pt.
-<figs/sd3_2.png, id=149, 1927.2pt x 363.3575pt>
+<figs/sd3_2.png, id=156, 1927.2pt x 363.3575pt>
 File: figs/sd3_2.png Graphic file (type png)
 <use figs/sd3_2.png>
 Package pdftex.def Info: figs/sd3_2.png  used on input line 120.
@@ -1393,7 +1393,7 @@ Package pdftex.def Info: figs/sd3_2.png  used on input line 120.
  [11
 
  <./figs/sd3_1.png> <./figs/sd3_2.png>]
-<figs/sora.png, id=158, 1456.44125pt x 779.91376pt>
+<figs/sora.png, id=165, 1456.44125pt x 779.91376pt>
 File: figs/sora.png Graphic file (type png)
 <use figs/sora.png>
 Package pdftex.def Info: figs/sora.png  used on input line 127.
@@ -1412,134 +1412,120 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 (Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 154.
 
-
-Overfull \vbox (8.71968pt too high) detected at line 154
- []
-
-[14
+ [14
 
 ]
-Overfull \hbox (9.79793pt too wide) detected at line 185
-\OML/cmm/m/it/10.95 ^^N\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 x\OT1/cmss/m/n
-/10.95 ) = []  [] \OML/cmm/m/it/10.95 ^^N\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10
-.95 x\OT1/cmss/m/n/10.95 )\OT1/mathkerncmss/m/sl/10.95 d\OT1/cmss/bx/n/10.95 x 
-\OT1/cmss/m/n/10.95 = 1;   [] \OML/cmm/m/it/10.95 ^^N\OT1/cmss/m/n/10.95 (\OT1/
-cmss/bx/n/10.95 x \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmss/bx/n/10.95 x[]\OT1/cmss/m/n
-/10.95 )\OT1/cmss/bx/n/10.95 f\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 x\OT1/c
-mss/m/n/10.95 )\OT1/mathkerncmss/m/sl/10.95 dx \OT1/cmss/m/n/10.95 = \OT1/cmss/
-bx/n/10.95 f\OT1/cmss/m/n/10.95 (\OT1/cmss/bx/n/10.95 x[]\OT1/cmss/m/n/10.95 )\
-OML/cmm/m/it/10.95 :
+Overfull \hbox (6.95961pt too wide) detected at line 173
+\OT1/mathkerncmss/m/sl/10.95 p\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95
+ y\OT1/cmss/m/n/10.95 ) = [] = [] = [][] = \OT1/mathkerncmss/m/sl/10.95 p\OT1/c
+mss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 x\OT1/cmss/m/n/10.95 )[]
  []
 
 [15
 
 ] [16
 
+] (./Lecture1.toc) [17
+
+] [18
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 227--227
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 
  []
 
-<figs/histogram.png, id=199, 433.62pt x 361.35pt>
+<figs/histogram.png, id=221, 433.62pt x 361.35pt>
 File: figs/histogram.png Graphic file (type png)
 <use figs/histogram.png>
-Package pdftex.def Info: figs/histogram.png  used on input line 227.
+Package pdftex.def Info: figs/histogram.png  used on input line 242.
 (pdftex.def)             Requested size: 122.91406pt x 102.42342pt.
 
-Overfull \vbox (9.03453pt too high) detected at line 227
+Overfull \vbox (9.03453pt too high) detected at line 242
  []
 
-[17
+[19
 
- <./figs/histogram.png>] [18
+ <./figs/histogram.png>] [20
 
-] (./Lecture1.toc) [19
+] (./Lecture1.toc) [21
 
-] [20
+] [22
 
-]
-<figs/f_divs.png, id=227, 632.3625pt x 209.28188pt>
-File: figs/f_divs.png Graphic file (type png)
-<use figs/f_divs.png>
-Package pdftex.def Info: figs/f_divs.png  used on input line 280.
-(pdftex.def)             Requested size: 307.28987pt x 101.69955pt.
- [21
-
- <./figs/f_divs.png>] [22
+] [23
 
 ]
-Overfull \vbox (1.40012pt too high) detected at line 326
+Overfull \vbox (1.40012pt too high) detected at line 327
  []
 
-[23
+[24
 
-] (./Lecture1.toc) [24
+] (./Lecture1.toc) [25
 
 ]
-Overfull \hbox (6.77243pt too wide) in paragraph at lines 376--376
+Overfull \hbox (6.77243pt too wide) in paragraph at lines 377--377
 [][]  
  []
 
-[25
+[26
 
-] [26
+] [27
 
 ]
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 420.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 421.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 420.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 421.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 420.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 421.
 
- [27
-
-]
-<figs/sequential_MLP.png, id=272, 681.54625pt x 250.9375pt>
-File: figs/sequential_MLP.png Graphic file (type png)
-<use figs/sequential_MLP.png>
-Package pdftex.def Info: figs/sequential_MLP.png  used on input line 452.
-(pdftex.def)             Requested size: 187.447pt x 69.01376pt.
  [28
 
- <./figs/sequential_MLP.png>]
-<figs/llm_modeling.png, id=281, 826.08624pt x 324.21124pt>
-File: figs/llm_modeling.png Graphic file (type png)
-<use figs/llm_modeling.png>
-Package pdftex.def Info: figs/llm_modeling.png  used on input line 463.
-(pdftex.def)             Requested size: 307.28987pt x 120.5994pt.
+]
+<figs/sequential_MLP.png, id=287, 681.54625pt x 250.9375pt>
+File: figs/sequential_MLP.png Graphic file (type png)
+<use figs/sequential_MLP.png>
+Package pdftex.def Info: figs/sequential_MLP.png  used on input line 453.
+(pdftex.def)             Requested size: 187.447pt x 69.01376pt.
  [29
 
+ <./figs/sequential_MLP.png>]
+<figs/llm_modeling.png, id=296, 826.08624pt x 324.21124pt>
+File: figs/llm_modeling.png Graphic file (type png)
+<use figs/llm_modeling.png>
+Package pdftex.def Info: figs/llm_modeling.png  used on input line 464.
+(pdftex.def)             Requested size: 307.28987pt x 120.5994pt.
+ [30
+
  <./figs/llm_modeling.png>]
-[30
+[31
 
 ]
-<figs/pixelcnn1.png, id=295, 210.7875pt x 208.78pt>
+<figs/pixelcnn1.png, id=311, 210.7875pt x 208.78pt>
 File: figs/pixelcnn1.png Graphic file (type png)
 <use figs/pixelcnn1.png>
-Package pdftex.def Info: figs/pixelcnn1.png  used on input line 514.
+Package pdftex.def Info: figs/pixelcnn1.png  used on input line 515.
 (pdftex.def)             Requested size: 107.55098pt x 106.52734pt.
-<figs/pixelcnn_0_1.png, id=296, 117.43875pt x 121.45375pt>
+<figs/pixelcnn_0_1.png, id=312, 117.43875pt x 121.45375pt>
 File: figs/pixelcnn_0_1.png Graphic file (type png)
 <use figs/pixelcnn_0_1.png>
-Package pdftex.def Info: figs/pixelcnn_0_1.png  used on input line 514.
+Package pdftex.def Info: figs/pixelcnn_0_1.png  used on input line 515.
 (pdftex.def)             Requested size: 53.77666pt x 55.6155pt.
-<figs/pixelcnn_0_2.png, id=297, 189.70876pt x 283.0575pt>
+<figs/pixelcnn_0_2.png, id=313, 189.70876pt x 283.0575pt>
 File: figs/pixelcnn_0_2.png Graphic file (type png)
 <use figs/pixelcnn_0_2.png>
-Package pdftex.def Info: figs/pixelcnn_0_2.png  used on input line 514.
+Package pdftex.def Info: figs/pixelcnn_0_2.png  used on input line 515.
 (pdftex.def)             Requested size: 76.82246pt x 114.6247pt.
-<figs/pixelcnn2.png, id=298, 249.93375pt x 163.61125pt>
+<figs/pixelcnn2.png, id=314, 249.93375pt x 163.61125pt>
 File: figs/pixelcnn2.png Graphic file (type png)
 <use figs/pixelcnn2.png>
-Package pdftex.def Info: figs/pixelcnn2.png  used on input line 514.
+Package pdftex.def Info: figs/pixelcnn2.png  used on input line 515.
 (pdftex.def)             Requested size: 99.86826pt x 65.37593pt.
- [31
+ [32
 
  <./figs/pixelcnn1.png> <./figs/pixelcnn_0_1.png> <./figs/pixelcnn_0_2.png> <./
-figs/pixelcnn2.png>] [32
+figs/pixelcnn2.png>] [33
 
 ]
 \tf@nav=\write7
@@ -1562,13 +1548,13 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.83pt have occurred.
 
 Package rerunfilecheck Info: File `Lecture1.out' has not changed.
-(rerunfilecheck)             Checksum: 30F939832E45D546C579D3D64B2BC132;690.
+(rerunfilecheck)             Checksum: 36EA49C97F4D2457FBF27FEDE460D0A6;801.
  ) 
 Here is how much of TeX's memory you used:
- 29156 strings out of 474116
- 595911 string characters out of 5743682
+ 29154 strings out of 474116
+ 595746 string characters out of 5743682
  1941187 words of memory out of 5000000
- 50804 multiletter control sequences out of 15000+600000
+ 50797 multiletter control sequences out of 15000+600000
  581233 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,16n,126p,436b,1328s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1591,10 +1577,10 @@ usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on Lecture1.pdf (32 pages, 34214040 bytes).
+Output written on Lecture1.pdf (33 pages, 34148502 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 269 words of extra memory for PDF output out of 10000 (max. 10000000)
 

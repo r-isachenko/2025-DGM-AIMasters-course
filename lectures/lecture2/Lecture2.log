@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  16 NOV 2024 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  13 JAN 2025 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,9 +1278,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <35> not available
 (Font)              size <35.83> substituted on input line 13.
 
+<../utils/aimasterslogo.png, id=57, 770.88pt x 768.8725pt>
+File: ../utils/aimasterslogo.png Graphic file (type png)
+<use ../utils/aimasterslogo.png>
+Package pdftex.def Info: ../utils/aimasterslogo.png  used on input line 13.
+(pdftex.def)             Requested size: 19.91684pt x 19.86232pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../util
+s/aimasterslogo.png>]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 
@@ -1323,17 +1329,17 @@ Overfull \vbox (4.45824pt too high) detected at line 38
 ] [4
 
 ]
-<figs/sequential_MLP.png, id=94, 681.54625pt x 250.9375pt>
+<figs/sequential_MLP.png, id=97, 681.54625pt x 250.9375pt>
 File: figs/sequential_MLP.png Graphic file (type png)
 <use figs/sequential_MLP.png>
 Package pdftex.def Info: figs/sequential_MLP.png  used on input line 114.
 (pdftex.def)             Requested size: 184.3758pt x 67.8842pt.
-<figs/pixelcnn1.png, id=96, 210.7875pt x 208.78pt>
+<figs/pixelcnn1.png, id=98, 210.7875pt x 208.78pt>
 File: figs/pixelcnn1.png Graphic file (type png)
 <use figs/pixelcnn1.png>
 Package pdftex.def Info: figs/pixelcnn1.png  used on input line 114.
 (pdftex.def)             Requested size: 92.18788pt x 91.31233pt.
-<figs/pixelcnn_0_2.png, id=97, 189.70876pt x 283.0575pt>
+<figs/pixelcnn_0_2.png, id=99, 189.70876pt x 283.0575pt>
 File: figs/pixelcnn_0_2.png Graphic file (type png)
 <use figs/pixelcnn_0_2.png>
 Package pdftex.def Info: figs/pixelcnn_0_2.png  used on input line 114.
@@ -1360,7 +1366,7 @@ Overfull \hbox (3.87845pt too wide) detected at line 193
 [9
 
 ]
-<figs/jacobian_det.png, id=143, 436.63126pt x 545.03625pt>
+<figs/jacobian_det.png, id=145, 436.63126pt x 545.03625pt>
 File: figs/jacobian_det.png Graphic file (type png)
 <use figs/jacobian_det.png>
 Package pdftex.def Info: figs/jacobian_det.png  used on input line 219.
@@ -1368,7 +1374,7 @@ Package pdftex.def Info: figs/jacobian_det.png  used on input line 219.
  [10
 
  <./figs/jacobian_det.png>]
-<figs/flows_how2.png, id=153, 1023.825pt x 538.01pt>
+<figs/flows_how2.png, id=155, 1023.825pt x 538.01pt>
 File: figs/flows_how2.png Graphic file (type png)
 <use figs/flows_how2.png>
 Package pdftex.def Info: figs/flows_how2.png  used on input line 236.
@@ -1380,7 +1386,7 @@ Overfull \vbox (1.0378pt too high) detected at line 236
 [11
 
  <./figs/flows_how2.png>]
-<figs/normalizing-flow.png, id=161, 1473.505pt x 443.6575pt>
+<figs/normalizing-flow.png, id=163, 1473.505pt x 443.6575pt>
 File: figs/normalizing-flow.png Graphic file (type png)
 <use figs/normalizing-flow.png>
 Package pdftex.def Info: figs/normalizing-flow.png  used on input line 256.
@@ -1396,7 +1402,7 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
  <./figs/normalizing-flow.png>] [13
 
 ]
-<figs/flow_4_steps_example.png, id=182, 1667.22874pt x 317.185pt>
+<figs/flow_4_steps_example.png, id=184, 1667.22874pt x 317.185pt>
 File: figs/flow_4_steps_example.png Graphic file (type png)
 <use figs/flow_4_steps_example.png>
 Package pdftex.def Info: figs/flow_4_steps_example.png  used on input line 309.
@@ -1444,12 +1450,12 @@ ML/cmm/m/it/10 ; []\OT1/cmss/m/n/10 ) = \OMS/cmsy/m/n/10 N [] \OML/cmm/m/it/10
 ] [22
 
 ]
-<figs/af_iaf_explained_2.png, id=258, 401.5pt x 274.02374pt>
+<figs/af_iaf_explained_2.png, id=260, 401.5pt x 274.02374pt>
 File: figs/af_iaf_explained_2.png Graphic file (type png)
 <use figs/af_iaf_explained_2.png>
 Package pdftex.def Info: figs/af_iaf_explained_2.png  used on input line 484.
 (pdftex.def)             Requested size: 96.79733pt x 66.0639pt.
-<figs/af_iaf_explained_1.png, id=259, 401.5pt x 270.00874pt>
+<figs/af_iaf_explained_1.png, id=261, 401.5pt x 270.00874pt>
 File: figs/af_iaf_explained_1.png Graphic file (type png)
 <use figs/af_iaf_explained_1.png>
 Package pdftex.def Info: figs/af_iaf_explained_1.png  used on input line 484.
@@ -1460,7 +1466,7 @@ Package pdftex.def Info: figs/af_iaf_explained_1.png  used on input line 484.
 (./Lecture2.toc) [24
 
 ]
-<figs/realnvp_masking.png, id=277, 616.3025pt x 282.05376pt>
+<figs/realnvp_masking.png, id=279, 616.3025pt x 282.05376pt>
 File: figs/realnvp_masking.png Graphic file (type png)
 <use figs/realnvp_masking.png>
 Package pdftex.def Info: figs/realnvp_masking.png  used on input line 520.
@@ -1470,7 +1476,7 @@ Package pdftex.def Info: figs/realnvp_masking.png  used on input line 520.
  <./figs/realnvp_masking.png>] [26
 
 ]
-<figs/glow_faces.png, id=292, 1222.5675pt x 820.06375pt>
+<figs/glow_faces.png, id=294, 1222.5675pt x 820.06375pt>
 File: figs/glow_faces.png Graphic file (type png)
 <use figs/glow_faces.png>
 Package pdftex.def Info: figs/glow_faces.png  used on input line 562.
@@ -1503,11 +1509,11 @@ Package rerunfilecheck Info: File `Lecture2.out' has not changed.
 (rerunfilecheck)             Checksum: A3663F868DCF138013AEE37098D62FB3;834.
  ) 
 Here is how much of TeX's memory you used:
- 29096 strings out of 474116
- 594743 string characters out of 5743682
- 1944187 words of memory out of 5000000
- 50740 multiletter control sequences out of 15000+600000
- 587142 words of font info for 130 fonts, out of 8000000 for 9000
+ 29108 strings out of 474116
+ 595111 string characters out of 5743682
+ 1943187 words of memory out of 5000000
+ 50752 multiletter control sequences out of 15000+600000
+ 587448 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,17n,126p,436b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -1538,10 +1544,10 @@ local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on Lecture2.pdf (28 pages, 3297521 bytes).
+Output written on Lecture2.pdf (28 pages, 3383508 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
+ 441 PDF objects out of 1000 (max. 8388607)
  305 compressed objects within 4 object streams
  62 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

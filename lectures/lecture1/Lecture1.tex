@@ -126,63 +126,78 @@
 		\myfootnotewithlink{https://openai.com/index/sora}{image credit: https://openai.com/index/sora}
 \end{frame}
 %=======
-\section{Problem statement}
+\section{Course tricks}
 %=======
 \begin{frame}{Course tricks 1}
-	Let $\bx \in \bbR^m$ be a random variable with a density $p(\bx)$.
-	\begin{block}{Law of the unconscious statistician (LOTUS)}
-		Let $\by=\bff(\bx)$ with density $p(\by)$. Then
+	\begin{block}{Log-derivative trick}
+		Let $f: \bbR^m \rightarrow \bbR$ be a differentiable function
 		\[
-			\bbE_{p(\by)} \bg(\by) = \int p(\by) \bg(\by) d \by = \int p(\bx) \bg(\bff(\bx)) d \bx = \bbE_{p(\bx)} \bg(\bff(\bx)).
+			\nabla \log f(\bx) = \frac{1}{f(\bx)} \cdot \nabla f(\bx).
 		\]
-		\vspace{-0.4cm}
+		\vspace{-0.7cm}
+	\end{block}
+	\begin{block}{Jensen's Inequality}
+		Let $f: \bbR^m \rightarrow \bbR$ be a convex function. Then
+		\[
+			\bbE [f(\bx)] \geq f(\bbE[\bx]).
+		\]
+		\vspace{-0.7cm}
 	\end{block}
 	\begin{block}{Monte-Carlo estimation}
-		Expected value could be estimated using only the samples:
+		Let $\bx \in \bbR^m$ be a continuous random variable with a density $p(\bx)$ and let $\bff: \bbR^m \rightarrow \bbR^d$ be a vector function. Then 
 		\[
 			\bbE_{p(\bx)} \bff(\bx) = \int p(\bx) \bff(\bx) d \bx \approx \frac{1}{n} \sum_{i=1}^n \bff(\bx_i), \quad 
 			\text{where } \bx_i \sim p(\bx).
 		\]
 		\vspace{-0.4cm}
 	\end{block}
-	\begin{block}{Jensen's Inequality}
-		Assume $f(\cdot)$ is a convex function. Then
+\end{frame}
+%=======
+\begin{frame}{Course tricks 2}
+	\begin{block}{Change of variable theorem (CoV)}
+		Let $\bx$ be a continuous random variable with a density $p(\bx)$ and $\bff: \bbR^m \rightarrow \bbR^m$ is a differentiable, \textbf{invertible} function. If $\by = \bff(\bx)$, then
 		\[
-			\bbE [f(\bx)] \geq f(\bbE[\bx]).
+			p(\by) = p(\bx) \left|\det \left(  \frac{\partial \bx}{\partial \by} \right) \right| = p(\bff^{-1}(\by)) \left|\det \left(  \frac{\partial \bff^{-1}(\by)}{\partial \by} \right) \right|.
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{Proof (1d)}
+		Assume $f$ is a monotonically increasing function
+		\[
+			F_Y(y) = P(Y \leq y) = P(x \leq f^{-1}(y)) = F_X(f^{-1}(y))
+		\]
+		\[
+			p(y) = \frac{dF_Y(y)}{dy} = \frac{dF_X(f^{-1}(y))}{dy} = \frac{dF_X(x)}{dx} \frac{df^{-1}(y)}{dy} =  p(x) \frac{df^{-1}(y)}{dy}
 		\]
 	\end{block}
 \end{frame}
 %=======
-\begin{frame}{Course tricks 2}
-	Let $\bx \in \bbR^m$ be a random variable with a density $p(\bx)$.
-	\begin{block}{Decomposition to conditionals}
-	\vspace{-0.5cm}
-	\[
-		p(\bx) = p(x_1) \cdot p(x_2 | x_1) \cdot p(x_3 | x_2, x_1) \cdot \dots \cdot p(x_m|x_{m-1},\dots,x_1).
-	\]
-	\vspace{-0.4cm}
-	\end{block}
-	\begin{block}{Log-derivative trick}
+\begin{frame}{Course tricks 3}
+	\begin{block}{Law of the unconscious statistician (LOTUS)}
+		Let $\bx \in \bbR^m$ be a continuous random variable with a density $p(\bx)$ and let $\bff: \bbR^m \rightarrow \bbR^m$ be a measurable function. If $\by=\bff(\bx)$ then
 		\[
-			\nabla \log f(\bx) = \frac{1}{f(\bx)} \cdot \nabla f(\bx).
+			\bbE_{p(\by)} \bg(\by) = \int p(\by) \bg(\by) d \by = \int p(\bx) \bg(\bff(\bx)) d \bx = \bbE_{p(\bx)} \bg(\bff(\bx)).
 		\]
 		\vspace{-0.4cm}
 	\end{block}
-		
 	\begin{block}{Dirac delta function}
-		\vspace{-0.5cm}
+		We could treat any deterministic variable $\bx_0$ as a random variable with density $p(\bx) = \delta(\bx - \bx_0)$. 
+		\vspace{-0.3cm}
 		\[
 			\delta(\bx) = 
 			\begin{cases}
 				+\infty, \quad \bx = 0; \\
 				0, \quad \bx \neq 0;
 			\end{cases} \, 
-			\int \delta(\bx) d\bx = 1; \,\, 
-			\int \delta (\bx - \bx_0) \bff(\bx) dx = \bff(\bx_0).
+			\int \delta(\bx) d\bx = 1.
 		\]
-		We could treat any deterministic variable $\bx_0$ as a random variable with density $p(\bx) = \delta(\bx - \bx_0)$.
+		\[
+			\bbE_p(\bx) \bff(\bx) = \int \delta (\bx - \bx_0) \bff(\bx) dx = \bff(\bx_0).
+		\]
 	\end{block}
 \end{frame}
+%=======
+\section{Problem statement}
 %=======
 \begin{frame}{Problem statement}
 	We are given i.i.d. samples $\{\bx_i\}_{i=1}^n \in \bbR^m$ from \textbf{unknown} distribution $\pi(\bx)$.
@@ -245,8 +260,10 @@
 \section{Divergence minimization framework}
 %=======
 \begin{frame}{Divergences}
-	Fix probabilistic model $p(\bx | \btheta)$~-- the set of parameterized distributions. \\
-	Instead of searching true $\pi(\bx)$ over all probability distributions, learn function approximation $p(\bx | \btheta) \approx \pi(\bx)$.
+	\begin{itemize}
+	\item Fix probabilistic model $p(\bx | \btheta)$~-- the set of parameterized distributions. \\
+	\item Instead of searching true $\pi(\bx)$ over all probability distributions, learn function approximation $p(\bx | \btheta) \approx \pi(\bx)$.
+	\end{itemize}
 	\begin{block}{What is a divergence?}
 		Let $\cP$ be the set of all possible probability distributions. Then $D: \cP \times \cP \rightarrow \bbR$ is a divergence if 
 		\begin{itemize}
@@ -261,22 +278,6 @@
 		\]
 		where $\pi(\bx)$ is a true data distribution, $p(\bx | \btheta)$ is a model distribution.
 	\end{block}
-\end{frame}
-%=======
-\begin{frame}{f-divergence family}
-	
-	\begin{block}{f-divergence}
-		\vspace{-0.3cm}
-		\[
-		D_f(\pi || p) = \bbE_{p(\bx)}  f\left( \frac{\pi(\bx)}{p(\bx)} \right)  = \int p(\bx) f\left( \frac{\pi(\bx)}{p(\bx)} \right) d \bx.
-		\]
-		Here $f: \bbR_+ \rightarrow \bbR$ is a convex, lower semicontinuous function satisfying $f(1) = 0$.
-	\end{block}
-	\begin{figure}
-		\centering
-		\includegraphics[width=\linewidth]{figs/f_divs}
-	\end{figure}
-	\myfootnotewithlink{https://arxiv.org/abs/1606.00709}{Nowozin S., Cseke B., Tomioka R. f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization, 2016}
 \end{frame}
 %=======
 \begin{frame}{Forward KL vs Reverse KL}
@@ -350,12 +351,12 @@
 		
 		% The second level, relatively positioned nodes
 		\begin{scope}[every node/.style={level 5}]
-			\node [below of = c11, yshift=-5pt, xshift=10pt] (c111) {\textbf{Autoregressive models}};
+			\node [below of = c11, yshift=-5pt, xshift=10pt] (c111) {Autoregressive models};
 		\end{scope}
 		
 		% The second level, relatively positioned nodes
 		\begin{scope}[every node/.style={level 4}]
-			\node [below of = c111] (c112) {Flow models};
+			\node [below of = c111, yshift=-5pt] (c112) {Normalizing Flows};
 			
 			\node [below of = c12, xshift=10pt] (c121) {VAEs};
 			\node [below of = c121] (c122) {Diffusion models};

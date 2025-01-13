@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  3 OCT 2024 08:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  13 JAN 2025 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,9 +1278,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <35> not available
 (Font)              size <35.83> substituted on input line 9.
 
+<../utils/aimasterslogo.png, id=57, 770.88pt x 768.8725pt>
+File: ../utils/aimasterslogo.png Graphic file (type png)
+<use ../utils/aimasterslogo.png>
+Package pdftex.def Info: ../utils/aimasterslogo.png  used on input line 9.
+(pdftex.def)             Requested size: 19.91684pt x 19.86232pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../util
+s/aimasterslogo.png>]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
 
 
@@ -1373,7 +1379,7 @@ Overfull \vbox (8.53114pt too high) detected at line 173
 [10
 
 ]
-<figs/em_bishop4.png, id=147, 758.835pt x 325.215pt>
+<figs/em_bishop4.png, id=150, 758.835pt x 325.215pt>
 File: figs/em_bishop4.png Graphic file (type png)
 <use figs/em_bishop4.png>
 Package pdftex.def Info: figs/em_bishop4.png  used on input line 191.
@@ -1442,12 +1448,12 @@ Overfull \hbox (6.77243pt too wide) in paragraph at lines 365--365
 ] [20
 
 ]
-<figs/VAE.png, id=212, 782.925pt x 691.58376pt>
+<figs/VAE.png, id=214, 782.925pt x 691.58376pt>
 File: figs/VAE.png Graphic file (type png)
 <use figs/VAE.png>
 Package pdftex.def Info: figs/VAE.png  used on input line 410.
 (pdftex.def)             Requested size: 184.3758pt x 162.85988pt.
-<figs/vae_scheme.png, id=213, 598.235pt x 749.80125pt>
+<figs/vae_scheme.png, id=215, 598.235pt x 749.80125pt>
 File: figs/vae_scheme.png Graphic file (type png)
 <use figs/vae_scheme.png>
 Package pdftex.def Info: figs/vae_scheme.png  used on input line 410.
@@ -1455,12 +1461,12 @@ Package pdftex.def Info: figs/vae_scheme.png  used on input line 410.
  [21
 
  <./figs/VAE.png> <./figs/vae_scheme.png>]
-<figs/vae-encoder.png, id=223, 816.04875pt x 170.6375pt>
+<figs/vae-encoder.png, id=225, 816.04875pt x 170.6375pt>
 File: figs/vae-encoder.png Graphic file (type png)
 <use figs/vae-encoder.png>
 Package pdftex.def Info: figs/vae-encoder.png  used on input line 427.
 (pdftex.def)             Requested size: 215.10196pt x 44.97656pt.
-<figs/vae-decoder.png, id=224, 946.53625pt x 201.75375pt>
+<figs/vae-decoder.png, id=226, 946.53625pt x 201.75375pt>
 File: figs/vae-decoder.png Graphic file (type png)
 <use figs/vae-decoder.png>
 Package pdftex.def Info: figs/vae-decoder.png  used on input line 427.
@@ -1520,11 +1526,11 @@ Package rerunfilecheck Info: File `Lecture4.out' has not changed.
 (rerunfilecheck)             Checksum: 3BABCD20267FAC568268FA82DCFA15C0;947.
  ) 
 Here is how much of TeX's memory you used:
- 29024 strings out of 474116
- 592591 string characters out of 5743682
+ 29036 strings out of 474116
+ 592959 string characters out of 5743682
  1941187 words of memory out of 5000000
- 50674 multiletter control sequences out of 15000+600000
- 587821 words of font info for 131 fonts, out of 8000000 for 9000
+ 50686 multiletter control sequences out of 15000+600000
+ 588127 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,18n,126p,436b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -1545,10 +1551,10 @@ local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/lo
 cal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
 r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 
-Output written on Lecture4.pdf (28 pages, 1126974 bytes).
+Output written on Lecture4.pdf (28 pages, 1212998 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
+ 363 PDF objects out of 1000 (max. 8388607)
  261 compressed objects within 3 object streams
  62 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

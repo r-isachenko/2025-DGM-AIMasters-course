@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  11 DEC 2024 19:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.3.23)  13 JAN 2025 21:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1278,10 +1278,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <35> not available
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <35> not available
 (Font)              size <35.83> substituted on input line 13.
 
+<../utils/aimasterslogo.png, id=69, 770.88pt x 768.8725pt>
+File: ../utils/aimasterslogo.png Graphic file (type png)
+<use ../utils/aimasterslogo.png>
+Package pdftex.def Info: ../utils/aimasterslogo.png  used on input line 13.
+(pdftex.def)             Requested size: 19.91684pt x 19.86232pt.
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./Lecture14.toc) [2
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../util
+s/aimasterslogo.png>] (./Lecture14.toc) [2
 
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
@@ -1318,7 +1323,7 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
  [3
 
 ]
-<figs/sbgm.png, id=119, 1012.78375pt x 442.65375pt>
+<figs/sbgm.png, id=122, 1012.78375pt x 442.65375pt>
 File: figs/sbgm.png Graphic file (type png)
 <use figs/sbgm.png>
 Package pdftex.def Info: figs/sbgm.png  used on input line 66.
@@ -1336,7 +1341,7 @@ Overfull \hbox (3.51091pt too wide) detected at line 90
 ] [6
 
 ]
-<figs/multiple_dynamics.png, id=143, 1164.35pt x 391.4625pt>
+<figs/multiple_dynamics.png, id=145, 1164.35pt x 391.4625pt>
 File: figs/multiple_dynamics.png Graphic file (type png)
 <use figs/multiple_dynamics.png>
 Package pdftex.def Info: figs/multiple_dynamics.png  used on input line 145.
@@ -1344,7 +1349,7 @@ Package pdftex.def Info: figs/multiple_dynamics.png  used on input line 145.
  [7
 
  <./figs/multiple_dynamics.png>]
-<figs/cfm_uncond_to_cond.png, id=153, 559.08875pt x 246.9225pt>
+<figs/cfm_uncond_to_cond.png, id=155, 559.08875pt x 246.9225pt>
 File: figs/cfm_uncond_to_cond.png Graphic file (type png)
 <use figs/cfm_uncond_to_cond.png>
 Package pdftex.def Info: figs/cfm_uncond_to_cond.png  used on input line 174.
@@ -1363,7 +1368,7 @@ Overfull \hbox (20.05905pt too wide) detected at line 209
 [9
 
 ]
-<figs/conical_paths.png, id=168, 491.8375pt x 145.54375pt>
+<figs/conical_paths.png, id=170, 491.8375pt x 145.54375pt>
 File: figs/conical_paths.png Graphic file (type png)
 <use figs/conical_paths.png>
 Package pdftex.def Info: figs/conical_paths.png  used on input line 241.
@@ -1392,13 +1397,13 @@ Overfull \vbox (14.2515pt too high) detected at line 302
 [14
 
 ]
-<figs/g2g-vector-field-samples-cond.png, id=214, 602.25pt x 401.5pt>
+<figs/g2g-vector-field-samples-cond.png, id=216, 602.25pt x 401.5pt>
 File: figs/g2g-vector-field-samples-cond.png Graphic file (type png)
 <use figs/g2g-vector-field-samples-cond.png>
 Package pdftex.def Info: figs/g2g-vector-field-samples-cond.png  used on input 
 line 326.
 (pdftex.def)             Requested size: 153.64493pt x 102.42708pt.
-<figs/g2g-forward_samples.png, id=215, 602.25pt x 401.5pt>
+<figs/g2g-forward_samples.png, id=217, 602.25pt x 401.5pt>
 File: figs/g2g-forward_samples.png Graphic file (type png)
 <use figs/g2g-forward_samples.png>
 Package pdftex.def Info: figs/g2g-forward_samples.png  used on input line 326.
@@ -1441,7 +1446,7 @@ Overfull \hbox (5.83553pt too wide) detected at line 392
 []  \OMS/cmsy/m/n/10.95 )  []
  []
 
-<figs/linear_paths.png, id=240, 489.83pt x 152.57pt>
+<figs/linear_paths.png, id=242, 489.83pt x 152.57pt>
 File: figs/linear_paths.png Graphic file (type png)
 <use figs/linear_paths.png>
 Package pdftex.def Info: figs/linear_paths.png  used on input line 392.
@@ -1462,7 +1467,7 @@ Overfull \hbox (23.93935pt too wide) in paragraph at lines 414--414
 [][][]  
  []
 
-<figs/compare_conditionings.png, id=248, 573.14125pt x 300.12125pt>
+<figs/compare_conditionings.png, id=250, 573.14125pt x 300.12125pt>
 File: figs/compare_conditionings.png Graphic file (type png)
 <use figs/compare_conditionings.png>
 Package pdftex.def Info: figs/compare_conditionings.png  used on input line 414
@@ -1479,7 +1484,7 @@ Overfull \vbox (9.69936pt too high) detected at line 472
 [21
 
 ]
-<figs/sd3.png, id=270, 1232.605pt x 715.67375pt>
+<figs/sd3.png, id=272, 1232.605pt x 715.67375pt>
 File: figs/sd3.png Graphic file (type png)
 <use figs/sd3.png>
 Package pdftex.def Info: figs/sd3.png  used on input line 480.
@@ -1515,12 +1520,12 @@ Overfull \vbox (5.35388pt too high) detected at line 548
 [25
 
 ]
-<figs/diff_cond_path.png, id=305, 720.6925pt x 183.68625pt>
+<figs/diff_cond_path.png, id=307, 720.6925pt x 183.68625pt>
 File: figs/diff_cond_path.png Graphic file (type png)
 <use figs/diff_cond_path.png>
 Package pdftex.def Info: figs/diff_cond_path.png  used on input line 575.
 (pdftex.def)             Requested size: 245.83282pt x 62.65428pt.
-<figs/ot_cond_path.png, id=306, 563.10374pt x 182.6825pt>
+<figs/ot_cond_path.png, id=308, 563.10374pt x 182.6825pt>
 File: figs/ot_cond_path.png Graphic file (type png)
 <use figs/ot_cond_path.png>
 Package pdftex.def Info: figs/ot_cond_path.png  used on input line 575.
@@ -1532,12 +1537,12 @@ Overfull \vbox (14.95677pt too high) detected at line 575
 [26
 
  <./figs/diff_cond_path.png> <./figs/ot_cond_path.png>]
-<figs/trajectories.png, id=316, 750.805pt x 394.47375pt>
+<figs/trajectories.png, id=318, 750.805pt x 394.47375pt>
 File: figs/trajectories.png Graphic file (type png)
 <use figs/trajectories.png>
 Package pdftex.def Info: figs/trajectories.png  used on input line 591.
 (pdftex.def)             Requested size: 184.3758pt x 96.86661pt.
-<figs/2d-generation.png, id=317, 1660.2025pt x 454.69875pt>
+<figs/2d-generation.png, id=319, 1660.2025pt x 454.69875pt>
 File: figs/2d-generation.png Graphic file (type png)
 <use figs/2d-generation.png>
 Package pdftex.def Info: figs/2d-generation.png  used on input line 591.
@@ -1550,12 +1555,12 @@ Package pdftex.def Info: figs/2d-generation.png  used on input line 591.
 [29
 
 ]
-<figs/latent_diffusion.png, id=350, 956.57375pt x 241.90375pt>
+<figs/latent_diffusion.png, id=352, 956.57375pt x 241.90375pt>
 File: figs/latent_diffusion.png Graphic file (type png)
 <use figs/latent_diffusion.png>
 Package pdftex.def Info: figs/latent_diffusion.png  used on input line 613.
 (pdftex.def)             Requested size: 307.28987pt x 77.70976pt.
-<figs/latent_flow_matching.png, id=351, 543.02875pt x 150.5625pt>
+<figs/latent_flow_matching.png, id=353, 543.02875pt x 150.5625pt>
 File: figs/latent_flow_matching.png Graphic file (type png)
 <use figs/latent_flow_matching.png>
 Package pdftex.def Info: figs/latent_flow_matching.png  used on input line 613.
@@ -1567,12 +1572,12 @@ Package pdftex.def Info: figs/latent_flow_matching.png  used on input line 613.
 (./Lecture14.toc) [31
 
 ]
-<figs/fqgan_cnn.png, id=375, 1330.9725pt x 498.86375pt>
+<figs/fqgan_cnn.png, id=377, 1330.9725pt x 498.86375pt>
 File: figs/fqgan_cnn.png Graphic file (type png)
 <use figs/fqgan_cnn.png>
 Package pdftex.def Info: figs/fqgan_cnn.png  used on input line 643.
 (pdftex.def)             Requested size: 169.01036pt x 63.33977pt.
-<figs/vqvae.png, id=376, 1389.19pt x 409.53pt>
+<figs/vqvae.png, id=378, 1389.19pt x 409.53pt>
 File: figs/vqvae.png Graphic file (type png)
 <use figs/vqvae.png>
 Package pdftex.def Info: figs/vqvae.png  used on input line 643.
@@ -1584,7 +1589,7 @@ Overfull \vbox (2.78854pt too high) detected at line 643
 [32
 
  <./figs/fqgan_cnn.png> <./figs/vqvae.png>]
-<figs/vqgan.png, id=387, 900.36375pt x 359.3425pt>
+<figs/vqgan.png, id=389, 900.36375pt x 359.3425pt>
 File: figs/vqgan.png Graphic file (type png)
 <use figs/vqgan.png>
 Package pdftex.def Info: figs/vqgan.png  used on input line 655.
@@ -1592,7 +1597,7 @@ Package pdftex.def Info: figs/vqgan.png  used on input line 655.
  [33
 
  <./figs/vqgan.png>]
-<figs/llamagen_samples.png, id=395, 1014.79124pt x 460.72125pt>
+<figs/llamagen_samples.png, id=397, 1014.79124pt x 460.72125pt>
 File: figs/llamagen_samples.png Graphic file (type png)
 <use figs/llamagen_samples.png>
 Package pdftex.def Info: figs/llamagen_samples.png  used on input line 668.
@@ -1600,12 +1605,12 @@ Package pdftex.def Info: figs/llamagen_samples.png  used on input line 668.
  [34
 
  <./figs/llamagen_samples.png>]
-<figs/var_idea.png, id=404, 1053.9375pt x 378.41376pt>
+<figs/var_idea.png, id=406, 1053.9375pt x 378.41376pt>
 File: figs/var_idea.png Graphic file (type png)
 <use figs/var_idea.png>
 Package pdftex.def Info: figs/var_idea.png  used on input line 678.
 (pdftex.def)             Requested size: 307.28987pt x 110.33191pt.
-<figs/var_training.png, id=405, 1053.9375pt x 330.23375pt>
+<figs/var_training.png, id=407, 1053.9375pt x 330.23375pt>
 File: figs/var_training.png Graphic file (type png)
 <use figs/var_training.png>
 Package pdftex.def Info: figs/var_training.png  used on input line 678.
@@ -1619,7 +1624,7 @@ Overfull \vbox (0.34312pt too high) detected at line 678
  <./figs/var_idea.png> <./figs/var_training.png>] (./Lecture14.toc) [36
 
 ]
-<figs/generative-overview.png, id=427, 1714.405pt x 1185.42876pt>
+<figs/generative-overview.png, id=429, 1714.405pt x 1185.42876pt>
 File: figs/generative-overview.png Graphic file (type png)
 <use figs/generative-overview.png>
 Package pdftex.def Info: figs/generative-overview.png  used on input line 687.
@@ -1628,12 +1633,12 @@ Package pdftex.def Info: figs/generative-overview.png  used on input line 687.
 [37
 
  <./figs/generative-overview.png>]
-<figs/trilemma.png, id=436, 713.66624pt x 643.40375pt>
+<figs/trilemma.png, id=438, 713.66624pt x 643.40375pt>
 File: figs/trilemma.png Graphic file (type png)
 <use figs/trilemma.png>
 Package pdftex.def Info: figs/trilemma.png  used on input line 699.
 (pdftex.def)             Requested size: 138.2795pt x 124.66309pt.
-<figs/gen_comp_table.png, id=437, 1216.545pt x 326.21875pt>
+<figs/gen_comp_table.png, id=439, 1216.545pt x 326.21875pt>
 File: figs/gen_comp_table.png Graphic file (type png)
 <use figs/gen_comp_table.png>
 Package pdftex.def Info: figs/gen_comp_table.png  used on input line 699.
@@ -1666,11 +1671,11 @@ Package rerunfilecheck Info: File `Lecture14.out' has not changed.
 (rerunfilecheck)             Checksum: B71578B97EDE2AE59BEA98DD12BAD37B;1423.
  ) 
 Here is how much of TeX's memory you used:
- 29172 strings out of 474116
- 597088 string characters out of 5743682
+ 29184 strings out of 474116
+ 597456 string characters out of 5743682
  1941187 words of memory out of 5000000
- 50794 multiletter control sequences out of 15000+600000
- 580927 words of font info for 109 fonts, out of 8000000 for 9000
+ 50806 multiletter control sequences out of 15000+600000
+ 581233 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  133i,16n,126p,437b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -1693,10 +1698,10 @@ sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 ocal/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></u
 sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on Lecture14.pdf (39 pages, 19222562 bytes).
+Output written on Lecture14.pdf (39 pages, 19308593 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
+ 561 PDF objects out of 1000 (max. 8388607)
  406 compressed objects within 5 object streams
  87 named destinations out of 1000 (max. 500000)
- 323 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 328 words of extra memory for PDF output out of 10000 (max. 10000000)
 
