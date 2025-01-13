@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Langevin dynamic}{8}{0}{1}
-\beamer@sectionintoc {2}{Score matching}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{Denoising score matching}{14}{0}{2}
-\beamer@subsectionintoc {2}{2}{Noise Conditioned Score Network (NCSN)}{21}{0}{2}
-\beamer@sectionintoc {3}{Forward gaussian diffusion process}{26}{0}{3}

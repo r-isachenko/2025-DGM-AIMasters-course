@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{Denoising Diffusion Probabilistic Model (DDPM)}{8}{0}{1}
-\beamer@subsectionintoc {1}{1}{Reparametrization}{9}{0}{1}
-\beamer@subsectionintoc {1}{2}{Overview}{13}{0}{1}
-\beamer@subsectionintoc {1}{3}{DDPM as score-based generative model}{18}{0}{1}
-\beamer@sectionintoc {2}{Guidance}{23}{0}{2}
-\beamer@subsectionintoc {2}{1}{Classifier guidance}{29}{0}{2}
-\beamer@subsectionintoc {2}{2}{Classifier-free guidance}{34}{0}{2}

@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Generative models overview}{4}{0}{1}
-\beamer@sectionintoc {2}{Course tricks}{13}{0}{2}
-\beamer@sectionintoc {3}{Problem statement}{17}{0}{3}
-\beamer@sectionintoc {4}{Divergence minimization framework}{21}{0}{4}
-\beamer@sectionintoc {5}{Autoregressive modelling}{25}{0}{5}

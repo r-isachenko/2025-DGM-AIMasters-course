@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{Wasserstein GAN}{8}{0}{1}
-\beamer@sectionintoc {2}{f-divergence minimization}{13}{0}{2}
-\beamer@sectionintoc {3}{Evaluation of likelihood-free models}{20}{0}{3}
-\beamer@subsectionintoc {3}{1}{Frechet Inception Distance (FID)}{23}{0}{3}
-\beamer@subsectionintoc {3}{2}{Precision-Recall}{26}{0}{3}

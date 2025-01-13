@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Forward and Reverse KL for NF}{8}{0}{1}
-\beamer@sectionintoc {2}{Latent variable models (LVM)}{13}{0}{2}
-\beamer@sectionintoc {3}{Variational lower bound (ELBO)}{19}{0}{3}
-\beamer@sectionintoc {4}{EM-algorithm}{23}{0}{4}
