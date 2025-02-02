@@ -463,55 +463,33 @@
 	 \myfootnotewithlink{https://jmtomczak.github.io/blog/20/20\_llms.html}{image credit: https://jmtomczak.github.io/blog/20/20\_llms.html}
 \end{frame}
 %=======
-\begin{frame}{Autoregressive models: PixelCNN}
-	\begin{block}{Goal}
-		Model a distribution $\pi(\bx)$ of natural images.
-	\end{block}
-	\begin{block}{Solution}
-		Autoregressive model on 2D pixels
-		\[
-		    p(\bx | \btheta) = \prod_{j=1}^{\text{width} \times \text{height}} p(x_j|\bx_{1:j-1}, \btheta).
-		\]
+\begin{frame}{Autoregressive models for images}
+	How to model the distribution $\pi(\bx)$ of natural images?
+	\[
+  		p(\bx | \btheta) = \prod_{j=1}^{\text{width} \times \text{height}} p(x_j|\bx_{1:j-1}, \btheta).
+	\]
+	\begin{minipage}[t]{0.5\columnwidth}
+		\vspace{0.5cm}
 		\begin{itemize}
-			\item We need to introduce the ordering of image pixels.
-		    \item The convolution should be \textbf{masked} to make them causal.
+			\item We need to introduce the order of image pixels. Raster ordering is the most straightforward way to do this.
 		    \item The image has RGB channels, these dependencies could be addressed.
 		\end{itemize}
-	\end{block}
+	\end{minipage}%
+	\begin{minipage}[t]{0.5\columnwidth}
+		\begin{figure}
+			\centering
+   			\includegraphics[width=0.9\linewidth]{figs/pixelcnn1.png}
+		\end{figure}
+	\end{minipage}
 	\myfootnotewithlink{https://arxiv.org/abs/1601.06759}{Oord A., Kalchbrenner N., Kavukcuoglu K. Pixel recurrent neural networks, 2016}
 \end{frame}
 %=======
-\begin{frame}{Autoregressive models: PixelCNN}
-	\vspace{-0.2cm}
-	\begin{minipage}[t]{0.5\columnwidth}
-		\begin{block}{Raster ordering}
-			\begin{figure}
-				\centering
-		        \includegraphics[width=0.7\linewidth]{figs/pixelcnn1.png}
-			\end{figure}
-		\end{block}
-		\vspace{-0.5cm}
-		\begin{block}{Mask for the convolution kernel}
-			\begin{figure}
-				\centering
-		        \includegraphics[width=0.35\linewidth]{figs/pixelcnn_0_1.png}
-			\end{figure}
-		\end{block}
-	\end{minipage}%
-	\begin{minipage}[t]{0.5\columnwidth}
-		\begin{block}{Dependencies between pixels}
-			\begin{figure}
-				\centering
-		        \includegraphics[width=0.5\linewidth]{figs/pixelcnn_0_2.png}
-			\end{figure}
-			\vspace{-0.3cm}
-			\begin{figure}
-				\centering
-		        \includegraphics[width=0.65\linewidth]{figs/pixelcnn2.png}
-			\end{figure}
-		\end{block}
-	\end{minipage}
-	\myfootnotewithlink{https://arxiv.org/abs/1601.06759}{Oord A., Kalchbrenner N., Kavukcuoglu K. Pixel recurrent neural networks, 2016}
+\begin{frame}{Autoregressive models: ImageGPT}
+	\begin{figure}
+		\centering
+  			\includegraphics[width=0.65\linewidth]{figs/imagegpt.png}
+	\end{figure}
+	\myfootnotewithlink{https://cdn.openai.com/papers/Generative_Pretraining_from_Pixels_V2.pdf}{Chen M. et al. Generative Pretraining from Pixels, 2020}
 \end{frame}
 %=======
 \begin{frame}{Summary}
@@ -528,7 +506,7 @@
         \vfill
         \item To estimate density you need to multiply all conditionals $p(x_j | \bx_{1:j - 1}, \btheta)$.
         \vfill
-     	\item PixelCNN model use masked causal convolutions (1D or 2D) to get autoregressive model.
+     	\item ImageGPT uses raster pixel ordering to flatten image and to apply the transformer model to it.
     \end{itemize}
 \end{frame}
 
