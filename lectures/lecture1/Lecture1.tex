@@ -134,10 +134,10 @@
 		\[
 			\nabla \log f(\bx) = \frac{1}{f(\bx)} \cdot \nabla f(\bx).
 		\]
-		\vspace{-0.7cm}
+		\vspace{-0.5cm}
 	\end{block}
 	\begin{block}{Jensen's Inequality}
-		Let $f: \bbR^m \rightarrow \bbR$ be a convex function. Then
+		Let $\bx \in \bbR^m$ be a continuous random variable with a density $p(\bx)$ and $f: \bbR^m \rightarrow \bbR$ be a convex function. Then
 		\[
 			\bbE [f(\bx)] \geq f(\bbE[\bx]).
 		\]
@@ -219,7 +219,7 @@
 	\begin{minipage}[t]{0.6\columnwidth}
 	    Let $x \sim \text{Categorical}(\bpi)$. The histogram is totally defined by
 		\[
-		    \pi_k = \pi(x = k) = \frac{\sum_{i=1}^n [x_i = k]}{n}.
+		    \hat{\pi}_k = \hat{\pi}(x = k) = \frac{\sum_{i=1}^n [x_i = k]}{n}.
 		\]
 		\textbf{Problem:} curse of dimensionality (number of bins grows exponentially). \\
 		\end{minipage}%
