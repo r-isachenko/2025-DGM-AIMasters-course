@@ -69,10 +69,10 @@ The course is accompanied by practical tasks that allow you to understand the pr
 -->
 
 ## Game rules
-- 6 homeworks each of 13 points = **78 points**
-- oral cozy exam = **26 points**
-- maximum points: 78 + 26 = **104 points**
-### Final grade: `floor(relu(#points/8 - 2))`
+- 6 homeworks each of 15 points = **90 points**
+- oral cozy exam = **30 points**
+- maximum points: 90 + 30 = **120 points**
+### Final grade: `min(floor(#points/10), 10)`
 
 ## Prerequisities
 - probability theory + statistics
