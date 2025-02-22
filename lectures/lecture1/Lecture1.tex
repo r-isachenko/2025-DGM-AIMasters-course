@@ -192,7 +192,7 @@
 			\int \delta(\bx) d\bx = 1.
 		\]
 		\[
-			\bbE_p(\bx) \bff(\bx) = \int \delta (\bx - \bx_0) \bff(\bx) dx = \bff(\bx_0).
+			\bbE_{p(\bx)}\bff(\bx) = \int \delta (\bx - \bx_0) \bff(\bx) dx = \bff(\bx_0).
 		\]
 	\end{block}
 \end{frame}
@@ -397,7 +397,7 @@
     \end{block}
     \vspace{-0.5cm}
 	 \[
-	     \btheta^* =  \argmax_{\btheta} \sum_{i=1}^n \left[{\color{violet} \sum_{j=1}^m \log p(x_{ij} | \bx_{i, 1:j - 1}\btheta)}\right]
+	     \btheta^* =  \argmax_{\btheta} \sum_{i=1}^n \left[{\color{violet} \sum_{j=1}^m \log p(x_{ij} | \bx_{i, 1:j - 1}, \btheta)}\right]
 	 \]
 \end{frame}
 %=======
