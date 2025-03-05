@@ -29,9 +29,11 @@ The course is accompanied by practical tasks that allow you to understand the pr
 |  |  | <b>Seminar 1:</b> Introduction. Maximum likelihood estimation. Histograms. Bayes theorem. PixelCNN. VAR. | [slides](seminars/seminar1/) |
 | 2 | February, 27 | <b>Lecture 2:</b> Normalizing Flow (NF) intuition and definition. Linear NF. Gaussian autoregressive NF. Coupling layer (RealNVP). | [slides](lectures/lecture2/Lecture2.pdf) |
 |  |  | <b>Seminar 2:</b> Planar and Radial Flows. Forward vs Reverse KL. | [slides](seminars/seminar2/seminar2.ipynb) |
+
+| 3 | March, 6 | <b>Lecture 3:</b> Forward and reverse KL divergence for NF. Latent variable models (LVM). Variational lower bound (ELBO). EM-algorithm. | [slides](lectures/lecture3/Lecture3.pdf) |
+|  |  | <b>Seminar 3:</b> Forward vs Reverse KL. RealNVP | [slides](seminars/seminar3/) |
+
 <!---
-| 3 | September, 24 | <b>Lecture 3:</b> Forward and reverse KL divergence for NF. Latent variable models (LVM). Variational lower bound (ELBO). EM-algorithm. | [slides](lectures/lecture3/Lecture3.pdf) |
-|  |  | <b>Seminar 3:</b> Forward vs Reverse KL. RealNVP | [slides](seminars/seminar3/seminar3.ipynb) |
 | 4 | October, 1 | <b>Lecture 4:</b> Amortized inference, ELBO gradients, reparametrization trick. Variational Autoencoder (VAE). NF as VAE model. Discrete VAE latent representations. | [slides](lectures/lecture4/Lecture4.pdf) |
 |  |  | <b>Seminar 4:</b> Gaussian Mixture Model (GMM). GMM and MLE. ELBO and EM-algorithm. GMM via EM-algorithm. Variational EM algorithm for GMM. | [slides](seminars/seminar4/seminar4.ipynb) |
 | 5 | October, 8 | <b>Lecture 5:</b> Vector quantization, straight-through gradient estimation (VQ-VAE). Gumbel-softmax trick (DALL-E). ELBO surgery and optimal VAE prior. Learnable VAE prior. | [slides](lectures/lecture5/Lecture5.pdf) |
