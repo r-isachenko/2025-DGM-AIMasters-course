@@ -32,7 +32,7 @@ The course is accompanied by practical tasks that allow you to understand the pr
 | 3 | March, 6 | <b>Lecture 3:</b> Forward and reverse KL divergence for NF. Latent variable models (LVM). Variational lower bound (ELBO). EM-algorithm. | [slides](lectures/lecture3/Lecture3.pdf) |
 |  |  | <b>Seminar 3:</b> Forward vs Reverse KL. RealNVP | [slides](seminars/seminar3/) |
 | 4 | March, 13 | <b>Lecture 4:</b> Amortized inference, ELBO gradients, reparametrization trick. Variational Autoencoder (VAE). NF as VAE model. Discrete VAE latent representations. | [slides](lectures/lecture4/Lecture4.pdf) |
-|  |  | <b>Seminar 4:</b> Gaussian Mixture Model (GMM). GMM and MLE. ELBO and EM-algorithm. GMM via EM-algorithm. Variational EM algorithm for GMM. | [slides](seminars/seminar4/seminar4) |
+|  |  | <b>Seminar 4:</b> Gaussian Mixture Model (GMM). GMM and MLE. ELBO and EM-algorithm. GMM via EM-algorithm. Variational EM algorithm for GMM. | [slides](seminars/seminar4/) |
 
 <!---
 | 5 | October, 8 | <b>Lecture 5:</b> Vector quantization, straight-through gradient estimation (VQ-VAE). Gumbel-softmax trick (DALL-E). ELBO surgery and optimal VAE prior. Learnable VAE prior. | [slides](lectures/lecture5/Lecture5.pdf) |
