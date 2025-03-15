@@ -3715,6 +3715,124 @@ where $i$ is treated as random variable:
 	\myfootnotewithlink{https://arxiv.org/abs/2004.02088}{Zhao Y. et al. Feature Quantization Improves GAN Training, 2020} 
 \end{frame}
 %=======
+\subsection{Gumbel-softmax for discrete VAE latents}
+%=======
+\begin{frame}{Discrete probabilistic VAE encoder}
+	\begin{itemize}
+		\item VQ-VAE has the deterministic variational posterior $q(c | \bx, \bphi)$ to avoid the discrete sampling and the reparametrization trick.
+		\item There is no uncertainty in the encoder output (KL term does not regularize the ELBO). 
+	\end{itemize}
+	\begin{block}{How to make the model with the probabilistic encoder?}
+		\begin{itemize}
+			\item Variational posterior $q(c | \bx, \bphi) = \text{Categorical}(\bpi_{\bphi}(\bx))$ (encoder) outputs discrete probabilities vector $\bpi_{\bphi}(\bx) = \text{Softmax}(\text{NN}_{e, \bphi}(\bx))$.
+			\item We sample $c^*$ from $q(c | \bx, \bphi)$ (reparametrization trick analogue).
+			\item We use $\be_{c^*}$ in the generative distribution $p(\bx | \be_{c^*}, \btheta)$ (decoder).
+		\end{itemize}
+	\end{block}
+	\textbf{Problem}: Reparametrization trick does not work in this case. Non-differentiable sampling operation depends on the parameters~$\bpi_{\bphi}(\bx)$.
+\end{frame}
+%=======
+\begin{frame}{Gumbel-max trick}
+	\begin{block}{Gumbel distribution}		
+		\vspace{-0.5cm}
+		\[
+			g \sim \text{Gumbel}(0, 1) \quad \Leftrightarrow \quad g = - \log (- \log u), \, u \sim \text{Uniform}[0, 1]
+		\]
+		\vspace{-0.8cm}
+	\end{block}
+	\begin{block}{Theorem}
+		Let $g_k \sim \text{Gumbel}(0, 1)$ for $k = 1, \dots, K$. Then a discrete random variable
+		\[
+			c = \argmax_k [\log {\color{violet}\pi_k} + {\color{teal}g_k}],
+		\]
+		\vspace{-0.4cm} \\
+		has a categorical distribution $c \sim \text{Categorical}(\bpi)$.
+	\end{block}
+	\begin{itemize}
+		\item We could sample from the discrete distribution using Gumbel-max reparametrization.
+		\item Here {\color{violet}parameters} and {\color{teal}random variable sampling} are separated (reparametrization trick). We could apply LOTUS trick.
+	\end{itemize}
+
+	\myfootnote{
+	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
+	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
+	}
+\end{frame}
+%=======
+\begin{frame}{Gumbel-softmax trick}
+	\begin{block}{Reparametrization trick (LOTUS)}
+		\vspace{-0.7cm}
+		\[
+			\nabla_{\bphi} \mathbb{E}_{q(c | \bx, \bphi)} \log p(\bx | \be_{c} , \btheta) = \bbE_{\text{Gumbel}(0, 1)} \nabla_{\bphi} \log p(\bx | \be_{k^*} , \btheta),
+		\]
+		where $k^* = \argmax_k [\log q(k | \bx, \bphi) + g_k]$.
+	\end{block}
+	\textbf{Problem:} We still have non-differentiable $\argmax$ operation.
+	
+	\begin{block}{Gumbel-softmax relaxation}
+		{\color{violet}Con}{\color{teal}crete} distribution = {\color{violet}\textbf{con}tinuous} + {\color{teal}dis\textbf{crete}}
+		\[
+			\hat{\bc} = \text{Softmax}\left(\frac{\log q(\bc | \bx, \bphi) + \bg}{\color{olive}\tau}\right)
+		\]
+		\vspace{-0.4cm} \\
+		Here ${\color{olive}\tau}$ is a temperature parameter. Now we have differentiable operation, but the gradient estimator is biased now.
+ 	\end{block}
+	\myfootnote{
+	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
+	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
+	}
+\end{frame}
+%=======
+\begin{frame}{Gumbel-softmax trick}	
+	\vspace{-0.5cm}
+	\[
+		\hat{\bc} = \text{Softmax}\left(\frac{\log q(\bc | \bx, \bphi) + \bg}{\color{olive}\tau}\right)
+	\]
+	\vspace{-0.5cm}
+ 	\begin{figure}
+ 		\includegraphics[width=0.8\linewidth]{figs/gumbel_softmax}
+ 	\end{figure}
+ 	\vspace{-0.7cm}
+ 	\begin{figure}
+ 		\includegraphics[width=0.8\linewidth]{figs/simplex}
+ 	\end{figure} 
+ 	\vspace{-0.5cm}
+	\begin{block}{Reparametrization trick}
+		\vspace{-0.4cm}
+		\[
+			\nabla_{\bphi} \mathbb{E}_{q(c | \bx, \bphi)} \log p(\bx | \be_{c} , \btheta) = \bbE_{\text{Gumbel}(0, 1)} \nabla_{\bphi} \log p(\bx | \bz , \btheta),
+		\]
+		where $\bz = \sum_{k=1}^K\hat{c}_k \be_k$ (all operations are differentiable now).
+	\end{block}
+ 	\vspace{-0.2cm}
+	\myfootnote{
+	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
+	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
+	}
+\end{frame}
+%=======
+\begin{frame}{DALL-E/dVAE}
+	\begin{block}{Deterministic VQ-VAE posterior}
+		\vspace{-0.3cm}
+		\[
+			q(\hat{z}_{ij} = k^* | \bx) = \begin{cases}
+				1 , \quad \text{for } k^* = \argmin_k \| [\bz_e]_{ij} - \be_k \| \\
+				0, \quad \text{otherwise}.
+			\end{cases}
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{itemize}
+		\item Gumbel-Softmax trick allows to make true categorical distribution and sample from it.
+		\item Since latent space is discrete we could train autoregressive transformers in it.
+		\item It is a natural way to incorporate text and image token spaces.
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{figs/dalle}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/2102.1209}{Ramesh A. et al. Zero-shot text-to-image generation, 2021}
+\end{frame}
+%=======
 \section{Diffusion related topics}
 %=======
 \subsection{Implicit score matching}

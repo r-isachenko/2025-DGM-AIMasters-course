@@ -178,14 +178,12 @@
 	\tableofcontents
 \end{frame}
 %=======
-\section{Discrete VAE latent representations}
-%=======
-\subsection{Vector quantization}
+\section{Vector quantization: (discrete VAE latent representations)}
 %=======
 \begin{frame}{Vector quantization}
-	Define the dictionary space $\{\be_k\}_{k=1}^K$, where $\be_k \in \bbR^C$, $K$ is the size of the dictionary.
+	Define the dictionary space $\{\be_k\}_{k=1}^K$, where $\be_k \in \bbR^L$, $K$ is the size of the dictionary.
 	\begin{block}{Quantized representation}
-		$\bz_q \in \bbR^{C}$  for $\bz \in \bbR^C$ is defined by a nearest neighbor look-up using the  dictionary space
+		$\bz_q \in \bbR^{L}$  for $\bz \in \bbR^L$ is defined by a nearest neighbor look-up using the  dictionary space
 		\vspace{-0.3cm}
 		\[
 		\bz_q = \bq (\bz) = \be_{k^*}, \quad \text{where } k^* = \argmin_k \| \bz - \be_k \|.
@@ -211,7 +209,7 @@
 %=======
 \begin{frame}{Vector Quantized VAE (VQ-VAE)}
 	\begin{itemize}
-		\item Let our encoder outputs continuous representation $\bz_e = \text{NN}_{e, \bphi}(\bx) \in \bbR^{C}$.
+		\item Let our encoder outputs continuous representation $\bz_e = \text{NN}_{e, \bphi}(\bx) \in \bbR^{L}$.
 		\item Quantization will give us the deterministic mapping from the encoder output $\bz_e$ to its quantized representation $\bz_q$.
 		\item Let use the dictionary elements $\be_c$ in the decoder distribution~$p(\bx | \be_c, \btheta)$ (instead of $p(\bx | c, \btheta)$).
 	\end{itemize}
@@ -298,124 +296,6 @@
 		\end{figure}
 	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/1906.00446}{Razavi A., Oord A., Vinyals O. Generating Diverse High-Fidelity Images with VQ-VAE-2, 2019} 
-\end{frame}
-%=======
-\subsection{Gumbel-softmax for discrete VAE latents}
-%=======
-\begin{frame}{Discrete probabilistic VAE encoder}
-	\begin{itemize}
-		\item VQ-VAE has the deterministic variational posterior $q(c | \bx, \bphi)$ to avoid the discrete sampling and the reparametrization trick.
-		\item There is no uncertainty in the encoder output (KL term does not regularize the ELBO). 
-	\end{itemize}
-	\begin{block}{How to make the model with the probabilistic encoder?}
-		\begin{itemize}
-			\item Variational posterior $q(c | \bx, \bphi) = \text{Categorical}(\bpi_{\bphi}(\bx))$ (encoder) outputs discrete probabilities vector $\bpi_{\bphi}(\bx) = \text{Softmax}(\text{NN}_{e, \bphi}(\bx))$.
-			\item We sample $c^*$ from $q(c | \bx, \bphi)$ (reparametrization trick analogue).
-			\item We use $\be_{c^*}$ in the generative distribution $p(\bx | \be_{c^*}, \btheta)$ (decoder).
-		\end{itemize}
-	\end{block}
-	\textbf{Problem}: Reparametrization trick does not work in this case. Non-differentiable sampling operation depends on the parameters~$\bpi_{\bphi}(\bx)$.
-\end{frame}
-%=======
-\begin{frame}{Gumbel-max trick}
-	\begin{block}{Gumbel distribution}		
-		\vspace{-0.5cm}
-		\[
-			g \sim \text{Gumbel}(0, 1) \quad \Leftrightarrow \quad g = - \log (- \log u), \, u \sim \text{Uniform}[0, 1]
-		\]
-		\vspace{-0.8cm}
-	\end{block}
-	\begin{block}{Theorem}
-		Let $g_k \sim \text{Gumbel}(0, 1)$ for $k = 1, \dots, K$. Then a discrete random variable
-		\[
-			c = \argmax_k [\log {\color{violet}\pi_k} + {\color{teal}g_k}],
-		\]
-		\vspace{-0.4cm} \\
-		has a categorical distribution $c \sim \text{Categorical}(\bpi)$.
-	\end{block}
-	\begin{itemize}
-		\item We could sample from the discrete distribution using Gumbel-max reparametrization.
-		\item Here {\color{violet}parameters} and {\color{teal}random variable sampling} are separated (reparametrization trick). We could apply LOTUS trick.
-	\end{itemize}
-
-	\myfootnote{
-	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
-	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
-	}
-\end{frame}
-%=======
-\begin{frame}{Gumbel-softmax trick}
-	\begin{block}{Reparametrization trick (LOTUS)}
-		\vspace{-0.7cm}
-		\[
-			\nabla_{\bphi} \mathbb{E}_{q(c | \bx, \bphi)} \log p(\bx | \be_{c} , \btheta) = \bbE_{\text{Gumbel}(0, 1)} \nabla_{\bphi} \log p(\bx | \be_{k^*} , \btheta),
-		\]
-		where $k^* = \argmax_k [\log q(k | \bx, \bphi) + g_k]$.
-	\end{block}
-	\textbf{Problem:} We still have non-differentiable $\argmax$ operation.
-	
-	\begin{block}{Gumbel-softmax relaxation}
-		{\color{violet}Con}{\color{teal}crete} distribution = {\color{violet}\textbf{con}tinuous} + {\color{teal}dis\textbf{crete}}
-		\[
-			\hat{\bc} = \text{Softmax}\left(\frac{\log q(\bc | \bx, \bphi) + \bg}{\color{olive}\tau}\right)
-		\]
-		\vspace{-0.4cm} \\
-		Here ${\color{olive}\tau}$ is a temperature parameter. Now we have differentiable operation, but the gradient estimator is biased now.
- 	\end{block}
-	\myfootnote{
-	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
-	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
-	}
-\end{frame}
-%=======
-\begin{frame}{Gumbel-softmax trick}	
-	\vspace{-0.5cm}
-	\[
-		\hat{\bc} = \text{Softmax}\left(\frac{\log q(\bc | \bx, \bphi) + \bg}{\color{olive}\tau}\right)
-	\]
-	\vspace{-0.5cm}
- 	\begin{figure}
- 		\includegraphics[width=0.8\linewidth]{figs/gumbel_softmax}
- 	\end{figure}
- 	\vspace{-0.7cm}
- 	\begin{figure}
- 		\includegraphics[width=0.8\linewidth]{figs/simplex}
- 	\end{figure} 
- 	\vspace{-0.5cm}
-	\begin{block}{Reparametrization trick}
-		\vspace{-0.4cm}
-		\[
-			\nabla_{\bphi} \mathbb{E}_{q(c | \bx, \bphi)} \log p(\bx | \be_{c} , \btheta) = \bbE_{\text{Gumbel}(0, 1)} \nabla_{\bphi} \log p(\bx | \bz , \btheta),
-		\]
-		where $\bz = \sum_{k=1}^K\hat{c}_k \be_k$ (all operations are differentiable now).
-	\end{block}
- 	\vspace{-0.2cm}
-	\myfootnote{
-	\href{https://arxiv.org/abs/1611.00712}{Maddison C. J., Mnih A., Teh Y. W. The Concrete distribution: A continuous relaxation of discrete random variables, 2016} \\
-	\href{https://arxiv.org/abs/1611.01144}{Jang E., Gu S., Poole B. Categorical reparameterization with Gumbel-Softmax, 2016}
-	}
-\end{frame}
-%=======
-\begin{frame}{DALL-E/dVAE}
-	\begin{block}{Deterministic VQ-VAE posterior}
-		\vspace{-0.3cm}
-		\[
-			q(\hat{z}_{ij} = k^* | \bx) = \begin{cases}
-				1 , \quad \text{for } k^* = \argmin_k \| [\bz_e]_{ij} - \be_k \| \\
-				0, \quad \text{otherwise}.
-			\end{cases}
-		\]
-		\vspace{-0.3cm}
-	\end{block}
-	\begin{itemize}
-		\item Gumbel-Softmax trick allows to make true categorical distribution and sample from it.
-		\item Since latent space is discrete we could train autoregressive transformers in it.
-		\item It is a natural way to incorporate text and image token spaces.
-	\end{itemize}
-	\begin{figure}
-		\includegraphics[width=\linewidth]{figs/dalle}
-	\end{figure}
-	\myfootnotewithlink{https://arxiv.org/abs/2102.1209}{Ramesh A. et al. Zero-shot text-to-image generation, 2021}
 \end{frame}
 %=======
 \section{ELBO surgery}
@@ -565,12 +445,111 @@
 		\vspace{-0.5cm}
 		{\small
 			\begin{multline*}
-				\cL_{\bphi, \btheta}(\bx) = \mathbb{E}_{q(\bz | \bx, \bphi)} \left[ \log p(\bx | \bz, \btheta) + {\color{violet}\log p(\bz | \blambda)} - \log q(\bz | \bx, \bphi) \right] \\
+				\cL_{\bphi, \btheta}(\bx) = \mathbb{E}_{q(\bz | \bx, \bphi)} \log p(\bx | \bz , \btheta) - KL(q(\bz| \bx, \bphi) || p(\bz)) = \\ 
+				= \mathbb{E}_{q(\bz | \bx, \bphi)} \left[ \log p(\bx | \bz, \btheta) + {\color{violet}\log p(\bz | \blambda)} - \log q(\bz | \bx, \bphi) \right] \\
 				= \mathbb{E}_{q(\bz | \bx, \bphi)} \Bigl[ \log p(\bx | \bz, \btheta) + \underbrace{ \Bigl({\color{violet} \log p(\bff_{\blambda}(\bz)) + \log \left| \det (\bJ_\bff) \right|} \Bigr) }_{\text{NF-based prior}} - \log q(\bz | \bx, \bphi) \Bigr] 
 			\end{multline*}
 		}
 	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/1611.02731}{Chen X. et al. Variational Lossy Autoencoder, 2016}
+\end{frame}
+%=======
+\section{Likelihood-free learning}
+%=======
+\begin{frame}{Likelihood based models}
+	\begin{minipage}[t]{0.48\columnwidth}
+		\begin{block}{Poor likelihood \\ Great samples}
+			\vspace{-0.3cm}
+			\[
+				p_1(\bx) = \frac{1}{n} \sum_{i=1}^n \cN(\bx | \bx_i, \epsilon \bI)
+			\]
+			For small $\epsilon$ this model will generate samples with great quality, but likelihood of test sample will be very poor.
+		\end{block}
+	\end{minipage}%
+	\begin{minipage}[t]{0.52\columnwidth}
+		\begin{block}{Great likelihood \\ Poor samples}
+			\vspace{-0.3cm}
+			\[
+				p_2(\bx) = 0.01p(\bx) + 0.99p_{\text{noise}}(\bx)
+			\]
+			\begin{multline*}
+				\log \left[ 0.01p(\bx) + 0.99p_{\text{noise}}(\bx) \right] \geq  \\ \geq \log \left[ 0.01p(\bx) \right]  = \log p(\bx) - \log 100
+			\end{multline*}
+		Noisy irrelevant samples, but for high dimensions $\log p(\bx)$ becomes proportional to $m$.
+		\end{block}
+	\end{minipage}
+	\begin{itemize}
+		\item Likelihood is not a perfect quality measure for generative model.
+		\item Likelihood could be intractable.
+	\end{itemize}
+	\myfootnotewithlink{https://arxiv.org/abs/1511.01844}{Theis L., Oord A., Bethge M. A note on the evaluation of generative models, 2015}
+\end{frame}
+%=======
+\begin{frame}{Likelihood-free learning}
+	\begin{block}{Where did we start}
+	 We would like to approximate true data distribution $\pi(\bx)$.
+	Instead of searching true $\pi(\bx)$ over all probability distributions, learn function approximation $p(\bx | \btheta) \approx \pi(\bx)$.
+	\end{block}
+	Imagine we have two sets of samples 
+	\begin{itemize}
+		\item $\{\bx_i\}_{i=1}^{n_1} \sim \pi(\bx)$ -- real samples;
+		\item $\{\bx_i\}_{i=1}^{n_2} \sim p(\bx | \btheta)$ -- generated (or fake) samples.
+	\end{itemize}
+	Let define discriminative model (classifier):
+	\[
+		p(y = 1 | \bx) = P\bigl(\{\bx \sim \pi(\bx)\}\bigr); \quad p(y = 0 | \bx) = P\bigl(\{\bx \sim p(\bx | \btheta)\}\bigr)
+	\]
+	\vspace{-0.5cm}
+	\begin{block}{Assumption}
+		Generative distribution $p(\bx | \btheta)$ equals to the true distribution $\pi(\bx)$ if we can not distinguish them using discriminative model $p(y | \bx)$. \\
+		It means that $p(y = 1 | \bx) = 0.5$ for each sample $\bx$.
+	\end{block}
+
+\end{frame}
+%=======
+\begin{frame}{Generative adversarial networks (GAN)}
+	\begin{itemize}
+		\item The more powerful discriminative model we will have, the more likely we will get the "best" generative distribution $p(\bx | \btheta)$.
+		\item The most common way to learn a classifier is to minimize cross entropy loss.
+	\end{itemize}
+	\begin{block}{Cross entropy for discriminative model}
+		\vspace{-0.3cm}
+		\[
+			\min_{p(y | \bx)} \left[ - \bbE_{\pi(\bx)} \log p(y = 1 | \bx) - \bbE_{p(\bx | \btheta)} \log p(y = 0 | \bx) \right] 
+		\]
+		\[
+			\max_{p(y | \bx)} \left[\bbE_{\pi(\bx)} \log p(y = 1 | \bx) + \bbE_{p(\bx | \btheta)} \log p(y = 0 | \bx) \right] 
+		\]
+	\end{block}
+	\vspace{-0.3cm}
+	\begin{block}{Generative model}
+		Assume generative model $p(\bx, \bz | \btheta) = p (\bx | \bz, \btheta) p(\bz) $ with the base distribution $p(\bz)$ and deterministic map $p (\bx | \bz, \btheta) = \delta (\bx - \bG_{\btheta}(\bz))$.
+	\end{block}
+	
+	\myfootnotewithlink{https://arxiv.org/abs/1406.2661}{Goodfellow I. J. et al. Generative Adversarial Networks, 2014}
+\end{frame}
+%=======
+\begin{frame}{Generative adversarial networks (GAN)}
+	\begin{block}{Cross entropy for discriminative model}
+		\vspace{-0.3cm}
+		\[
+			\max_{p(y | \bx)} \left[\bbE_{\pi(\bx)} \log p(y = 1 | \bx) + \bbE_{p(\bx | \btheta)} \log p(y = 0 | \bx) \right] 
+		\]
+	\end{block}
+	\begin{itemize}
+		\item \textbf{Discriminator:} a classifier $p(y = 1 | \bx, \bphi) = D_{\bphi}(\bx) \in [0, 1]$, which distinguishes real samples from $\pi(\bx)$ and  generated samples from $p(\bx | \btheta)$. Discriminator tries to \textbf{minimize} cross entropy.
+		\item \textbf{Generator:} generative model $\bx = \bG_{\btheta}(\bz)$ with $\bz \sim p(\bz)$, which makes the generated sample more realistic. Generator tries to \textbf{maximize} cross entropy.
+	\end{itemize}
+	\begin{block}{GAN Objective}
+		\vspace{-0.5cm}
+		\[
+			\min_{G} \max_D \left[ \bbE_{\pi(\bx)} \log D(\bx) + \bbE_{p(\bx | \btheta)} \log (1 - D(\bx)) \right] 
+		\]
+		\[
+			\min_{G} \max_D \left[ \bbE_{\pi(\bx)} \log D(\bx) + \bbE_{p(\bz)} \log (1 - D(\bG(\bz))) \right]
+		\]
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/1406.2661}{Goodfellow I. J. et al. Generative Adversarial Networks, 2014}
 \end{frame}
 %=======
 \begin{frame}{Summary}
@@ -579,13 +558,15 @@
 		\vfill
 		\item Straight-through gradient ignores quantize operation in backprop.			
 		\vfill
-		\item Gumbel-softmax trick relaxes discrete problem to continuous one using Gumbel-max reparametrization trick.
-		\vfill	
 		\item The ELBO surgery reveals insights about a prior distribution in VAE. The optimal prior is the aggregated variational posterior distribution. 
 		\vfill
 		\item It is widely believed that mismatch between $p(\bz)$ and $q_{\text{agg}}(\bz | \bphi)$ is the main reason of blurry images of VAE.
 		\vfill
-		\item We could use NF-based prior in VAE (even autoregressive).
+		\item We could use NF-based prior in VAE (even autoregressive).	
+		\vfill
+		\item Likelihood is not a perfect criteria to measure quality of generative model.		
+		\vfill
+		\item Adversarial learning suggests to solve minimax problem to match the distributions.
 	\end{itemize}
 \end{frame}
 %=======

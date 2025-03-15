@@ -135,6 +135,32 @@
   	    
 \end{frame}
 %======
+\begin{frame}{Recap of previous lecture}
+	\vspace{-0.5cm}
+	\begin{multline*}
+		\cL_{q, \btheta}(\bx)  =  \mathbb{E}_{q} \log p(\bx | \bz, \btheta) - KL (q(\bz) || p(\bz)) = \\ = \bbE_q \left[ \log p(\bx | \bz, \btheta) - \log \frac{q(\bz)}{p(\bz)} \right]d\bz \rightarrow \max_{q, \btheta}.
+	\end{multline*}
+	\vspace{-0.5cm}
+	\begin{block}{EM-algorithm (block-coordinate optimization)}
+		\begin{itemize}
+			\item Initialize $\btheta^*$;
+			\item \textbf{E-step} ($\cL_{q, \btheta}(\bx) \rightarrow \max_q$)
+			\vspace{-0.2cm}
+			\begin{multline*}
+				q^*(\bz) = \argmax_q \cL_{q, \btheta^*}(\bx) = \\
+				= \argmin_q KL(q(\bz) || p(\bz | \bx, \btheta^*)) = p(\bz| \bx, \btheta^*);
+			\end{multline*}
+			\item \textbf{M-step} ($\cL_{q, \btheta}(\bx) \rightarrow \max_{\btheta}$)
+			\vspace{-0.2cm}
+			\[
+			\btheta^* = \argmax_{\btheta} \cL_{q^*, \btheta}(\bx);
+			\]
+			\vspace{-0.2cm}
+			\item Repeat E-step and M-step until convergence.
+		\end{itemize}
+	\end{block}
+\end{frame}
+%=======
 \begin{frame}{Outline}
 	\tableofcontents
 \end{frame}
