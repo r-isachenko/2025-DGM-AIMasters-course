@@ -36,7 +36,7 @@ The course is accompanied by practical tasks that allow you to understand the pr
 | 5 | March, 20 | <b>Lecture 5:</b> Vector quantization, straight-through gradient estimation (VQ-VAE). ELBO surgery and optimal VAE prior. Learnable VAE prior.  | [slides](lectures/lecture5/Lecture5.pdf) |
 |  |  | <b>Seminar 5:</b> VAE: Implementation hints. Vanilla 2D VAE coding. VAE on Binarized MNIST visualization. Posterior collapse. Beta VAE on MNIST.| [slides](seminars/seminar5/seminar5.ipynb) |
 | 6 | March, 27 | <b>Lecture 6:</b> Likelihood-free learning. GAN optimality theorem. Wasserstein distance. Wasserstein GAN (WGAN). | [slides](lectures/lecture6/Lecture6.pdf) |
-|  |  | <b>Seminar 6:</b>  KL vs JS divergences. Vanilla GAN in 1D coding. Mode collapse and vanishing gradients. Non-saturating GAN. | [slides](seminars/seminar6/seminar6.ipynb) |
+|  |  | <b>Seminar 6:</b>  Vanilla GAN in 1D coding. Mode collapse and vanishing gradients. Non-saturating GAN. Wasserstein GAN (WGAN) and WGAN-GP | [slides](seminars/seminar6/seminar6_wgan.ipynb) |
 
 <!---
 | 7 | October, 22 | <b>Lecture 7:</b> f-divergence minimization. GAN evaluation (FID, Precision-Recall, truncation trick). | [slides](lectures/lecture7/Lecture7.pdf) |
