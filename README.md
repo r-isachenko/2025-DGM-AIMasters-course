@@ -38,7 +38,7 @@ The course is accompanied by practical tasks that allow you to understand the pr
 | 6 | March, 27 | <b>Lecture 6:</b> Likelihood-free learning. GAN optimality theorem. Wasserstein distance. Wasserstein GAN (WGAN). | [slides](lectures/lecture6/Lecture6.pdf) |
 |  |  | <b>Seminar 6:</b>  Vanilla GAN in 1D coding. Mode collapse and vanishing gradients. Non-saturating GAN. Wasserstein GAN (WGAN) and WGAN-GP | [slides](seminars/seminar6/seminar6_wgan.ipynb) |
 | 7 | April, 3 | <b>Lecture 7:</b> GAN evaluation (FID, Precision-Recall, truncation trick). Langevin Dynamic. Score Mathing. Denoising Score Mathing. | [slides](lectures/lecture7/Lecture7.pdf) |
-|  |  | <b>Seminar 7:</b> WGAN and WGAN-GP. | [slides](seminars/seminar7/seminar7.ipynb) |
+|  |  | <b>Seminar 7:</b> Progressive Growing GAN. StyleGAN | [slides](seminars/seminar7/seminar7.ipynb) |
 
 <!---
 | 8 | October, 29 | <b>Lecture 8:</b>  Langevin dynamic. Score matching (Denoising score matching, Noise Conditioned Score Network (NCSN)). Forward gaussian diffusion process. | [slides](lectures/lecture8/Lecture8.pdf) |
