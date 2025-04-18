@@ -13,41 +13,6 @@
 \end{frame}
 %=======
 \begin{frame}{Recap of previous lecture}
-	\vspace{-0.3cm}
-	\begin{figure}
-		\includegraphics[width=0.8\linewidth]{figs/DDPM}
-	\end{figure}
-	\vspace{-0.5cm}
-	\begin{block}{Reverse process}
-		\vspace{-0.5cm}
-		{\small
-		\[
-			q(\bx_{t-1}|\bx_{t}) = \frac{q(\bx_{t}|\bx_{t-1}) {\color{violet}q(\bx_{t-1})}}{{\color{violet}q(\bx_{t})}} \approx p(\bx_{t - 1} | \bx_t, \btheta) = \cN \left(\bmu_{\btheta, t}(\bx_t), \bsigma_{\btheta, t}^2(\bx_t)\right)
-		\]}
-		{\color{gray}Feller theorem shows that it is a reasonable assumption.}
-	\end{block}
-	\begin{minipage}{0.5\linewidth}
-		\begin{block}{Forward process}
-			\begin{enumerate}
-				\item $\bx_0 = \bx \sim \pi(\bx)$;
-				\item $\bx_t = \sqrt{1 - \beta_t} \cdot \bx_{t - 1} + \sqrt{\beta_t} \cdot \bepsilon$;
-				\item $\bx_T \sim p_{\infty}(\bx) = \cN(0, \bI)$.
-			\end{enumerate}
-		\end{block}
-	\end{minipage}%
-	\begin{minipage}{0.55\linewidth}
-		\begin{block}{Reverse process}
-			\begin{enumerate}
-				\item $\bx_T \sim p_{\infty}(\bx) = \cN(0, \bI)$;
-				\item $\bx_{t - 1} = \bsigma_{\btheta, t}(\bx_t) \cdot \bepsilon + \bmu_{\btheta, t}(\bx_t)$;
-				\item $\bx_0 = \bx \sim \pi(\bx)$;
-			\end{enumerate}
-		\end{block}
-	\end{minipage}
-	\myfootnotewithlink{https://lilianweng.github.io/posts/2021-07-11-diffusion-models/}{Weng L. What are Diffusion Models?, blog post, 2021}
-\end{frame}
-%=======
-\begin{frame}{Recap of previous lecture}
 	\textbf{Forward process} goes from any distribution $\pi(\bx)$ to $\cN(0, \bI)$ via noise injection.
 	\begin{align*}
 		q(\bx_t | \bx_{t-1}) &= \cN(\sqrt{1 - \beta_t} \cdot \bx_{t-1}, \beta_t \cdot \bI); \\
@@ -116,62 +81,6 @@
 \end{frame}
 %=======
 \begin{frame}{Recap of previous lecture}
-	\begin{block}{Training}
-		\begin{enumerate}
-			\item Get the sample $\bx_0 \sim \pi(\bx)$.
-			\item Get noisy image $\bx_t = \sqrt{\bar{\alpha}_t} \cdot \bx_0 + \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon$, where $\bepsilon \sim \cN(0, \bI)$.
-			\item Compute ELBO 
-			\vspace{-0.3cm}
-			\begin{multline*}
-				\cL_{\bphi, \btheta}(\bx) =  {\color{olive}\bbE_{q(\bx_1 | \bx_0)} \log p(\bx_0 | \bx_1, \btheta)} - {\color{violet}KL\bigl(q(\bx_T | \bx_0) || p(\bx_T)\bigr)} - \\
-				- {\color{teal}\sum_{t=2}^T \underbrace{ \bbE_{q(\bx_t | \bx_0)} \left[\frac{1}{2\tilde{\beta}_t} \bigl\| \tilde{\bmu}_t(\bx_t, \bx_0) - \bmu_{\btheta, t}(\bx_t) \bigr\|^2  \right]}_{\cL_t}}
-			\end{multline*}
-			\vspace{-0.7cm}
-		\end{enumerate}
-	\end{block}
-	\begin{block}{Sampling}
-		\begin{enumerate}
-			\item Sample $\bx_T \sim \cN(0, \bI)$.
-			\item Get denoised image $\bx_{t - 1} = \bmu_{\btheta, t}(\bx_t) +  \sqrt{\tilde{\beta}_t} \cdot \bepsilon$, where $\bepsilon \sim \cN(0, \bI)$.
-		\end{enumerate}
-	\end{block}
-	
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-\end{frame}
-%=======
-\begin{frame}{Outline}
-	\tableofcontents
-\end{frame}
-%=======
-\section{Denoising Diffusion Probabilistic Model (DDPM)}
-%=======
-\subsection{Reparametrization}
-%=======
-\begin{frame}{Reparametrization of DDPM}
-	\[
-		\cL_t = \bbE_{q(\bx_t | \bx_0)} \left[\frac{1}{2\tilde{\beta}_t} \bigl\| \tilde{\bmu}_t(\bx_t, \bx_0) - \bmu_{\btheta, t}(\bx_t) \bigr\|^2  \right]
-	\]
-	\[
-		\tilde{\bmu}_t(\bx_t, \bx_0) = \frac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \cdot \bx_t + \frac{\sqrt{\bar{\alpha}_{t-1}}(1 - \alpha_t)}{1 - \bar{\alpha}_t} \cdot {\color{olive} \bx_0}
-	\]
-	\vspace{-0.2cm}
-	\[
-		\bx_t = \sqrt{\bar{\alpha}_t} \cdot \bx_0 + \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon \quad \Rightarrow \quad {\color{olive} \bx_0} = \frac{\bx_t -  \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon}{\sqrt{\bar{\alpha}_t}}
-	\]
-	\vspace{-0.3cm}
-	\begin{itemize}
-	\item There is linear dependence between $\bepsilon$, $\bx_t$, $\bx_0$.
-	\item Let try to rewrite this mean in terms of $\bx_t$ and $\bepsilon$.
-	\end{itemize}
-	\vspace{-0.2cm}
-	\begin{align*}
-		\tilde{\bmu}_t(\bx_t, \bepsilon) &= \frac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \cdot \bx_t + \frac{\sqrt{\bar{\alpha}_{t-1}}(1 - \alpha_t)}{1 - \bar{\alpha}_t} \cdot {\color{olive} \left(\frac{\bx_t -  \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon}{\sqrt{\bar{\alpha}_t}}\right)} \\
-		&= \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \cdot \bepsilon
-	\end{align*}
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-	\end{frame}
-%=======
-\begin{frame}{Reparametrization of DDPM}
 	\vspace{-0.3cm}
 	\[
 		\cL_t = \bbE_{\color{violet}q(\bx_t | \bx_0)} \left[ {\color{olive}\frac{1}{2\tilde{\beta}_t}} \bigl\| \tilde{\bmu}_t(\bx_t, \bx_0) - \bmu_{\btheta, t}(\bx_t) \bigr\|^2  \right]
@@ -181,119 +90,26 @@
 		\vspace{-0.7cm}
 		\begin{align*}
 			\tilde{\bmu}_t(\bx_t, \bx_0) &= \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \cdot \bepsilon \\
-			\bmu_{\btheta, t}(\bx_t) &= \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - {\color{teal}\frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}}} \cdot \bepsilon_{\btheta, t}(\bx_t)
+			\bmu_{\btheta, t}(\bx_t) &= \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \cdot \bepsilon_{\btheta, t}({\color{teal}\bx_t})
 		\end{align*}
 		\vspace{-0.7cm}
 	\end{block}
-		\vspace{-0.5cm}
-		\begin{align*}
-			\cL_t &=  \bbE_{\color{violet} \bepsilon \sim \cN(0, \bI)} \left[ \frac{{\color{teal}(1 - \alpha_t)^2}}{{\color{olive}2\tilde{\beta}_t} {\color{teal} \alpha_t (1 - \bar{\alpha}_t)}} \bigl\| \bepsilon - \bepsilon_{\btheta, t}({\color{violet}\bx_t}) \bigr\|^2 \right] \\
-			& =	 \bbE_{\color{violet}\bepsilon \sim \cN(0, \bI)} \left[ \frac{(1 - \alpha_t)^2}{2\tilde{\beta}_t \alpha_t (1 - \bar{\alpha}_t)} \Bigl\| \bepsilon - \bepsilon_{\btheta, t}\bigl( {\color{violet}\sqrt{\bar{\alpha}_t} \bx_0 + \sqrt{1 - \bar{\alpha}_t} \bepsilon}\bigr) \Bigr\|^2 \right]
-		\end{align*}
-		At each step of the reverse diffusion process we try to predict the noise~$\bepsilon$ that we used in the forward diffusion process!
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-	\end{frame}
-%=======
-\begin{frame}{Reparametrization of DDPM}
-	\begin{multline*}
-		\cL_{\bphi, \btheta}(\bx) =  {\color{olive}\bbE_{q(\bx_1 | \bx_0)} \log p(\bx_0 | \bx_1, \btheta)} - {\color{violet}KL\bigl(q(\bx_T | \bx_0) || p(\bx_T)\bigr)} - \\
-		- \sum_{t=2}^T \underbrace{ \bbE_{q(\bx_t | \bx_0)} KL \bigl(q(\bx_{t-1} | \bx_t, \bx_0) || p(\bx_{t - 1} | \bx_t, \btheta )\bigr)}_{\cL_t}
-	\end{multline*}
-	\vspace{-0.3cm}
+	\vspace{-0.2cm}
 	\[
-		\cL_t  = \bbE_{\bepsilon \sim \cN(0, \bI)} \left[ \frac{(1 - \alpha_t)^2}{2\tilde{\beta}_t \alpha_t (1 - \bar{\alpha}_t)} \Bigl\| \bepsilon - \bepsilon_{\btheta, t}\bigl( \sqrt{\bar{\alpha}_t} \bx_0 + \sqrt{1 - \bar{\alpha}_t} \bepsilon\bigr) \Bigr\|^2 \right]
+		\cL_t  =	 \bbE_{\color{violet}\bepsilon \sim \cN(0, \bI)} \left[ \frac{(1 - \alpha_t)^2}{2\tilde{\beta}_t \alpha_t (1 - \bar{\alpha}_t)} \Bigl\| \bepsilon - \bepsilon_{\btheta, t}\bigl( {\color{teal}\sqrt{\bar{\alpha}_t} \bx_0 + \sqrt{1 - \bar{\alpha}_t} \bepsilon}\bigr) \Bigr\|^2 \right]
 	\]
-	Let drop the scaling coefficient.
+	At each step of reverse diffusion process we try to predict the noise~$\bepsilon$ that we used in the forward diffusion process!
 	\begin{block}{Simplified objective}
-		\vspace{-0.3cm}
+		\vspace{-0.7cm}
 		\[
-			 \cL_{\text{simple}} = \bbE_{t \sim U\{2, T\}} \bbE_{\bepsilon \sim \cN(0, \bI)} \Bigl\| \bepsilon - \bepsilon_{\btheta, t}\bigl( \sqrt{\bar{\alpha}_t} \cdot \bx_0 + \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon\bigr) \Bigr\|^2 
+			 \cL_{\text{simple}} = \bbE_{t \sim U\{2, T\}} \bbE_{\bepsilon \sim \cN(0, \bI)} \Bigl\| \bepsilon - \bepsilon_{\btheta, t}\bigl( \sqrt{\bar{\alpha}_t} \bx_0 + \sqrt{1 - \bar{\alpha}_t} \bepsilon\bigr) \Bigr\|^2 
 		\]
 	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-	\end{frame}
-%=======
-\subsection{Overview}
-%=======
-\begin{frame}{Generative models zoo}
-	\begin{tikzpicture}[
-		basic/.style  = {draw, text width=2cm, drop shadow, rectangle},
-		root/.style   = {basic, rounded corners=2pt, thin, text height=1.1em, text width=7em, align=center, fill=blue!40},
-		level 1/.style={sibling distance=55mm},
-		level 2/.style = {basic, rounded corners=6pt, thin, align=center, fill=blue!20, text height=1.1em, text width=9em, sibling distance=38mm},
-		level 3/.style = {basic, rounded corners=6pt, thin,align=center, fill=blue!20, text width=8.5em},
-		level 4/.style = {basic, thin, align=left, fill=pink!30, text width=7em},
-		level 5/.style = {basic, thin, align=left, fill=pink!90, text width=7em},
-		edge from parent/.style={->,draw},
-		>=latex]
-		
-		% root of the the initial tree, level 1
-		\node[root] {\Large Generative models}
-		% The first level, as children of the initial tree
-		child {node[level 2] (c1) {Likelihood-based}
-			child {node[level 3] (c11) {Tractable density}}
-			child {node[level 3] (c12) {Approximate density}}
-		}
-		child {node[level 2] (c2) {Implicit density}};
-		
-		% The second level, relatively positioned nodes
-		\begin{scope}[every node/.style={level 4}]
-			\node [below of = c11, yshift=-5pt, xshift=10pt] (c111) {Autoregressive models};
-			\node [below of = c111, yshift=-5pt] (c112) {Normalizing Flows};
-			\node [below of = c12, xshift=10pt] (c121) {VAEs};
-			
-			\node [below of = c2, xshift=10pt] (c21) {GANs};
-		\end{scope}
-		
-		% The second level, relatively positioned nodes
-		\begin{scope}[every node/.style={level 5}]
-			\node [below of = c121] (c122) {\textbf{Diffusion \\ models}};
-		\end{scope}
-		
-		% lines from each level 1 node to every one of its "children"
-		\foreach \value in {1,2}
-		\draw[->] (c11.194) |- (c11\value.west);
-		
-		\foreach \value in {1,2}
-		\draw[->] (c12.194) |- (c12\value.west);
-		
-		\draw[->] (c2.194) |- (c21.west);
-		
-	\end{tikzpicture}
 \end{frame}
 %=======
-\begin{frame}{Denoising diffusion probabilistic model (DDPM)}
-	\begin{block}{DDPM is a VAE model}
-		\begin{itemize}
-			\item Encoder is a fixed Gaussian Markov chain $q(\bx_1, \dots, \bx_T | \bx_0)$.
-			\item Latent variable is a hierarchical (in each step the dim. of the latent equals to the dim of the input).
-			\item Decoder is a simple Gaussian model $p(\bx_0 | \bx_1, \btheta)$.
-			\item Prior distribution is given by parametric Gaussian Markov chain $p(\bx_{t-1} | \bx_t, \btheta)$.
-		\end{itemize}
-	\end{block}
-	\begin{minipage}{0.5\linewidth}
-		\begin{block}{Forward process}
-			\begin{enumerate}
-				\item $\bx_0 = \bx \sim \pi(\bx)$;
-				\item $\bx_t = \sqrt{1 - \beta_t} \cdot \bx_{t - 1} + \sqrt{\beta_t} \cdot \bepsilon$;
-				\item $\bx_T \sim p_{\infty}(\bx) = \cN(0, \bI)$.
-			\end{enumerate}
-		\end{block}
-	\end{minipage}%
-	\begin{minipage}{0.55\linewidth}
-		\begin{block}{Reverse process}
-			\begin{enumerate}
-				\item $\bx_T \sim p_{\infty}(\bx) = \cN(0, \bI)$;
-				\item $\bx_{t - 1} = \bsigma_{\btheta, t}(\bx_t) \cdot \bepsilon + \bmu_{\btheta, t}(\bx_t)$;
-				\item $\bx_0 = \bx \sim \pi(\bx)$;
-			\end{enumerate}
-		\end{block}
-	\end{minipage}
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-\end{frame}
-%=======
-\begin{frame}{Denoising diffusion probabilistic model (DDPM)}
-	\begin{block}{Training}
+\begin{frame}{Recap of previous lecture}
+	\begin{block}{Training of DDPM}
 		\begin{enumerate}
 			\item Get the sample $\bx_0 \sim \pi(\bx)$.
 			\item Sample timestamp $t \sim U\{1, T\}$ and the noise $\bepsilon \sim \cN(0, \bI)$.
@@ -301,30 +117,25 @@
 			\item Compute loss $ \cL_{\text{simple}} = \| \bepsilon - \bepsilon_{\btheta, t}(\bx_t) \|^2 $.
 		\end{enumerate}
 	\end{block}
-	\begin{block}{Sampling (ancestral sampling)}
+	\begin{block}{Sampling of DDPM}
 		\begin{enumerate}
 			\item Sample $\bx_T \sim \cN(0, \bI)$.
-			\item Compute mean of $p(\bx_{t-1} | \bx_t, \btheta) = \cN(\bmu_{\btheta, t}(\bx_t), \tilde{\beta}_t \cdot \bI)$:
+			\item Compute mean of $p(\bx_{t-1} | \bx_t, \btheta) = \cN(\bmu_{\btheta, t}(\bx_t), \sigma_t^2 \cdot \bI)$:
 			\[
 				\bmu_{\btheta, t}(\bx_t) = \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \cdot \bepsilon_{\btheta, t}(\bx_t)
 			\]
 			\vspace{-0.3cm}
-			\item Get denoised image $\bx_{t - 1} = \bmu_{\btheta, t}(\bx_t) +  \sqrt{\tilde{\beta}_t} \cdot \bepsilon$, where $\bepsilon \sim \cN(0, \bI)$.
+			\item Get denoised image $\bx_{t - 1} = \bmu_{\btheta, t}(\bx_t) +  \sigma_t \cdot \bepsilon$, where $\bepsilon \sim \cN(0, \bI)$.
 		\end{enumerate}
 	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
 \end{frame}
 %=======
-\begin{frame}{Denoising diffusion probabilistic model (DDPM)}
-	\begin{block}{Samples}
-		\begin{figure}
-			\includegraphics[width=\linewidth]{figs/ddpm_samples}
-		\end{figure}
-	\end{block}
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
+\begin{frame}{Outline}
+	\tableofcontents
 \end{frame}
 %=======
-\subsection{DDPM as score-based generative model}
+\section{DDPM as score-based generative model}
 %=======
 \begin{frame}{Denosing diffusion as score-based generative model}
 	\begin{block}{DDPM objective}
@@ -656,22 +467,153 @@
 		\item Train the single model $\bepsilon_{\btheta, t}(\bx_t, \by)$ on \textbf{supervised} data alternating with real conditioning $\by$ and empty conditioning $\by = \emptyset$.
 		\item Apply the model twice during inference.
 	\end{itemize}
+	\begin{block}{Guided sampling}
+		\vspace{-0.3cm}
+		\[
+			\bx_{t-1} = \frac{1}{\sqrt{\alpha_t}} \cdot \bx_t - \frac{1 - \alpha_t}{\sqrt{\alpha_t (1 - \bar{\alpha}_t)}} \cdot  {\color{olive}\hat{\bepsilon}_{\btheta, t}(\bx_t, \by)} + \sigma_t \cdot \bepsilon
+		\]
+	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/2207.12598}{Ho J., Salimans T. Classifier-Free Diffusion Guidance, 2022}
+\end{frame}
+%=======
+\section{Continuous-in-time normalizing flows}
+%=======
+\begin{frame}{Discrete-in-time NF}
+	\vspace{-0.3cm}
+	\begin{block}{Change of variable theorem (CoV)}
+		Let $\bx$ be a random variable with density function $p(\bx)$ and $\bff: \mathbb{R}^m \rightarrow \mathbb{R}^m$ is a differentiable, \textbf{invertible} function. If $\bz = \bff(\bx)$, $\bx = \bff^{-1}(\bz) = \bg(\bz)$, then
+		\vspace{-0.3cm}
+		\[
+			p(\bx) = p(\bz) |\det(\bJ_{\bff})| = p(\bz) \left|\det \left( \frac{\partial \bz}{\partial \bx} \right) \right| = p(\bff(\bx)) \left|\det \left(  \frac{\partial \bff(\bx)}{\partial \bx} \right) \right|
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+
+	\vspace{-0.3cm}
+	\begin{figure}
+		\includegraphics[width=0.95\linewidth]{figs/normalizing-flow}
+	\end{figure}
+	\vspace{-0.4cm}
+	\[
+		\log p(\bx | \btheta) = \log p(\bff_K \circ \dots \circ \bff_1(\bx)) + \sum_{k=1}^K\log \left|\det \left(\frac{\partial \mathbf{f}_k}{\partial \bff_{k-1}}\right)\right|.
+	\]
+	\vspace{-0.4cm}
+	\myfootnotewithlink{https://lilianweng.github.io/lil-log/2018/10/13/flow-based-deep-generative-models.html}{https://lilianweng.github.io/lil-log/2018/10/13/flow-based-deep-generative-models.html}
+\end{frame}
+%=======
+\begin{frame}{Discrete-in-time NF}
+	\begin{itemize}
+		\item Previously we assumed that the time axis is discrete:
+		\vspace{-0.3cm}
+		 \[
+		 	 \bx_{t+1} = \bff_{\btheta}(\bx_t, t); \quad \log p(\bx_{t+1}) = \log p(\bx_{t}) - \log \left| \det \frac{\partial \bff_{\btheta}(\bx_t)}{\partial \bx_{t}} \right| .
+		 \]
+		\item Let consider the more general case of continuous time. It means that we will have the function $\bx(t): \bbR \rightarrow \bbR^m$ of continuous dynamic.
+	\end{itemize}
+	\begin{block}{Continuous-in-time dynamics}
+		Consider Ordinary Differential Equation (ODE)
+		\vspace{-0.3cm}
+		\begin{align*}
+		   \frac{d \bx(t)}{dt} &= \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0. \\
+		   \bx(t_1) &= \int^{t_1}_{t_0} \bff_{\btheta}(\bx(t), t) d t  + \bx_0
+		\end{align*}
+		\vspace{-0.6cm}
+	\end{block}
+	Here $\bff_{\btheta}: \bbR^m \times [t_0, t_1] \rightarrow \bbR^m$ is a vector field.
+\end{frame}
+%=======
+\begin{frame}{Numerical solution of ODE}
+	\vspace{-0.5cm}
+	\begin{align*}
+		\frac{d \bx(t)}{dt} &= \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0. \\
+		\bx(t_1) &= \int^{t_1}_{t_0} \bff_{\btheta}(\bx(t), t) d t  + \bx_0 \approx {\color{teal}\text{ODESolve}_f(\bx_0, \btheta, t_0, t_1)}.
+	\end{align*}
+	Here we need to define the computational procedure $\text{ODESolve}_f(\bx_0, \btheta, t_0, t_1)$.
+	\begin{block}{Euler update step}
+		\begin{minipage}[t]{0.6\columnwidth}
+			\vspace{-0.5cm}
+			\[
+	  			\frac{\bx(t + \Delta t) - \bx(t)}{\Delta t} = \bff_{\btheta}(\bx(t), t)
+			\]
+			\[
+	  			\bx(t + \Delta t) = \bx(t) + \Delta t \cdot \bff_{\btheta}(\bx(t), t)
+			\]
+		\end{minipage}%
+		\begin{minipage}[t]{0.4\columnwidth}
+			\vspace{-0.3cm}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.7\linewidth]{figs/euler}
+			\end{figure}
+		\end{minipage}
+	\end{block}
+	\textbf{Note:} Euler method is the simplest version of the ODESolve that is unstable in practice. It is possible to use more sophisticated numerical methods instead if Euler (e.x. Runge-Kutta methods).
+\end{frame}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	\begin{block}{Neural ODE}
+		\vspace{-0.2cm}
+		\[
+  			\frac{d \bx(t)}{dt} = \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Euler ODESolve}
+		\vspace{-0.3cm}
+		\[
+		    \bx(t + \Delta t) = \bx(t) + \Delta t \cdot \bff_{\btheta}(\bx(t), t)
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{itemize}
+		\item Let consider time interval $[t_0, t_1] = [0, 1]$ without loss of generality.
+		\item Assume that $\bx(0)$ is a random variable with the density function~$p_0(\bx)$.
+		\item Then $\bx(t)$ is a random variable with the density function~$p_t(\bx)$.
+	\end{itemize}
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
+
+\end{frame}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	\[
+ 		\frac{d \bx(t)}{dt} = \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0
+	\]
+	\vspace{-0.5cm}
+	\begin{itemize}
+		\item$p_t(\bx) = p(\bx, t)$ is the \textbf{probability path} between $p_0(\bx)$ and $p_1(\bx)$.
+		\item {\color{gray}What is the difference between $p_t(\bx(t))$ and $p_t(\bx)$?}
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.75\linewidth]{figs/cnf_flow.png}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/1810.01367}{Grathwohl W. et al. FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models, 2018}  
+\end{frame}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	\begin{block}{Theorem (Picard)}
+		If $\bff$ is uniformly Lipschitz continuous in $\bx$ and continuous in $t$, then the ODE has a \textbf{unique} solution.
+	\end{block}
+	It means that we are able \textbf{uniquely revert} our ODE. 
+	\begin{align*}
+		\bx(1) &= \bx(0) + \int_{0}^{1} \bff_{\btheta}(\bx(t), t) dt \\
+		\bx(0) &= \bx(1) + \int_{1}^{0} \bff_{\btheta}(\bx(t), t) dt
+	\end{align*}
+	\textbf{Note:} Unlike discrete-in-time NF, $\bff$ does not need to be invertible (uniqueness guarantees bijectivity).
+	
+	How to compute $p_t(\bx)$ at any moment $t$?
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
 \end{frame}
 %=======
 \begin{frame}{Summary}
 	\begin{itemize}
-		\item At each step DDPM predicts the noise that was used in the forward diffusion process. 
-		\vfill
-		\item DDPM is a VAE model that tries to invert forward diffusion process using variational inference. 
-		\vfill
-		\item DDPM is really slow, because we have to apply the model $T$ times.
-		\vfill
 		\item DDPM and NCSN are closely related in terms of objectives.	
 		\vfill
 		\item Classifier guidance is the way to turn the unconditional model to the conditional one via the training additional classifier on the noisy data.
 		\vfill
 		\item Classifier-free guidance allows to avoid the training additional classifier to get the conditional model. It is widely used in practice.
+		\vfill 
+		\item Continuous-in-time NF uses neural ODE to define continuous dynamic $\bx(t)$. It has less functional restrictions.
 	\end{itemize}
 \end{frame}
 %=======

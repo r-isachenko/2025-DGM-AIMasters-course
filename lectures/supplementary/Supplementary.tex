@@ -4121,4 +4121,117 @@ where $i$ is treated as random variable:
 	\myfootnotewithlink{https://arxiv.org/abs/2105.05233}{Dhariwal P., Nichol A. Diffusion Models Beat GANs on Image Synthesis, 2021}
 \end{frame}
 %=======
+\section{Continuous dynamics}
+%=======
+\subsection{Adjoint method for continuous-in-time NF}
+%=======
+\begin{frame}{Continuous-in-time NF}
+	\begin{block}{Dynamics ODE}
+		\vspace{-0.3cm}
+		\[
+			 \frac{d \bx(t)}{dt} = \bff_{\btheta}(\bx(t), t) 	 
+ 		\]
+ 		\[
+			 \bx(1) = \bx(0) + \int_{0}^{1} \bff_{\btheta}(\bx(t), t) dt 
+		\]
+		\vspace{-0.5cm}
+	\end{block}
+	\begin{block}{Continuity ODE}
+		\vspace{-0.2cm}
+		\[
+				\frac{d \log p_t(\bx(t))}{d t} = - \text{tr} \left( \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} \right) 
+ 		\]
+ 		\[
+				\log p_1(\bx(1)) = \log p_0(\bx(0)) - \int_{0}^{1} \text{tr} \left( \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} \right) dt
+		\]
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{How to get optimal parameters of $\btheta$?}
+		\begin{itemize}
+			\item We need the gradients for fitting the parameters
+			\item We need the continuous analogue of the backpropagation.
+		\end{itemize}
+	\end{block}
+	
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}     
+\end{frame}
+%=======
+\begin{frame}{Neural ODE}
+	\begin{block}{Forward pass (Loss function)}
+		\vspace{-0.3cm}
+		\[
+			L(\bx) = - \log p_1(\bx(1) | \btheta) = - \log p_0(\bx(0)) + \int_{0}^{1} \text{tr} \left( \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} \right) dt
+		\]
+	\end{block}
+	\vspace{-0.5cm}
+	\begin{block}{Adjoint functions}
+		\vspace{-0.3cm}
+		\[
+			\ba_{\bx}(t) = \frac{\partial L}{\partial \bx(t)}; \quad \ba_{\btheta}(t) = \frac{\partial L}{\partial \btheta(t)}.
+		\]
+		These functions show how the gradient of the loss depends on the hidden state~$\bx(t)$ and parameters $\btheta$.
+		\vspace{-0.3cm}
+	\end{block}
+	\begin{block}{Theorem (Pontryagin)}
+		\vspace{-0.6cm}
+		\[
+		\frac{d \ba_{\bx}(t)}{dt} = - \ba_{\bx}(t)^T \cdot \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx}; \quad \frac{d \ba_{\btheta}(t)}{dt} = - \ba_{\bx}(t)^T \cdot \frac{\partial \bff_{\btheta}(\bx(t),  t)}{\partial \btheta}.
+		\]
+		\vspace{-0.7cm}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
+\end{frame}
+%=======
+\begin{frame}{Adjoint method}
+	\begin{block}{Theorem (Pontryagin)}
+		\vspace{-0.6cm}
+		\[
+		\frac{d \ba_{\bx}(t)}{dt} = - \ba_{\bx}(t)^T \cdot \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx}; \quad \frac{d \ba_{\btheta}(t)}{dt} = - \ba_{\bx}(t)^T \cdot \frac{\partial \bff_{\btheta}(\bx(t),  t)}{\partial \btheta}.
+		\]
+		\vspace{-0.7cm}
+	\end{block}
+	\begin{block}{Solution for the adjoints function}
+		\vspace{-0.5cm}
+		\begin{align*}
+			\frac{\partial L}{\partial \btheta(0)} &= \ba_{\btheta}(0) =  - \int_{1}^{0} \ba_{\bx}(t)^T \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \btheta(t)} dt + 0\\
+			\frac{\partial L}{\partial \bx(0)} &= \ba_{\bx}(0) =  - \int_{1}^{0} \ba_{\bx}(t)^T \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} dt + \frac{\partial L}{\partial \bx(1)}
+		\end{align*}
+	\end{block}
+	\begin{itemize}
+		\item Think about the initial conditions.
+		\item These equations are solved in the reverse time direction.
+		\item Numerical solvers (Euler ODESolve) are used to solve them.
+	\end{itemize}
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
+\end{frame}
+%=======
+\begin{frame}{Adjoint method}
+	\begin{block}{Forward pass}
+		\vspace{-0.3cm}
+		\[
+		\bx(1) = \bx(0) + \int^{1}_{0} \bff_{\btheta}(\bx(t), t) d t \quad \Rightarrow \quad \text{ODE Solver}
+		\]
+		\vspace{-0.4cm}
+	\end{block}
+	\begin{block}{Backward pass}
+		\vspace{-0.5cm}
+		\begin{equation*}
+			\left.
+			{\footnotesize 
+				\begin{aligned}
+					\frac{\partial L}{\partial \btheta(0)} &= \ba_{\btheta}(0) =  - \int_{1}^{0} \ba_{\bx}(t)^T \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \btheta(t)} dt + 0 \\
+					\frac{\partial L}{\partial \bx(0)} &= \ba_{\bx}(0) =  - \int_{1}^{0} \ba_{\bx}(t)^T \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} dt + \frac{\partial L}{\partial \bx(1)} \\
+					\bx(0) &= - \int^{1}_{0} \bff_{\btheta}(\bx(t), t) d t  + \bx(1).
+				\end{aligned}
+			}
+			\right\rbrace
+			\Rightarrow
+			\text{ODE Solver}
+		\end{equation*}
+		\vspace{-0.4cm} 
+	\end{block}
+	\textbf{Note:} These scary formulas are the standard backprop in the discrete case.
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
+\end{frame}
+%=======
 \end{document} 

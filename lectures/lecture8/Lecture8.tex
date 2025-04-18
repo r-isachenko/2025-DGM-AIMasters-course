@@ -307,9 +307,13 @@
 		\bbE_{\pi(\bx)} \bbE_{\cN(0, \bI)}\left\| \bs_{\btheta, \sigma}(\bx + \sigma \cdot \bepsilon) + \frac{\bepsilon}{\sigma} \right\|^2_2 \rightarrow \min_{\btheta}
 	\]
 	\begin{minipage}{0.5\linewidth}
+		\[
+			\bx_{l + 1} = \bx_l + \frac{\eta}{2} \cdot \bs_{\btheta, \sigma}(\bx_l) + \sqrt{\eta} \cdot \bepsilon_l
+		\]
+		\vspace{-0.3cm}
 		\begin{itemize}
-			\item If $\sigma$ is \textbf{small}, the score function is not accurate and Langevin dynamics will probably fail to jump between modes.
-			\item If $\sigma$ is \textbf{large}, it is good for low-density regions and  multimodal distributions, but we will learn too corrupted distribution.
+			\item If $\sigma$ is \textbf{small}, $\bs_{\btheta, \sigma}(\bx)$ is not accurate and Langevin dynamics will fail to jump between modes.
+			\item If $\sigma$ is \textbf{large}, it is good for low-density regions, but we will learn too corrupted distribution.
 		\end{itemize}
 	\end{minipage}%
 	\begin{minipage}{0.5\linewidth}
@@ -430,7 +434,7 @@
 			\bx_t = \sqrt{\alpha_t} \cdot {\color{teal}\bx_{t-1}} + \sqrt{1 - \alpha_t} \cdot \boldsymbol{\epsilon}_t = \\
 			= \sqrt{\alpha_t} ({\color{teal} \sqrt{\alpha_{t-1}} \cdot \bx_{t-2} + \sqrt{1 - \alpha_{t-1}} \cdot  \boldsymbol{\epsilon}_{t-1}}) + \sqrt{1 - \alpha_t} \cdot \boldsymbol{\epsilon}_t = \\
 			= \sqrt{\alpha_t \alpha_{t-1}} \cdot \bx_{t-2} + ( {\color{violet}\sqrt{\alpha_t (1 - \alpha_{t-1})} \cdot  \boldsymbol{\epsilon}_{t-1} + \sqrt{1 - \alpha_t} \cdot \boldsymbol{\epsilon}_t}) = \\
-			= \sqrt{\alpha_t \alpha_{t-1}} \cdot \bx_{t-2} + {\color{violet}\sqrt{1 - \alpha_{t-1} \alpha_t} \cdot \boldsymbol{\epsilon}'_t} = \\
+			= \sqrt{\alpha_t \alpha_{t-1}} \cdot \bx_{t-2} + {\color{violet}\sqrt{1 - \alpha_t \alpha_{t-1}} \cdot \boldsymbol{\epsilon}'_t} = \\
 			 = \dots = \sqrt{\bar{\alpha}_t} \cdot \bx_{0} + \sqrt{1 - \bar{\alpha}_t} \cdot \bepsilon, \quad \text{where } \bepsilon \sim \cN(0, \bI).
 		\end{multline*}
 		}
@@ -559,7 +563,7 @@
 	\href{https://arxiv.org/abs/2112.07804}{Xiao Z., Kreis K., Vahdat A. Tackling the generative learning trilemma with denoising diffusion GANs, 2021}}
 	\end{frame} 
 %=======
-\begin{frame}{Reverse Gaussian diffusion process}
+\begin{frame}{Reverse Gaussian diffusion process (ancestral sampling)}
 	\vspace{-0.3cm} 
 	\begin{figure}
 		\includegraphics[width=0.8\linewidth]{figs/DDPM}
@@ -591,48 +595,6 @@
 	\end{minipage}
 	\textbf{Note:} The forward process does not have any learnable parameters!
 	\myfootnotewithlink{https://lilianweng.github.io/posts/2021-07-11-diffusion-models/}{Weng L. What are Diffusion Models?, blog post, 2021}
-\end{frame}
-%=======
-\begin{frame}{Conditioned reverse distribution}
-	\begin{block}{Reverse kernel (\textbf{intractable})}
-		\vspace{-0.3cm}
-		\[
-			q(\bx_{t-1}|\bx_{t}) = \frac{q(\bx_{t}|\bx_{t-1}) {\color{violet}q(\bx_{t-1})}}{{\color{violet}q(\bx_{t})}} 
-		\]
-		\vspace{-0.5cm}
-	\end{block}
-	\begin{block}{Conditioned reverse kernel (\textbf{tractable})}
-		\vspace{-0.6cm}
-		\begin{align*}
-			q(\bx_{t-1}|\bx_{t}, {\color{olive}\bx_0}) & = \frac{q(\bx_{t}|\bx_{t-1}, {\color{olive}\bx_0}) q(\bx_{t-1} | {\color{olive}\bx_0}) }{q(\bx_{t}| {\color{olive}\bx_0})} \\
-			& = \frac{\cN(\sqrt{1 - \beta_t} \cdot \bx_{t-1}, \beta_t \bI) \cdot \cN(\sqrt{\bar{\alpha}_{t-1}} \cdot \bx_0, (1 - \bar{\alpha}_{t-1}) \cdot \bI)}{ \cN(\sqrt{\bar{\alpha}_t} \cdot \bx_0, (1 - \bar{\alpha}_t) \cdot \bI)} \\
-			&= \cN(\tilde{\bmu}_t(\bx_t, \bx_0), \tilde{\beta}_t \cdot \bI)
-		\end{align*}
-		\vspace{-0.7cm}
-	\end{block}
-	Here 
-	\begin{align*}
-		\tilde{\bmu}_t(\bx_t, \bx_0) &= \frac{\sqrt{\alpha_t}(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \cdot \bx_t + \frac{\sqrt{\bar{\alpha}_{t-1}}(1 - \alpha_t)}{1 - \bar{\alpha}_t} \cdot \bx_0; \\
-		\tilde{\beta}_t &= \frac{(1 - \alpha_t)(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} = \text{const}.
-	\end{align*}
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
-\end{frame}
-%=======
-\begin{frame}{Distribution summary}
-	\textbf{Forward process} goes from any distribution $\pi(\bx)$ to $\cN(0, \bI)$ via noise injection.
-	\begin{align*}
-		q(\bx_t | \bx_{t-1}) &= \cN(\sqrt{1 - \beta_t} \cdot \bx_{t-1}, \beta_t \cdot \bI); \\
-		q(\bx_t | \bx_0) &= \cN(\sqrt{\bar{\alpha}_t} \cdot \bx_0, (1 - \bar{\alpha}_t) \cdot \bI).
-	\end{align*}
-	\textbf{Reverse process} is Intractable distribution that is able to be approximated by Normal (with unknown parameters) for small $\beta_t$.
-	\[
-		q(\bx_{t-1}|\bx_{t}) = \frac{q(\bx_{t}|\bx_{t-1}) q(\bx_{t-1})}{q(\bx_{t})} \approx \cN \left(\bmu_{\btheta, t}(\bx_t), \bsigma_{\btheta, t}^2(\bx_t)\right)
-	\]
-	\textbf{Conditioned reverse process} is Normal with the known parameters, which defines how to denoise a noisy image $\bx_t$ with access to what the final, completely denoised image $\bx_0$ should be.
-	\[
-		q(\bx_{t-1}|\bx_{t}, {\color{olive}\bx_0}) = \cN(\tilde{\bmu}_t(\bx_t, \bx_0), \tilde{\beta}_t \cdot \bI)
-	\]
-	\myfootnotewithlink{https://arxiv.org/abs/2006.11239}{Ho J. Denoising Diffusion Probabilistic Models, 2020}
 \end{frame}
 %=======
 \begin{frame}{Summary}
