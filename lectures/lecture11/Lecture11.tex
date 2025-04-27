@@ -88,15 +88,12 @@
 		\]
 		\vspace{-0.3cm}
 	\end{block}
-	\textbf{Note:} Guidance scale $\gamma$ tries to sharpen the distribution $p(\by | \bx_t)$ (in this case $Z$ should not depend on $\bx_t$).
+	\textbf{Note:} Guidance scale $\gamma$ tries to sharpen the distribution $p(\by | \bx_t)$.
 	\myfootnotewithlink{https://arxiv.org/abs/2105.05233}{Dhariwal P., Nichol A. Diffusion Models Beat GANs on Image Synthesis, 2021}
 \end{frame}
 %=======
 \begin{frame}{Recap of previous lecture}
-	\begin{itemize}
-		\item Previous method requires training the additional classifier model $p(\by | \bx_t)$ on the noisy data.	
-		\item Let try to avoid this requirement.
-	\end{itemize}
+	Previous method requires training the additional classifier model $p(\by | \bx_t)$ on the noisy data. Let try to avoid this requirement.
 	\[
 		{\color{teal}\nabla_{\bx_t} \log p(\by | \bx_t)} =  \nabla_{\bx_t} \log p(\bx_t| \by, \btheta) -\nabla_{\bx_t} \log  p(\bx_t | \btheta)
 	\]
@@ -121,17 +118,16 @@
 \end{frame}
 %=======
 \begin{frame}{Recap of previous lecture}
-	\begin{block}{Continuous-in-time dynamics}
-		Consider Ordinary Differential Equation (ODE)
-		\vspace{-0.3cm}
+	\begin{block}{Continuous-in-time dynamics (Neural ODE)}
+		\vspace{-0.5cm}
 		\begin{align*}
-		   \frac{d \bx(t)}{dt} &= \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(0) = \bx_0. \\
-		   \bx(1) &= \int^{1}_{0} \bff_{\btheta}(\bx(t), t) d t  + \bx_0
+			\frac{d \bx(t)}{dt} &= \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0. \\
+			\bx(t_1) &= \int^{t_1}_{t_0} \bff_{\btheta}(\bx(t), t) d t  + \bx_0 \approx {\color{teal}\text{ODESolve}_f(\bx_0, \btheta, t_0, t_1)}.
 		\end{align*}
-		\vspace{-0.6cm}
+		\vspace{-0.5cm}
 	\end{block}
-	Here $\bff_{\btheta}: \bbR^m \times [0, 1] \rightarrow \bbR^m$ is a vector field.
-	\begin{block}{Euler update step}
+	Here $\bff_{\btheta}: \bbR^m \times [t_0, t_1] \rightarrow \bbR^m$ is a vector field.
+	\begin{block}{Euler update step (ODESolve)}
 		\vspace{-0.3cm}
 		\[
   			\bx(t + \Delta t) = \bx(t) + \Delta t \cdot \bff_{\btheta}(\bx(t), t)
@@ -145,31 +141,35 @@
 \end{frame}
 %=======
 \begin{frame}{Recap of previous lecture}
-	\begin{minipage}[t]{0.6\columnwidth}
-		\begin{itemize}
-			\item $\bx(0) \sim p(\bx(0))$.
-		 	\item $\bx(1) \sim p(\bx(1))$.
-			\item$p_t(\bx) = p(\bx, t)$ is the \textbf{probability path} between $p_0(\bx)$ and $p_1(\bx)$.
-			\item $p_0(\bx) = \cN(0, \bI)$ is the base distribution and $p_1(\bx) = \pi(\bx)$ is the data distribution.
-		\end{itemize}
-		\vspace{0.2cm}
-	\end{minipage}%
-	\begin{minipage}[t]{0.4\columnwidth}	
-		\vspace{-0.7cm}
-		\begin{figure}
-			\centering
-			\includegraphics[width=\linewidth]{figs/cnf_flow.png}
-		\end{figure}
-	\end{minipage}
-	\vspace{-0.5cm}
+	\vspace{-0.3cm}
+	\[
+ 		\frac{d \bx(t)}{dt} = \bff_{\btheta}(\bx(t), t); \quad \text{with initial condition }\bx(t_0) = \bx_0
+	\]
+	\vspace{-0.3cm}
+	\begin{itemize}
+		\item Assume that $\bx(0)$ is a random variable with the density function~$p_0(\bx)$. Then $\bx(t)$ is a random variable with the density function~$p_t(\bx)$.
+		\item$p_t(\bx) = p(\bx, t)$ is the \textbf{probability path} between $p_0(\bx)$ and $p_1(\bx)$.
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\linewidth]{figs/cnf_flow.png}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/1810.01367}{Grathwohl W. et al. FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models, 2018}  
+\end{frame}
+%=======
+\begin{frame}{Recap of previous lecture}
 	\begin{block}{Theorem (Picard)}
 		If $\bff$ is uniformly Lipschitz continuous in $\bx$ and continuous in $t$, then the ODE has a \textbf{unique} solution.
 	\end{block}
-	\vspace{-0.7cm}
-	\[
-		\bx(1) = \bx(0) + \int_{0}^{1} \bff_{\btheta}(\bx(t), t) dt; \quad \bx(0) = \bx(1) + \int_{1}^{0} \bff_{\btheta}(\bx(t), t) dt
-	\]
-	\myfootnotewithlink{https://arxiv.org/abs/1810.01367}{Grathwohl W. et al. FFJORD: Free-form Continuous Dynamics for Scalable Reversible Generative Models, 2018}  
+	It means that we are able \textbf{uniquely revert} our ODE. 
+	\begin{align*}
+		\bx(1) &= \bx(0) + \int_{0}^{1} \bff_{\btheta}(\bx(t), t) dt \\
+		\bx(0) &= \bx(1) + \int_{1}^{0} \bff_{\btheta}(\bx(t), t) dt
+	\end{align*}
+	\textbf{Note:} Unlike discrete-in-time NF, $\bff$ does not need to be invertible (uniqueness guarantees bijectivity).
+	
+	How to compute $p_t(\bx)$ at any moment $t$?
+	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
 \end{frame}
 %=======
 \begin{frame}{Outline}
@@ -190,29 +190,13 @@
 	\begin{block}{Solution of continuity equation}
 		\vspace{-0.3cm}
 		\[
-			\log p_1(\bx(1)) = \log p_0(\bx(0)) - \int_{0}^{1} \text{tr}  \left( \frac{\partial \bff(\bx(t), t)}{\partial \bx(t)} \right) dt.
+			\log p_1(\bx(1)) = \log p_0(\bx(0)) - {\color{teal}\int_{0}^{1} \text{tr}  \left( \frac{\partial \bff(\bx(t), t)}{\partial \bx(t)} \right) dt}.
 		\]
 	\end{block}
-	\textbf{Note:} This solution will give us the density along the trajectory (not the total probability path).
-	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
-\end{frame}
-%=======
-\begin{frame}{Continuous-in-time NF}
-	\begin{block}{Forward transform + log-density}
-		\vspace{-0.7cm}
-		\begin{align*}
-				\bx(1) &= \bx(0) + \int_{0}^{1} \bff_{\btheta}(\bx(t), t) dt \\
-				\log p_1(\bx(1) | \btheta) &= \log p_0(\bx(0)) - \int_{0}^{1} \text{tr} \left( \frac{\partial \bff_{\btheta}(\bx(t), t)}{\partial \bx(t)} \right) dt
-		\end{align*}		
-		\vspace{-0.3cm}
-	\end{block}
 	\begin{itemize}
-		\item \textbf{Discrete-in-time NF}: evaluation of determinant of the Jacobian costs $O(m^3)$ (we need invertible $\bff$).
-		\item \textbf{Continuous-in-time NF}: getting the trace of the Jacobian costs $O(m^2)$ (we need smooth $\bff$).
-	\end{itemize}
-	\begin{block}{Why $O(m^2)$?}
-		$\text{tr} \left( \frac{\partial \bff_{\btheta}(\bx(t))}{\partial \bx(t)} \right)$ costs $O(m^2)$ ($m$ evaluations of $\bff$), since we have to compute a derivative for each diagonal element. It is possible to reduce cost from $O(m^2)$ to $O(m)$!
-	\end{block}
+		\item This solution will give us the density along the trajectory (not the total probability path).
+		\item But it is difficult to estimate {\color{teal}the last term} efficiently.
+	 \end{itemize}
 	\myfootnotewithlink{https://arxiv.org/abs/1806.07366}{Chen R. T. Q. et al. Neural Ordinary Differential Equations, 2018}   
 \end{frame}
 %=======
