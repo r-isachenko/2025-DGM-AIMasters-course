@@ -17,3 +17,6 @@
 
 #additions by PMokrov
 *__pycache__*
+
+#Hide helper code for seminars
+seminars/seminar?/seminar?_utils.py
