@@ -215,7 +215,8 @@
 		 \begin{enumerate}
 		 	\item $\bw(0) = 0$ (almost surely);
 		 	\item $\bw(t)$ has independent increments;
-			 \item $\bw(t) - \bw(s) \sim \cN(0, (t - s) \bI)$, for $t > s$.
+		 	\item $\bw(t)$ has continuous trajectories;
+			 \item $\bw(t) - \bw(s) \sim \cN(0, (t - s) \bI)$, for $t > s$;
 		 \end{enumerate}
 		 \item $d \bw = \bw(t + dt) - \bw(t) = \cN(0, \bI \cdot dt ) = \bepsilon \cdot \sqrt{dt}$, where $\bepsilon \sim \cN(0, \bI)$.
 		 \item If $g(t) = 0$ we get standard ODE.
@@ -284,7 +285,7 @@
  		\vspace{-0.2cm}
  	\end{block}
  	 \begin{itemize}
- 	 	\item KFP theorem does not define the SDE uniquely in general case.
+ 	 	\item KFP theorem uniquely defines the density $p_t(\bx)$.
  		 \item This is the generalization of continuity equation that we used in continuous-in-time NF:
  	 	\[
  	 		\frac{d \log p_t(\bx(t))}{d t} = - \text{tr} \left( \frac{\partial \bff(\bx, t)}{\partial \bx} \right).
@@ -365,6 +366,22 @@
 		\]
 		\vspace{-0.7cm}
 	\end{block}
+	\begin{figure}
+		\includegraphics[width=0.75\linewidth]{figs/probability_flow}
+	\end{figure}
+	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
+\end{frame}
+%=======
+\begin{frame}{Probability flow ODE}
+	\begin{block}{Theorem}
+		Assume SDE $d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw$ induces the probability path~$p_t(\bx)$.
+		Then there exists ODE with identical probability path $p_t(\bx)$ of the form
+		\vspace{-0.3cm}
+		\[
+			d\bx = \left(\mathbf{f}(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt
+		\]
+		\vspace{-0.7cm}
+	\end{block}
 	\begin{block}{Proof}
  		\vspace{-0.7cm}
  		{\small
@@ -380,26 +397,22 @@
 \end{frame}
 %=======
 \begin{frame}{Probability flow ODE}
-	\begin{block}{Theorem}
-		Assume SDE $d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw$ induces the probability path~$p_t(\bx)$.
-		Then there exists ODE with identical probabilities distribution $p_t(\bx)$ of the form
-		\vspace{-0.3cm}
-		\[
-			d\bx = \left(\mathbf{f}(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt
-		\]
-		\vspace{-0.7cm}
-	\end{block}
 	\begin{block}{Proof (continued)}
  		\vspace{-0.7cm}
  		\begin{multline*}
  			\frac{\partial p_t(\bx)}{\partial t} =  \text{tr}\left(- \frac{\partial}{\partial \bx} \left[ \left( {\color{teal}\mathbf{f}(\bx, t) - \frac{1}{2} g^2(t) \frac{\partial}{\partial \bx}\log p_t(\bx)}\right) p_t(\bx) \right]  \right) =\\
- 			  =  \text{tr}\left(- \frac{\partial}{\partial \bx} \left[ {\color{teal}\tilde{\mathbf{f}}(\bx, t)} p_t(\bx) \right]  \right)
+ 			  =  \text{tr}\left(- \frac{\partial}{\partial \bx} \left[ {\color{teal}\tilde{\mathbf{f}}(\bx, t)} p_t(\bx) \right]  \right) = -  \text{div}\left(\tilde{\mathbf{f}}(\bx, t) p_t(\bx)\right) 
  		\end{multline*}
+		\[
+			\tilde{\bff}(\bx, t) = \bff(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx); \quad \tilde{g}(t) = 0
+		\]
+	 	\[
+	 		d \bx = \tilde{\bff}(\bx, t) dt + 0 \cdot d \bw = \left(\bff(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt
+	 	\]
+		\[
+			\frac{\partial p_t(\bx)}{\partial t} = - \text{div}\left(\tilde{\mathbf{f}}(\bx, t) p_t(\bx)\right) + \frac{1}{2}\tilde{g}^2(t) \Delta_{\bx}p_t(\bx)
+		\]
  	\end{block}
- 	\vspace{-1.0cm}
- 	\[
- 		d \bx = \tilde{\bff}(\bx, t) dt + 0 \cdot d \bw = \left(\mathbf{f}(\bx, t) -\frac{1}{2} g^2(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt
- 	\]
 	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
 \end{frame}
 %=======
@@ -607,7 +620,7 @@
 		\]
 		\vspace{-0.5cm}
 	\end{block}
-	Let turn this Markov chain to the continuous stochastic process taking $T \rightarrow \infty$ and taking $\beta(\frac{t}{T}) = \beta_t \cdot T$
+	Let turn this Markov chain to the continuous stochastic process taking $T \rightarrow \infty$ and taking $\beta_t = \beta(\frac{t}{T}) \cdot \frac{1}{T}$ (with $dt = \frac{1}{T}$)
 	\begin{multline*}
 		{\color{teal}\bx(t)} = \sqrt{1 - \beta(t) dt} \cdot \bx(t - dt) + \sqrt{\beta(t)dt} \cdot \bepsilon \approx \\
 		\approx (1 - \frac{1}{2} \beta(t) dt) \cdot \bx(t - dt) + \sqrt{\beta(t){\color{violet}dt}} \cdot {\color{violet}\bepsilon} = \\
