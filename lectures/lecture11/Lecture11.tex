@@ -561,126 +561,6 @@
 	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
 \end{frame}
 %=======
-\section{Diffusion and Score matching SDEs}
-%=======
-\begin{frame}{Score matching SDE}
-	\vspace{-0.3cm}
-	\begin{block}{Denoising score matching}
-		\vspace{-0.7cm}
-		\begin{align*}
-			\bx_t &= \bx + \sigma_t \cdot \bepsilon_t, & q(\bx_t | \bx) &= \cN(\bx, \sigma_t^2 \cdot \bI) \\
-			\bx_{t-1} &= \bx + \sigma_{t-1} \cdot \bepsilon_{t-1}, & q(\bx_{t-1} | \bx) &= \cN(\bx, \sigma_{t-1}^2 \cdot \bI)
-		\end{align*}
-	\end{block}
-	\vspace{-1.0cm}
-	\[
-		\bx_t = \bx_{t - 1} + \sqrt{\sigma^2_t - \sigma^2_{t-1}} \cdot \bepsilon, \quad q(\bx_{t} | \bx_{t-1}) = \cN(\bx_{t-1}, (\sigma_t^2 - \sigma_{t-1}^2) \cdot \bI)
-	\]
-	Let turn this Markov chain to the continuous stochastic process~$\bx(t)$ taking $T \rightarrow \infty$:
-	\vspace{-0.3cm}
-	\begin{align*}
-		\bx(t) &= \bx(t - dt) + \sqrt{\sigma^2(t) - \sigma^2(t - dt)} \cdot {\color{violet}\bepsilon} \\
-		&= \bx(t - dt) + \sqrt{\frac{\sigma^2(t) - \sigma^2(t - dt)}{dt} {\color{violet}dt}} \cdot {\color{violet}\bepsilon} \\
-		&= \bx(t - dt) + \sqrt{\frac{ d [\sigma^2(t)]}{dt}} \cdot {\color{violet}d \bw}
-	\end{align*}
-	\vspace{-0.5cm}
-	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
-\end{frame}
-%=======
-\begin{frame}{Score matching SDE}
-	\vspace{-0.3cm}
-	\[
-		\bx(t) = \bx(t - dt) + \sqrt{\frac{ d [\sigma^2(t)]}{dt}} \cdot d \bw
-	\]
-	\vspace{-0.5cm}
-	\begin{block}{Variance Exploding SDE}
-		\vspace{-0.3cm}
-		\[
-			d \bx = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} \cdot d \bw
-		\]
-		$\sigma(t)$ is a monotonically increasing function.
-	\end{block}
-	\vspace{-0.7cm}
-	\[
-		d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw, \quad \bff(\bx, t) = 0, \quad g(t) = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} 
-	\]
-	\vspace{-0.5cm}
-	\begin{align*}
-		d\bx &= \left(-\frac{1}{2} \frac{ d [\sigma^2(t)]}{dt} \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt - \text{probability flow ODE} \\
-		d\bx &= \left(- \frac{ d [\sigma^2(t)]}{dt} \frac{\partial}{\partial \bx}\log p_t(\bx)\right) dt + \sqrt{\frac{ d [\sigma^2(t)]}{dt}}  d \bw - \text{reverse SDE}
-	\end{align*}
-	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
-\end{frame}
-%=======
-\begin{frame}{Diffusion SDE}
-	\begin{block}{Denoising Diffusion}
-		\vspace{-0.5cm}
-		\[
-			\bx_t = \sqrt{1 - \beta_t} \cdot \bx_{t - 1} + \sqrt{\beta_t} \cdot \bepsilon, \quad q(\bx_t | \bx_{t-1}) = \cN(\sqrt{1 - \beta_t} \cdot \bx_{t-1}, \beta_t \cdot \bI)
-		\]
-		\vspace{-0.5cm}
-	\end{block}
-	Let turn this Markov chain to the continuous stochastic process taking $T \rightarrow \infty$ and taking $\beta_t = \beta(\frac{t}{T}) \cdot \frac{1}{T}$ (with $dt = \frac{1}{T}$)
-	\begin{multline*}
-		{\color{teal}\bx(t)} = \sqrt{1 - \beta(t) dt} \cdot \bx(t - dt) + \sqrt{\beta(t)dt} \cdot \bepsilon \approx \\
-		\approx (1 - \frac{1}{2} \beta(t) dt) \cdot \bx(t - dt) + \sqrt{\beta(t){\color{violet}dt}} \cdot {\color{violet}\bepsilon} = \\
-		= {\color{teal}\bx(t - dt)} - \frac{1}{2} \beta(t) \bx(t - dt) dt  + \sqrt{\beta(t)} \cdot {\color{violet}d \bw}
-	\end{multline*}
-	\vspace{-0.5cm}
-	\begin{block}{Variance Preserving SDE}
-		\vspace{-0.3cm}
-		\[
-			{\color{teal}d \bx} = - \frac{1}{2} \beta(t) \bx(t) dt + \sqrt{\beta(t)} \cdot d \bw
-		\]
-	\end{block}
-	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
-\end{frame}
-%=======
-\begin{frame}{Diffusion SDE}
-	\begin{block}{Variance Preserving SDE}
-		\vspace{-0.3cm}
-		\[
-			d \bx = - \frac{1}{2} \beta(t) \bx(t) dt + \sqrt{\beta(t)} \cdot d \bw
-		\]
-		\[
-			\bff(\bx, t) = - \frac{1}{2} \beta(t) \bx(t) , \quad g(t) = \sqrt{\beta(t)} 
-		\]
-	\end{block}
-	Variance is preserved if $\bx(0)$ has a unit variance.
-	\begin{align*}
-		d\bx &= \left(- \frac{1}{2} \beta(t) \bx(t) - \frac{1}{2} \beta(t) \frac{\partial}{\partial \bx} \log p_t(\bx) \right) dt - \text{probability flow ODE} \\
-		d\bx &= \left(- \frac{1}{2} \beta(t) \bx(t) - \beta(t) \frac{\partial}{\partial \bx} \log p_t(\bx)\right) dt + \sqrt{\beta(t)} d \bw - \text{reverse SDE}
-	\end{align*}
-	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
-\end{frame}
-%=======
-\begin{frame}{Diffusion SDE}
-	\vspace{-0.5cm}
-	\[
-		d\bx = \mathbf{f}(\bx, t) dt + g(t) d \bw
-	\]
-	\vspace{-0.3cm}
-	\begin{block}{Variance Exploding SDE (NCSN)}
-		\vspace{-0.5cm}
-		\[
-			d \bx = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} \cdot d \bw, \quad \bff(\bx, t) = 0, \quad g(t) = \sqrt{\frac{ d [\sigma^2(t)]}{dt}} 
-		\]
-		\vspace{-0.5cm}
-	\end{block}
-	\begin{block}{Variance Preserving SDE (DDPM)}
-		\vspace{-0.3cm}
-		\[
-			d \bx = - \frac{1}{2} \beta(t) \bx(t) dt + \sqrt{\beta(t)} \cdot d \bw
-		\]
-		\[
-			\bff(\bx, t) = - \frac{1}{2} \beta(t) \bx(t) , \quad g(t) = \sqrt{\beta(t)} 
-		\]
-		\vspace{-0.3cm}
-	\end{block}
-	Is it possible to train score-based generative model (DDPM or NCSN) in continuous time?
-	\myfootnotewithlink{https://arxiv.org/abs/2011.13456}{Song Y., et al. Score-Based Generative Modeling through Stochastic Differential Equations, 2020}
-\end{frame}
-%=======
 \begin{frame}{Summary}
 	\begin{itemize}
 		\item Continuity equation allows to calculate $\log p(\bx, t)$ at arbitrary moment $t$.
@@ -694,8 +574,6 @@
 		\item There exists special probability flow ODE for each SDE that gives the same probability path.
 		\vfill
 		\item It is possible to revert SDE using the score function.
-		\vfill
-		\item Score matching (NCSN) and diffusion models (DDPM) are the discretizations of the SDEs (variance exploding and variance preserving).
 	\end{itemize}
 \end{frame}
 \end{document} 

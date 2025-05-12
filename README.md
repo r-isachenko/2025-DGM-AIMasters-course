@@ -45,12 +45,12 @@ The course is accompanied by practical tasks that allow you to understand the pr
 |  |  | <b>Seminar 9:</b> Denoising diffusion probabilistic model (DDPM). Denoising Diffusion Implicit Models (DDIM). | [slides](seminars/seminar9/) |
 | 10 | April, 24 | <b>Lecture 10:</b> Denoising diffusion as score-based generative model. Model guidance: classifier guidance, classfier-free guidance. Continuous-in-time NF and neural ODE.  | [slides](lectures/lecture10/Lecture10.pdf) |
 |  |  | <b>Seminar 10:</b> Guidance. CLIP, GLIDE, DALL-E 2, Imagen. | [slides](seminars/seminar10/) |
-| 11 | May, 1 | <b>Lecture 11:</b> Continuity equation for NF log-likelihood. SDE basics. Kolmogorov-Fokker-Planck equation. Probability flow ODE. Reverse SDE. Variance Preserving and Variance Exploding SDEs. | [slides](lectures/lecture11/Lecture11.pdf) |
-|  |  | <b>Seminar 11:</b> Latent Diffusion Model. Stable Diffusion | [slides](seminars/seminar11/) |
+| 11 | May, 1 | <b>Lecture 11:</b> Continuity equation for NF log-likelihood. SDE basics. Kolmogorov-Fokker-Planck equation. Probability flow ODE. Reverse SDE. | [slides](lectures/lecture11/Lecture11.pdf) |
+|  |  | <b>Seminar 11:</b> Latent Diffusion Model. Stable Diffusion. | [slides](seminars/seminar11/) |
+| 12 | May, 15 | <b>Lecture 12:</b> Variance Preserving and Variance Exploding SDEs. Score-based generative models through SDE. Flow matching. Conditional flow matching. | [slides](lectures/lecture12/Lecture12.pdf) |
+|  |  | <b>Seminar 12:</b> Latent Diffusion Models. Recap and colab playground.| [slides](seminars/seminar12/seminar12.ipynb) <a href="https://colab.research.google.com/github/r-isachenko/2024-DGM-MIPT-YSDA-course/blob/main/seminars/seminar12/seminar12_SD.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 <!---
-| 12 | November, 26 | <b>Lecture 12:</b>  | [slides](lectures/lecture12/Lecture12.pdf) |
-|  |  | <b>Seminar 12:</b>  Latent Diffusion Models. Recap and colab playground.| [slides](seminars/seminar12/seminar12.ipynb) <a href="https://colab.research.google.com/github/r-isachenko/2024-DGM-MIPT-YSDA-course/blob/main/seminars/seminar12/seminar12_SD.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| 13 | December, 3 | <b>Lecture 13:</b> Score-based generative models through SDE. Flow matching. Conditional flow matching. Conical gaussian paths. | [slides](lectures/lecture13/Lecture13.pdf) |
+| 13 | December, 3 | <b>Lecture 13:</b> Flow matching. Conditional flow matching. Conical gaussian paths. | [slides](lectures/lecture13/Lecture13.pdf) |
 |  |  | <b>Seminar 13:</b> Latent Diffusion Models. Code. | [slides](seminars/seminar13/seminar13_SD.ipynb) <a href="https://colab.research.google.com/github/r-isachenko/2024-DGM-MIPT-YSDA-course/blob/main/seminars/seminar13/seminar13_SD.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 | 13 | December, 10 | <b>Lecture 14:</b> Conical gaussian paths (continued). Linear interpolation. Link with diffusion and score matching. Latent space models. Course overview. | [slides](lectures/lecture14/Lecture14.pdf) |
 |  |  | <b>Seminar 14:</b>  The Final Recap| [slides](seminars/seminar14/seminar14.ipynb) |
