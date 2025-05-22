@@ -14,6 +14,8 @@
 *.nav
 *.snm
 *eps-converted-to.pdf
+*.fdb_latexmk
+*.fls
 
 #additions by PMokrov
 *__pycache__*

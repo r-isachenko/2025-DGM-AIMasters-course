@@ -169,11 +169,38 @@
 \section{Conditional Flow Matching}
 %=======
 \begin{frame}{Conditional Flow Matching}
-	\vspace{-0.2cm}
 	\[
-		\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+		\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx_t \sim p_t(\bx | \bz)}\left\| \bff(\bx_t, \bz, t) - \bff_{\btheta}(\bx_t, t) \right\|^2 \rightarrow \min_{\btheta}
+	\]
+	\[
+		p(\bx) = \cN(0, \bI) = \bbE_{p(\bz)} p_0(\bx | \bz); \quad \pi(\bx) = \bbE_{p(\bz)} p_1(\bx | \bz).
 	\]
 	\vspace{-0.3cm}
+	\begin{block}{Training}
+		\begin{enumerate}
+			\item Sample timestamp $t \sim U[0, 1]$ and $\bz \sim p(\bz)$.
+			\item Get the sample $\bx_t \sim p_t(\bx | \bz)$.
+			\item Compute loss $ \cL = \left\| \bff(\bx_t, \bz, t) - \bff_{\btheta}(\bx_t, t) \right\|^2 $.
+		\end{enumerate}
+	\end{block}
+	\begin{block}{Sampling}
+		\begin{enumerate}
+			\item Sample $\bx_0 \sim \cN(0, \bI)$.
+			\item Solve the ODE to get $\bx_1$:
+			\[
+				\bx_1 = \text{ODESolve}_f(\bx_0, \btheta, t_0=0, t_1=1).
+			\]
+		\end{enumerate}
+	\end{block}
+	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
+\end{frame}
+%=======
+\begin{frame}{Conditional Flow Matching}
+	\vspace{-0.3cm}
+	\[
+		\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx_t \sim p_t(\bx | \bz)}\left\| \bff(\bx_t, \bz, t) - \bff_{\btheta}(\bx_t, t) \right\|^2 \rightarrow \min_{\btheta}
+	\]
+	\vspace{-0.4cm}
 	\begin{block}{What is left?}
 		\begin{itemize}
 			\item How to choose the conditioning latent variable $\bz$?
@@ -181,7 +208,7 @@
 		\end{itemize}
 	\end{block}
 	\vspace{-0.3cm}
-	\begin{block}{Gaussian conditional probability path}
+	\begin{block}{Gaussian conditional probability path (choice 2)}
 		\vspace{-0.3cm}
 		\[
 			p_t(\bx | \bz) = \cN\left(\bmu_t(\bz), \bsigma_t^2(\bz)\right)
@@ -189,10 +216,10 @@
 		\vspace{-0.5cm}
 	\end{block}
 	\begin{itemize}
-		\item There is an infinite number of vector fields that generate any particular probability path.
+		\item There is an infinite number of vector fields that generate particular probability path.
 		\item Let consider the following dynamics:
 		\[
-			\bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bx_0, \quad {\color{violet} \bx_0 \sim p_0(\bx) = \cN(0, \bI)}
+			\bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bepsilon, \quad {\color{violet} \text{with fixed } \bepsilon = \cN(0, \bI)}
 		\]
 	\end{itemize}
 	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
@@ -202,40 +229,41 @@
 	\begin{block}{Gaussian conditional probability path}
 		\vspace{-0.3cm}
 		\[
-			p_t(\bx | \bz) = \cN\left(\bmu_t(\bz), \bsigma_t^2(\bz)\right); \quad \bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bx_0
+			p_t(\bx | \bz) = \cN\left(\bmu_t(\bz), \bsigma_t^2(\bz)\right); \quad \bx_t = \bmu_t(\bz) + \bsigma_t(\bz) \odot \bepsilon
 		\]
 		\vspace{-0.5cm}
 	\end{block}
 	\begin{block}{Theorem}
 		\vspace{-0.3cm}
 		\[
-			\bff(\bx, \bz, t) =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx - \bmu_t(\bz))
+			\bff(\bx_t, \bz, t) =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx_t - \bmu_t(\bz))
 		\]
 		\vspace{-0.3cm}
 	\end{block}
+	\vspace{-0.2cm}
 	\begin{block}{Proof}
-	\vspace{-0.3cm}
+	\vspace{-0.2cm}
 	\[
-		\frac{d\bx}{dt} = \bff(\bx, \bz, t); \quad \bx_0 = \frac{1}{\bsigma_t(\bz)} \odot (\bx_t - \bmu_t(\bz))
+		\frac{d\bx_t}{dt} = \bff(\bx_t, \bz, t); \quad \bepsilon = \frac{1}{\bsigma_t(\bz)} \odot (\bx_t - \bmu_t(\bz))
 	\]
 	\[
-		\frac{d\bx}{dt} = \bmu_t'(\bz) + \bsigma_t'(\bz) \odot \bx_0 =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx - \bmu_t(\bz))
+		\frac{d\bx_t}{dt} = \bmu_t'(\bz) + \bsigma_t'(\bz) \odot \bepsilon =  \bmu_t'(\bz) + \frac{\bsigma_t'(\bz)}{\bsigma_t(\bz)} \odot (\bx_t - \bmu_t(\bz))
 	\]
 	\end{block}
 	\myfootnotewithlink{https://arxiv.org/abs/2302.00482}{Tong A., et al. Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport, 2023}
 \end{frame}
 %=======
-\subsection{Conical gaussian paths}
+\section{Conical gaussian paths}
 %=======
 \begin{frame}{Endpoint conditioning}
 	\begin{block}{Conditional Flow Matching}
 		\vspace{-0.3cm}
 		\[
-			\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 \rightarrow \min_{\btheta}
+			\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx_t \sim p_t(\bx | \bz)}\left\| \bff(\bx_t, \bz, t) - \bff_{\btheta}(\bx_t, t) \right\|^2 \rightarrow \min_{\btheta}
 		\]
 		\vspace{-0.3cm}
 	\end{block}
-	\begin{block}{Conditioning latent variable}
+	\begin{block}{Conditioning latent variable (choice 1)}
 		Let choose $\bz = \bx_1$. Then $p(\bz) = p_1(\bx_1)$.
 		\[
 			p_t(\bx) = \int p_t(\bx | \bx_1) p_1(\bx_1) d \bx_1
@@ -265,7 +293,7 @@
 	\begin{block}{Gaussian conditional probability path}
 		\vspace{-0.5cm}
 		\[
-			p_t(\bx | \bx_1) = \cN\left(\bmu_t(\bx_1), \bsigma_t^2(\bx_1)\right); \quad \bx_t = \bmu_t(\bx_1) +  \bsigma_t(\bx_1) \odot \bx_0.
+			p_t(\bx | \bx_1) = \cN\left(\bmu_t(\bx_1), \bsigma_t^2(\bx_1)\right); \quad \bx_t = \bmu_t(\bx_1) +  \bsigma_t(\bx_1) \odot {\color{olive}\bepsilon}.
 		\]
 		\vspace{-0.6cm}
 	\end{block}
@@ -278,7 +306,7 @@
 		\quad \Rightarrow \quad 
 		\begin{cases}
 			p_t(\bx | \bx_1) = \cN\left(t \bx_1, (1-t)^2 \cdot \bI\right); \\
-		 	\bx_t = t \bx_1 + (1 - t) \bx_0. 
+		 	\bx_t = t \bx_1 + (1 - t) {\color{olive}\bx_0}. 
 	 \end{cases}
 	\]
 	\vspace{-0.3cm}
@@ -290,41 +318,68 @@
 \end{frame}
 %=======
 \begin{frame}{Conical gaussian paths}
-	\vspace{-0.3cm}
 	\[
-		p_t(\bx | \bx_1) = \cN\left(t \bx_1, (1-t)^2 \bI\right); \quad {\color{teal}\bx = t \bx_1 + (1 - t) \bx_0}. 
+		p_t(\bx | \bx_1) = \cN\left(t \bx_1, (1-t)^2 \bI\right); \quad {\color{teal}\bx_t = t \bx_1 + (1 - t) \bx_0}. 
 	\]
-	\vspace{-0.5cm}
+	\vspace{-0.3cm}
 	\begin{block}{Conditional vector field}
 		\vspace{-0.3cm}
 		\[
-			 \frac{d\bx}{dt} = \bff(\bx, \bx_1, t) =  \bmu_t'(\bx_1) + \frac{\bsigma_t'(\bx_1)}{\bsigma_t(\bx_1)} \odot (\bx - \bmu_t(\bx_1))
+			 \frac{d\bx_t}{dt} = \bff(\bx_t, \bx_1, t) =  \bmu_t'(\bx_1) + \frac{\bsigma_t'(\bx_1)}{\bsigma_t(\bx_1)} \odot (\bx_t - \bmu_t(\bx_1))
 		\]
 		\vspace{-0.5cm}
 		\begin{multline*}
-			\bff(\bx, \bx_1, t) = \bx_1 - \frac{1}{1-t} \cdot (\bx - t \bx_1) = \frac{\bx_1 - {\color{teal}\bx}}{1-t} = \\
+			\bff(\bx_t, \bx_1, t) = \bx_1 - \frac{1}{1-t} \cdot (\bx_t - t \bx_1) = \frac{\bx_1 - {\color{teal}\bx_t}}{1-t} = \\
 			= \frac{\bx_1 - {\color{teal}t \bx_1 - (1 - t) \bx_0}}{1-t} = \bx_1 - \bx_0
 		\end{multline*}
 		\vspace{-0.7cm}
 	\end{block}
-	\begin{block}{Conditional Flow Matching}
+	\begin{minipage}[t]{0.55\columnwidth}
 		\vspace{-0.7cm}
-		\begin{multline*}
-			\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 = \\
-		 \bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} \bbE_{\bx \sim p_t(\bx | \bx_1)}\left\| \left(\frac{\bx_1 - \bx}{1-t}\right) - \bff_{\btheta}(\bx, t) \right\|^2 = \\
-		 \bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} \bbE_{\bx_0 \sim \cN(0, \bI)}\left\| (\bx_1 - \bx_0) - \bff_{\btheta}\left(t \bx_1 + (1 - t) \bx_0, t\right) \right\|^2
-		\end{multline*}
-		\vspace{-0.5cm}
-	\end{block}	
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.9\linewidth]{figs/g2g-vector-field-samples-cond}
+		\end{figure}
+	\end{minipage}%
+	\begin{minipage}[t]{0.45\columnwidth}
+		Conditional vector field $\bff(\bx_t, \bx_1, t)$ defines the straight lines between $\pi(\bx)$ and $\cN(0, \bI)$.
+	\end{minipage}
+	\myfootnotewithlink{https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html}{image credit: https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html}
+\end{frame}
+%=======
+\begin{frame}{Conical gaussian paths}
+	\vspace{-0.5cm}
+	\begin{multline*}
+		\bbE_{t \sim U[0, 1]} \bbE_{\bz \sim p(\bz)} \bbE_{\bx \sim p_t(\bx | \bz)}\left\| \bff(\bx, \bz, t) - \bff_{\btheta}(\bx, t) \right\|^2 = \\
+		\bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} {\color{violet}\bbE_{\bx_t \sim p_t(\bx | \bx_1)}}\left\| \left(\frac{\bx_1 - \bx_t}{1-t}\right) - \bff_{\btheta}(\bx_t, t) \right\|^2 = \\
+		\bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} {\color{violet}\bbE_{\bx_0 \sim \cN(0, \bI)}}\left\| (\bx_1 - \bx_0) - \bff_{\btheta}\left(t \bx_1 + (1 - t) \bx_0, t\right) \right\|^2
+	\end{multline*}
+	\vspace{-0.5cm}
+	\begin{itemize}
+		\item We fit straight lines between noise distribution $p(\bx)$ and the data distribution $\pi(\bx)$.
+		\item The \textbf{marginal} path $p_t(\bx)$ does not give the straight lines.
+	\end{itemize}
+	\vspace{-0.3cm}
+	\begin{minipage}[t]{0.5\columnwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=\linewidth]{figs/g2g-vector-field-samples-cond}
+			\end{figure}
+		\end{minipage}%
+		\begin{minipage}[t]{0.5\columnwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=\linewidth]{figs/g2g-forward_samples}
+			\end{figure}
+	\end{minipage}
 	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
 \end{frame}
 %=======
 \begin{frame}{Conditional Flow Matching}
 	\vspace{-0.3cm}
 	\[
-	 \bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} \bbE_{\bx_0 \sim \cN(0, \bI)}\left\| (\bx_1 - \bx_0) - \bff_{\btheta}(\bx, t) \right\|^2  \rightarrow \min_{\btheta}
+	 \bbE_{t \sim U[0, 1]} \bbE_{\bx_1 \sim \pi(\bx)} \bbE_{\bx_0 \sim \cN(0, \bI)}\left\| (\bx_1 - \bx_0) - \bff_{\btheta}(\bx_t, t) \right\|^2  \rightarrow \min_{\btheta}
 	\]
-	We fit straight lines between noise distribution $p(\bx)$ and the data distribution $\pi(\bx)$.
 	\begin{block}{Training}
 		\begin{enumerate}
 			\item Get the sample $\bx_1 \sim \pi(\bx)$.
@@ -346,31 +401,7 @@
 	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
 \end{frame}
 %=======
-\begin{frame}{Flow Matching}
-	\[
-		\bx_t = t \bx_1 + (1 - t) \bx_0
-	\]
-	\vspace{-0.3cm}
-	\begin{itemize}
-		\item The conditional probability path $p_t(\bx|\bz)$ is an \textbf{optimal transport path} from $p_0(\bx|\bz)$ to $p_1(\bx|\bz)$ (in terms of the conditional trajectories straightness).
-		\item The marginal path $p_t(\bx)$ is not in general an optimal transport path from the standard normal $p_0(\bx)$ to the data distribution $p_1(\bx)$.
-	\end{itemize}
-	\begin{minipage}[t]{0.5\columnwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[width=\linewidth]{figs/g2g-vector-field-samples-cond}
-			\end{figure}
-		\end{minipage}%
-		\begin{minipage}[t]{0.5\columnwidth}
-			\begin{figure}
-				\centering
-				\includegraphics[width=\linewidth]{figs/g2g-forward_samples}
-			\end{figure}
-	\end{minipage}
-	\myfootnotewithlink{https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html}{image credit: https://mlg.eng.cam.ac.uk/blog/2024/01/20/flow-matching.html}
-\end{frame}
-%=======
-\subsection{Linear interpolation}
+\section{Linear interpolation}
 %=======
 \begin{frame}{Pair conditioning}
 	\begin{block}{Conditional Flow Matching}
@@ -380,7 +411,7 @@
 		\]
 		\vspace{-0.3cm}
 	\end{block}
-	\begin{block}{Conditioning latent variable}
+	\begin{block}{Conditioning latent variable (choice 1)}
 		Let choose $\bz = (\bx_0, \bx_1)$. Then $p(\bz) = p (\bx_0, \bx_1) = p_0(\bx_0) p_1(\bx_1)$.
 		\[
 			p_t(\bx) = \int p_t(\bx | \bx_0, \bx_1) p_0(\bx_0) p_1(\bx_1) d \bx_0 d \bx_1
@@ -467,11 +498,11 @@
 	\begin{block}{Conditional vector field}
 		\vspace{-0.5cm}
 		\[
-			 \frac{d\bx}{dt} = \bff(\bx, \bx_0, \bx_1, t) =  \bmu_t'(\bx_0, \bx_1) + \frac{\bsigma_t'(\bx_0, \bx_1)}{\bsigma_t(\bx_0, \bx_1)} \odot (\bx - \bmu_t(\bx_0, \bx_1))
+			 \frac{d\bx_t}{dt} = \bff(\bx_t, \bx_0, \bx_1, t) =  \bmu_t'(\bx_0, \bx_1) + \frac{\bsigma_t'(\bx_0, \bx_1)}{\bsigma_t(\bx_0, \bx_1)} \odot (\bx_t - \bmu_t(\bx_0, \bx_1))
 		\]
 		\vspace{-0.5cm}
 		\[
-			\bff(\bx, \bx_0, \bx_1, t) = \bx_1 - \bx_0
+			\bff(\bx_t, \bx_0, \bx_1, t) = \bx_1 - \bx_0
 		\]
 		\vspace{-0.7cm}
 	\end{block}
@@ -524,7 +555,7 @@
 	\myfootnotewithlink{https://arxiv.org/pdf/2403.03206}{Esser P., et al. Scaling Rectified Flow Transformers for High-Resolution Image Synthesis, 2024}
 \end{frame}
 %=======
-\subsection{Link with score-based models}
+\section{Link with score-based models}
 %=======
 \begin{frame}{Score-based generative models through SDEs}
 	\vspace{-0.3cm}
@@ -593,33 +624,6 @@
 \end{frame}
 %=======
 \begin{frame}{Flow matching vs score-based SDE models}
-	\begin{block}{SDE vector field}
-		\vspace{-0.3cm}
-		\[
-			\bff(\bx, \bx_1, t) = \frac{\alpha'_{1-t}}{1 - \alpha^2_{1-t}}\cdot \left(\alpha_{1-t}  \bx - \bx_1\right)
-		\]
-		\vspace{-0.5cm}
-		\begin{figure}
-			\raggedleft
-			\includegraphics[width=0.8\linewidth]{figs/diff_cond_path}
-		\end{figure}
-		\vspace{-0.5cm}
-	\end{block}
-	\begin{block}{FM vector field}
-		\vspace{-0.3cm}
-		\[
-			\bff(\bx, \bx_1, t) = \frac{\bx_1  - \bx}{1-t}
-		\]
-		\vspace{-0.5cm}
-		\begin{figure}
-			\raggedleft
-			\includegraphics[width=0.6\linewidth]{figs/ot_cond_path}
-		\end{figure}
-	\end{block}
-	\myfootnotewithlink{https://arxiv.org/abs/2210.02747}{Lipman Y., et al. Flow Matching for Generative Modeling, 2022}
-\end{frame}
-%=======
-\begin{frame}{Flow matching vs score-based SDE models}
 	\begin{block}{Trajectories}
 		\vspace{-0.3cm}
 		\begin{figure}
@@ -641,7 +645,7 @@
 		\vfill
 		\item Conical gaussian paths is the example of the effective FM technique.
 		\vfill
-		\item Pair conditioning gives the same procedure, but it is more general.
+		\item Pair conditioning gives the same procedure, but it is more general (suitable for unpaired tasks).
 		\vfill
 		\item Diffusion and score-based model are the special case of flow matching approach with curved trajectories.
 	\end{itemize}
